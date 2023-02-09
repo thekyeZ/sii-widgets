@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  title = "";
+  cityName = 'Kraków';
+  date = new Date();
+  temperature = 10;
+  units = 'C';
 }

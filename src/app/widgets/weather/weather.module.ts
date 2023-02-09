@@ -19,4 +19,6 @@ import { ListingComponent } from './listing/listing.component';
     WeatherComponent
   ]
 })
-export class WeatherModule { }
+export class WeatherModule {
+  
+}
