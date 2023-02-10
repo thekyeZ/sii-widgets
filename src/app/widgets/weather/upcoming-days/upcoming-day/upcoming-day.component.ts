@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-upcoming-day',
@@ -9,5 +9,6 @@ export class UpcomingDayComponent {
   name = 'Monday';
   date = '10. 02. 2023';
   temperature = 10;
+
 
 }
