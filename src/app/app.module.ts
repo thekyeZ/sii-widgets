@@ -14,7 +14,7 @@ import { BusesModule } from './widgets/buses/buses.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
