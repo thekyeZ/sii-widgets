@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class UpcomingDayComponent {
   name = 'Monday';
-  date = new Date();
+  date = '10. 02. 2023';
   temperature = 10;
 
 }

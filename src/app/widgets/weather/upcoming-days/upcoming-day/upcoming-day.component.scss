@@ -1,0 +1,29 @@
+.upcoming-day-component {
+    border: 1px solid green;
+    border-radius: 10px;
+    margin-bottom: 1em;
+    
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .upcoming-day-item {
+        list-style-type: none;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2em;
+
+        li {
+            flex: 1;
+        }
+
+        img {
+            min-height: 2em;
+            max-height: 4em;
+        }
+    }
+}

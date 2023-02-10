@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./upcoming-days.component.scss']
 })
 export class UpcomingDaysComponent {
-  days = ['day1', 'day2'];
+  days = [,,,,,];
 
 }

@@ -3,8 +3,12 @@
         <ul class="upcoming-day-item">
             <li>{{ name }}</li>
             <li>{{ date }}</li>
-            <li>{{ temperature }}</li>
-            <!-- <li><img [src]="day.iconPath" alt="{{ day.temperature }}"/></li>   -->
+            <li>{{ temperature }}{{ ' °C' }}</li>
+            <li>
+                <img src="../assets/thermometer.png" alt="{{ temperature }}"/>
+                <img src="../assets/thermometer-cold.png" alt="{{ temperature }}"/>
+                <img src="../assets/thermometer-hot.png" alt="{{ temperature }}"/>
+            </li>  
         </ul>
-    </a> 
+    </a>
 </div>
