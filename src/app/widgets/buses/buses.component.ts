@@ -7,7 +7,7 @@ import { Component } from "@angular/core";
 })
 export class BusesComponent {
   chosenBusStop = "Batorego/Dworcowa"
-  incomingBusses = [
+  incomingBuses = [
     "44 - 13min",
     "52 - 20min",
     "55 - 30min",
