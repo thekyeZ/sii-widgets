@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./upcoming-day.component.scss']
 })
 export class UpcomingDayComponent {
+  name = 'Monday';
+  date = new Date();
+  temperature = 10;
 
 }
