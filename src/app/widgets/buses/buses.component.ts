@@ -6,6 +6,7 @@ import { Component } from "@angular/core";
   styleUrls: ["./buses.component.scss"],
 })
 export class BusesComponent {
+  chosenBusStop = "Batorego/Dworcowa"
   incomingBusses = [
     "44 - 13min",
     "52 - 20min",

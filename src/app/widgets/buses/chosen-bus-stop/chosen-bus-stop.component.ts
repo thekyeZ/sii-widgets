@@ -6,6 +6,6 @@ import { Component, Input } from "@angular/core";
   styleUrls: ["./chosen-bus-stop.component.scss"],
 })
 export class ChosenBusStopComponent {
-  @Input() chosenBusStop: string = '';
+  @Input() chosenBusStop: string = "";
 }
 
