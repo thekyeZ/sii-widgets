@@ -1,0 +1,16 @@
+.upcoming-weather-component {
+
+    .upcoming-weather {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2em;
+        font-size: 1.5rem;
+
+        img {
+            margin: 0;
+            padding: 0;
+            max-height: 3rem;
+        }
+    }
+}

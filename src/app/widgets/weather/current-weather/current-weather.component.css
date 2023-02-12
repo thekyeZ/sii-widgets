@@ -1,3 +1,33 @@
 .current-weather-component {
   border: 1px solid red;
+}
+.current-weather-component .current-weather {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 3em;
+  align-items: center;
+}
+.current-weather-component .current-weather img {
+  margin: 0;
+  padding: 0;
+  max-height: 10rem;
+}
+.current-weather-component .current-weather .current-temperature {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.current-weather-component .current-city {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.current-weather-component .current-date {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
 }/*# sourceMappingURL=current-weather.component.css.map */

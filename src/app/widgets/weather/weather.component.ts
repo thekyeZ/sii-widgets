@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./weather.component.scss']
 })
 export class WeatherComponent {
-  currentWeather = 'Look outside the window to check current weather for';
+  currentWeather = '9 °C';
   upcomingWeather= ['sunny', ' cloudy', ' windy', 'hot'];
 }

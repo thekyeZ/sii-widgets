@@ -1,1 +1,8 @@
-/*# sourceMappingURL=weather.component.css.map */
+.card-body {
+  background-color: #9fab95;
+  font-family: "Varela Round", sans-serif;
+  color: #e4e4d8;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}/*# sourceMappingURL=weather.component.css.map */

@@ -1,1 +1,12 @@
-/*# sourceMappingURL=upcoming-weather.component.css.map */
+.upcoming-weather-component .upcoming-weather {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  font-size: 1.5rem;
+}
+.upcoming-weather-component .upcoming-weather img {
+  margin: 0;
+  padding: 0;
+  max-height: 3rem;
+}/*# sourceMappingURL=upcoming-weather.component.css.map */
