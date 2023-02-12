@@ -1,0 +1,13 @@
+.weather-settings {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+        background: none;
+        border: none;
+
+        img {
+            max-height: 3rem;
+        }
+    }
+}

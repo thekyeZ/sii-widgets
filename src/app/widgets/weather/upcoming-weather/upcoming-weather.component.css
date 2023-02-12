@@ -1,3 +1,10 @@
+.upcoming-weather-component {
+  display: flex;
+  justify-content: space-around;
+}
+.upcoming-weather-component :hover {
+  cursor: pointer;
+}
 .upcoming-weather-component .upcoming-weather {
   display: flex;
   align-items: center;
@@ -9,4 +16,11 @@
   margin: 0;
   padding: 0;
   max-height: 3rem;
+}
+.upcoming-weather-component button {
+  background: none;
+  border: none;
+}
+.upcoming-weather-component button img {
+  max-height: 2rem;
 }/*# sourceMappingURL=upcoming-weather.component.css.map */

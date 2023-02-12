@@ -1,0 +1,11 @@
+.weather-settings {
+  display: flex;
+  justify-content: flex-end;
+}
+.weather-settings button {
+  background: none;
+  border: none;
+}
+.weather-settings button img {
+  max-height: 3rem;
+}/*# sourceMappingURL=weather-settings.component.css.map */

@@ -1,5 +1,6 @@
 .current-weather-component {
-  border: 1px solid red;
+  padding-bottom: 2em;
+  border-bottom: 0.15rem solid #9a7852;
 }
 .current-weather-component .current-weather {
   margin: 0;

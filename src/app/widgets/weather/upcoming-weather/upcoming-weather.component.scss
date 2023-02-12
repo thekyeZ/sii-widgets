@@ -1,4 +1,11 @@
 .upcoming-weather-component {
+    display: flex;
+    justify-content: space-around;
+
+
+    :hover {
+        cursor: pointer;
+    }
 
     .upcoming-weather {
         display: flex;
@@ -11,6 +18,15 @@
             margin: 0;
             padding: 0;
             max-height: 3rem;
+        }
+    }
+
+    button {
+        background: none;
+        border: none;
+
+        img {
+            max-height: 2rem;
         }
     }
 }
