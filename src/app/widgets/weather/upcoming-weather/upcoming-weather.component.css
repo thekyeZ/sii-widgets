@@ -1,9 +1,8 @@
 .upcoming-weather-component {
   display: flex;
   justify-content: space-around;
-}
-.upcoming-weather-component :hover {
-  cursor: pointer;
+  padding: 0.25em 1em;
+  transition: 0.5s;
 }
 .upcoming-weather-component .upcoming-weather {
   display: flex;
@@ -23,4 +22,9 @@
 }
 .upcoming-weather-component button img {
   max-height: 2rem;
+}
+
+.upcoming-weather-component:hover {
+  box-shadow: 0 0 1rem #616451;
+  cursor: pointer;
 }/*# sourceMappingURL=upcoming-weather.component.css.map */

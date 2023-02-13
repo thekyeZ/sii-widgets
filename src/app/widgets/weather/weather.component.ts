@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
 })
 export class WeatherComponent {
   currentWeather = '9 °C';
-  upcomingWeather= ['sunny', ' cloudy', ' windy', 'hot'];
+  upcomingWeather= ['sunny', ' cloudy', ' windy', 'hot', 'raining'];
+
+  readMore(details: string) {
+    console.log(details);
+  }
+
 }
