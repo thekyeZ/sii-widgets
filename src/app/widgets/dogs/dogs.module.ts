@@ -1,12 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DogsComponent } from './dogs.component';
-
+import { BreedsComponent } from './breeds/breeds.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { BreedDescriptionComponent } from './breeds/breed-description/breed-description.component';
+import { BreedListComponent } from './breeds/breed-list/breed-list.component';
+import { HeaderCatsComponent } from './header-cats/header-cats.component';
 
 
 @NgModule({
   declarations: [
-    DogsComponent
+    DogsComponent,
+    BreedsComponent,
+    GalleryComponent,
+    BreedDescriptionComponent,
+    BreedListComponent,
+    HeaderCatsComponent,
   ],
   imports: [
     CommonModule

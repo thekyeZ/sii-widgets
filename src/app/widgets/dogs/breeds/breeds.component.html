@@ -1,28 +1,25 @@
 <div class="row mb-2">
-  <div class="col-md-6 ">
-    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-      <div class="col p-4 d-flex flex-column position-static">
-        <h5>Breeds</h5>        
-        <app-breeds-list></app-breeds-list>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Breed list</strong>
+          <ul class="list-group list-group-flush">
+          
+            <app-breed-list [breeds]="listOfBreeds"></app-breed-list>
+            
+          </ul>
+        </div>
       </div>
-    </div>
-  </div>
-
-  <div class="col-md-6 ">
-    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-      <div class="col p-4 d-flex flex-column position-static">
-        <h5>Name</h5>
-        <img
-          src="https://i0.wp.com/piesrasowy.pl/wp-content/uploads/2019/06/piese%C5%82yyyyy.jpg?resize=1103%2C640&ssl=1"
-          alt="" class="img-responsive" style="max-height: 180px;">
-        <p>Strong Willed, Stubborn, Friendly, Clownish, Affectionate, Loyal, Obedient, Intelligent, Courageous </p>
-        <p>14 - 50 kgs</p>
-        <p>40 - 60 cm</p>
-        <p>8 – 15 years average life span</p>
-      </div>
-
-    </div>
-  </div>
 </div>
 
-<div class="container-fluid">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+
+            <app-breed-description></app-breed-description>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+

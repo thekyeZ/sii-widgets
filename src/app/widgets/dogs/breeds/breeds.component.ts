@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-breeds',
@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./breeds.component.scss']
 })
 export class BreedsComponent {
-listOfBreeds =[
-  'Golden Retrievers', 'Boston Terriers', 'Labrador Retrievers', 'Poodles', 'Border Collie',
-]
+  listOfBreeds = [
+    'Bengal', 'Bombai', 'Cheetoh', 'Cornish Rex', 'Chausie',
+  ]
+
 }
