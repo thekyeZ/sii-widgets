@@ -1,0 +1,12 @@
+$text-color: #79aabf;
+$light-text-color: #EAC7C7;
+$background-beige: #EAE0DA;
+$background-yellow-beige: #F7F5EB;
+
+.nav-link {
+    cursor: pointer;
+    color: $text-color;
+}
+.nav-link:hover{
+    color:$light-text-color;
+}

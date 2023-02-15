@@ -1,0 +1,8 @@
+.nav-link {
+  cursor: pointer;
+  color: #79aabf;
+}
+
+.nav-link:hover {
+  color: #EAC7C7;
+}/*# sourceMappingURL=header-cats.component.css.map */

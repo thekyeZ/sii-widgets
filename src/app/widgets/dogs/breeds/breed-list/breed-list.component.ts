@@ -8,11 +8,4 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class BreedListComponent {
 @Input() breeds: string[]=[];
 
-@Output() breedEmitter = new EventEmitter<string>;
-
-logBreed(breedName: string){
-  this.breedEmitter.emit(breedName)
-  console.log(breedName);
-  
-}
 }

@@ -1,4 +1,12 @@
-<div class="card">
-<app-header-cats></app-header-cats>
-<app-breeds></app-breeds>
+<div class="card cats-card">
+<app-header-cats 
+(selectedItem)="onNavigate($event)" 
+></app-header-cats>
+<hr>
+<app-breeds *ngIf="loadedFeature ==='breeds'"></app-breeds>
+<app-gallery *ngIf="loadedFeature ==='gallery'"></app-gallery>
+<app-favorites-cats *ngIf="loadedFeature ==='favorites'"></app-favorites-cats>
+<ng-template #tem>
+    <p>Hello</p>
+</ng-template>
 </div>

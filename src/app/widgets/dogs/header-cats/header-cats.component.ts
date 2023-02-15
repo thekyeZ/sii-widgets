@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header-cats',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./header-cats.component.scss']
 })
 export class HeaderCatsComponent {
+@Output() selectedItem = new EventEmitter<string>();
 
+onMenu(feature: string){
+this.selectedItem.emit(feature);
+}
 }
