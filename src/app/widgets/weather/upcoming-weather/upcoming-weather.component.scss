@@ -1,7 +1,7 @@
 .upcoming-weather-component {
     display: flex;
-    justify-content: space-around;
-    padding: .25em 1em;
+    align-items: center;
+    padding: .75em 1em;
     transition: .5s;
     border-radius: 1rem;
     margin: 0 .5em;
@@ -9,9 +9,19 @@
     .upcoming-weather {
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 2em;
+        justify-content: flex-start;
         font-size: 1.5rem;
+        flex: 1;
+        padding: 0;
+        margin: 0;
+
+        li {
+            list-style: none;
+        }
+
+        .upcoming-date {
+            flex: .6;
+        }
 
         img {
             margin: 0;

@@ -4,6 +4,7 @@ import { WeatherComponent } from './weather.component';
 import { CurrentWeatherComponent } from './current-weather/current-weather.component';
 import { UpcomingWeatherComponent } from './upcoming-weather/upcoming-weather.component';
 import { WeatherSettingsComponent } from './weather-settings/weather-settings.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -15,7 +16,8 @@ import { WeatherSettingsComponent } from './weather-settings/weather-settings.co
     WeatherSettingsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, 
+    HttpClientModule
   ],
   exports: [
     WeatherComponent

@@ -1,11 +1,9 @@
-<!-- <p>Upcoming-weather will be: {{ upcomingWeather }}</p> -->
-
-<div class="upcoming-weather-component">
-    <div class="upcoming-weather">
-        <div class="upcoming-date"> Monday, 13.02</div>
-        <img src="../assets/thermometer.png" alt=""/>
-        <div class="upcoming-temperature">10 °C</div>
-    </div>
+<div class="upcoming-weather-component" *ngFor="let post of posts">
+    <ul class="upcoming-weather">
+        <li class="upcoming-date"> {{ post.id }} </li>
+        <li><img src="../assets/thermometer.png" alt=""/></li>
+        <li class="upcoming-temperature">10 °C</li>
+    </ul>
     <button (click)="readMore('The details will be available soon')"  class="more-info">
         <img src="../assets/caret-circle-right.png" alt=""/>
     </button>
