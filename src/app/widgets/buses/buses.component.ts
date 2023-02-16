@@ -8,7 +8,7 @@ import { Component, OnInit } from "@angular/core";
 })
 export class BusesComponent implements OnInit {
   busStops: any[] = [];
-  chosenBusStop: string = "";
+  chosenBusStop: string = "Wybierz swój przystanek 🤠";
 
   constructor(private http: HttpClient) {}
 
