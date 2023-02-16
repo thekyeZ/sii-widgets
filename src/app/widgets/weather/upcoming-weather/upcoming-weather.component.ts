@@ -9,7 +9,6 @@ import { Event } from '@angular/router';
 
 export class UpcomingWeatherComponent {
   @Input() upcomingWeather: string[] = [];
-
   @Output() showDetails = new EventEmitter<string>();
 
   readMore(value: string) {

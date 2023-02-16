@@ -3,6 +3,8 @@
   justify-content: space-around;
   padding: 0.25em 1em;
   transition: 0.5s;
+  border-radius: 1rem;
+  margin: 0 0.5em;
 }
 .upcoming-weather-component .upcoming-weather {
   display: flex;

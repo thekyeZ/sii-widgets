@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class CurrentWeatherComponent {
   @Input() currentWeather: string = '';
-
+  @Input() currentDate: string = '';
 }
