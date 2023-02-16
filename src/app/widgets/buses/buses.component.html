@@ -1,9 +1,9 @@
-<div class="card" >
+<div class="card">
   <div class="card-body">
     <app-settings></app-settings>
-    <app-chosen-bus-stop [chosenBusStop]="busStops"></app-chosen-bus-stop>
+    <app-chosen-bus-stop [chosenBusStop]="chosenBusStop"></app-chosen-bus-stop>
     <app-incoming-buses [incomingBuses]="incomingBuses"></app-incoming-buses>
     <hr />
-    <app-list-of-buses [busStops]="busStops"></app-list-of-buses>
+    <app-list-of-buses [busStops]="busStops" (busStopSelected)="onBusStopSelected($event)"></app-list-of-buses>
   </div>
 </div>

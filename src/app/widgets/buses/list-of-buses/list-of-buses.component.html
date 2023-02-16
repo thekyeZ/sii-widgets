@@ -3,6 +3,7 @@
     <li
       *ngFor="let busStopName of getUniqueNames(busStops)"
       class="list-group-item"
+      (click)="selectBusStop(busStopName)"
     >
       {{ busStopName | titlecase }}
     </li>

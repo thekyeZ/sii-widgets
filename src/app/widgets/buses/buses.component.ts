@@ -7,10 +7,9 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./buses.component.scss"],
 })
 export class BusesComponent implements OnInit {
-  
   busStops: any[] = [];
+  chosenBusStop: string = "";
 
-  chosenBusStop: any[] = [];
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
@@ -23,6 +22,10 @@ export class BusesComponent implements OnInit {
         "https://poland-public-transport.konhi.workers.dev/v1/zielonagora/mzk/stops"
       )
       .subscribe((getBusStops) => (this.busStops = getBusStops));
+  }
+
+  onBusStopSelected(busStopName: string) {
+    this.chosenBusStop = busStopName;
   }
 
   incomingBuses = [

@@ -7,6 +7,7 @@ import { Component,EventEmitter, Input, Output } from "@angular/core";
 })
 export class ListOfBusesComponent {
   @Input() busStops: any[] = [];
+  @Output() busStopSelected = new EventEmitter<string>();
 
   getUniqueNames(busStops: any[]): string[] {
     const uniqueNames = new Set<string>();
@@ -21,5 +22,9 @@ export class ListOfBusesComponent {
     }
   
     return Array.from(uniqueNames);
+  }
+
+  selectBusStop(busStopName: string) {
+    this.busStopSelected.emit(busStopName);
   }
 }
