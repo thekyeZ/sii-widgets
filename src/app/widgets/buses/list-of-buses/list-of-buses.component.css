@@ -4,6 +4,15 @@
   align-items: center;
 }
 
-.container .list-group-item {
+.container .list-group {
+  flex-wrap: wrap;
+  height: 300px;
+}
+
+.container .list-group .list-group-item {
   background-color: #90ace1;
+  text-align: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 16ch;
 }

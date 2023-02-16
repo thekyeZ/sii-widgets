@@ -5,6 +5,7 @@ import { IncomingBusesComponent } from "./incoming-buses/incoming-buses.componen
 import { ListOfBusesComponent } from "./list-of-buses/list-of-buses.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { ChosenBusStopComponent } from "./chosen-bus-stop/chosen-bus-stop.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { ChosenBusStopComponent } from "./chosen-bus-stop/chosen-bus-stop.compon
     SettingsComponent,
     ChosenBusStopComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, HttpClientModule],
   exports: [BusesComponent],
 })
 export class BusesModule {}

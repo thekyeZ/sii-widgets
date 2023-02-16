@@ -2,8 +2,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  .list-group-item {
-    background-color: #90ace1;
+  .list-group {
+    flex-wrap: wrap;
+    height: 300px;
+    .list-group-item {
+      background-color: #90ace1;
+      text-align: center;
+      justify-content: center;
+      flex-grow: 1;
+      width: 16ch;
+    }
   }
 }
