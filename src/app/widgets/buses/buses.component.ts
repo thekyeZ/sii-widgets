@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
+import { busStop } from "./interfaces/busStop";
 
 @Component({
   selector: "app-buses",
@@ -7,7 +8,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./buses.component.scss"],
 })
 export class BusesComponent implements OnInit {
-  busStops: any[] = [];
+  busStops: busStop[] = [];
   chosenBusStop: string = "Wybierz swój przystanek 🤠";
 
   constructor(private http: HttpClient) {}
@@ -18,10 +19,10 @@ export class BusesComponent implements OnInit {
 
   requestBusStops() {
     this.http
-      .get<any>(
+      .get<busStop[]>(
         "https://poland-public-transport.konhi.workers.dev/v1/zielonagora/mzk/stops"
       )
-      .subscribe((getBusStops) => (this.busStops = getBusStops));
+      .subscribe((busStops) => (this.busStops = busStops));
   }
 
   onBusStopSelected(busStopName: string) {
