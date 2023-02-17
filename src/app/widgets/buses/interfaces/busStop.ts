@@ -6,3 +6,9 @@ export interface busStop {
   lat: number;
   lon: number;
 }
+
+export interface busStopName {
+  name: string;
+}
+
+export type busStopNames = busStopName[];

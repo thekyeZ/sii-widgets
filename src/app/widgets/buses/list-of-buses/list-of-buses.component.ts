@@ -1,7 +1,5 @@
-import { UpperCasePipe } from "@angular/common";
-import { Component,EventEmitter, Input, Output } from "@angular/core";
-import { busStop } from "../interfaces/busStop";
-// import { busStopName } from "../interfaces/busStopName";
+import { Component, Input} from "@angular/core";
+import { busStopNames } from "../interfaces/busStop";
 
 @Component({
   selector: "app-list-of-buses",
@@ -9,25 +7,20 @@ import { busStop } from "../interfaces/busStop";
   styleUrls: ["./list-of-buses.component.scss"],
 })
 export class ListOfBusesComponent {
-  @Input() busStops: busStop[] = [];
-  @Output() busStopSelected = new EventEmitter<string>();
+  @Input() busStops: busStopNames = [];
 
-  getUniqueNames(busStops: busStop[]): string[] {
-    const uniqueNames = new Set<string>();
-  
+  getNames(busStops: busStopNames) {
+    const upperCaseNames = new Set<string>();
+
     if (busStops) {
-      Object.values(busStops).forEach((busStop) => {
-        const name = busStop && busStop.name ? busStop.name.trim().toLowerCase() : '';
-        if (name) {
-          uniqueNames.add(name);
+      for (const busStop of Object.values(busStops)) {
+        const name = busStop.name;
+        if (name === name.toUpperCase()) {
+          upperCaseNames.add(name);
         }
-      });
+      }
     }
-  
-    return Array.from(uniqueNames);
-  }
 
-  selectBusStop(busStopName: string) {
-    this.busStopSelected.emit(busStopName);
+    return Array.from(upperCaseNames);
   }
 }
