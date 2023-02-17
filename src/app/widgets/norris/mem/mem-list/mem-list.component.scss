@@ -1,0 +1,61 @@
+
+.card-body {
+ padding: 3%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ border: 1px solid black;
+ border-radius: 5px;
+ background-color: #ccec99;
+
+ .twoIcon {
+    min-width: 400px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    
+}
+    
+    .card-img-top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2px;
+        background-color: azure;
+        
+    }
+    
+    .bodyImg {
+        display: flex;
+        flex-direction: block;
+        justify-content: center;
+        border: 1px solid black;
+        border-radius: 15px;
+        background-image: linear-gradient(#D7E9B9, #FAAB78);
+        padding: 10px;
+        padding-top: 15px;
+        padding-bottom: 30px;
+        max-width: 400px;
+        
+       
+        
+        .paragrafMem {
+            max-width: 370px;
+            margin: 14px;
+        }
+
+     
+       
+      
+    }
+    
+  
+    .buttonDiv {
+        min-width: 300px;
+        display: flex;
+        justify-content: center;
+        margin-top: 45px;
+    }
+ 
+}
+

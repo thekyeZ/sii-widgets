@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./norris.component.scss']
 })
 export class NorrisComponent {
+  
+
 
 }
