@@ -11,6 +11,7 @@ import { NorrisModule } from './widgets/norris/norris.module';
 import { DogsModule } from './widgets/dogs/dogs.module';
 import { GotModule } from './widgets/got/got.module';
 import { BusesModule } from './widgets/buses/buses.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BusesModule } from './widgets/buses/buses.module';
     NorrisModule,
     DogsModule,
     GotModule,
-    BusesModule
+    BusesModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
