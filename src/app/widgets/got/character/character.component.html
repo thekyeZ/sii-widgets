@@ -1,0 +1,24 @@
+<li class="list-group-item">
+  <div>
+    <img src="assets/icons/person.svg" alt="person" />
+    <span *ngIf="character.name">{{ character.name }} a.k.a </span>
+    <span>{{ character.aliases[0] | titlecase }}</span>
+  </div>
+  <div class="buttons">
+    <button
+      type="button"
+      class="btn btn-details"
+      (click)="buttonClick(character)"
+    >
+      Details
+    </button>
+    <button class="btn" (click)="favButtonClick(character)">
+      <div *ngIf="isFavourite; else elseBlock" class="div-with-svg-inside">
+        <img [src]="imgSrcFilled" alt="" fill="#fff" />
+      </div>
+      <ng-template #elseBlock
+        ><img [src]="imgSrc" alt="" class="div-with-svg-inside"
+      /></ng-template>
+    </button>
+  </div>
+</li>

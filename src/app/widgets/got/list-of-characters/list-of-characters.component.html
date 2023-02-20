@@ -1,0 +1,13 @@
+<h5 *ngIf="favCharacter">
+  Favourite character: {{ favCharacter.aliases[0] | titlecase }}
+</h5>
+<app-character-details></app-character-details>
+<ul class="list-group list-group-flush">
+  <app-character
+    *ngFor="let character of characters"
+    [character]="character"
+    (detailBtnClicked)="listingEntryClicked($event)"
+    (favouriteBtnClicked)="listingEntryFavClicked($event)"
+  >
+  </app-character>
+</ul>

@@ -1,0 +1,31 @@
+img {
+  max-height: 20px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+li:hover {
+  background-color: #dddddd;
+  transform: scale(1.01, 1.1);
+  z-index: 1;
+  color: #f05454;
+}
+
+.buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.div-with-svg-inside {
+  filter: invert(33%) sepia(77%) saturate(1642%) hue-rotate(335deg) brightness(112%) contrast(87%);
+}
+
+.btn-details {
+  background-color: #30475e;
+  color: #fff;
+}/*# sourceMappingURL=character.component.css.map */
