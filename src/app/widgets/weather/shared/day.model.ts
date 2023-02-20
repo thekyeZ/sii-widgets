@@ -1,3 +1,7 @@
+// export interface WeatherForTheDayApi {
+//     data: WeatherForTheDay[]
+// };
+
 
 export interface WeatherForTheDay {
     latitude: number,
@@ -8,15 +12,15 @@ export interface WeatherForTheDay {
     timezone_abbreviation: string,
     elevation: number,
     daily_units: DailyUnits,
-    daily: Daily
+    daily: Daily,
 }
 
 export interface DailyUnits {
     time: string,
-    temperature_2m_max: string
+    temperature_2m_max: string,
 }
 
 export interface Daily {
     time: string[],
-    temperature_2m_max: number[]
+    temperature_2m_max: number[],
 }

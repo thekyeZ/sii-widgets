@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Event } from '@angular/router';
+import { WeatherForTheDay} from '../shared/day.model';
 
 @Component({
   selector: 'app-upcoming-weather',
@@ -9,7 +10,7 @@ import { Event } from '@angular/router';
 
 export class UpcomingWeatherComponent {
   @Input() upcomingWeather: string[] = [];
-  @Input() posts: any[] = [];
+  @Input() posts!: WeatherForTheDay;
   @Output() showDetails = new EventEmitter<string>();
 
   readMore(value: string) {
