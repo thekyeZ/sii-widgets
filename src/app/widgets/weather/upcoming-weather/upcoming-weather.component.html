@@ -1,8 +1,8 @@
-<div class="upcoming-weather-component" *ngFor="let post of posts">
+<div class="upcoming-weather-component" *ngFor="let temperature of posts.daily.temperature_2m_max; index as i">
     <ul class="upcoming-weather">
-        <li class="upcoming-date">Day</li>
+        <li class="upcoming-date"> {{ posts.daily.time[i] }}</li>
         <li><img src="../assets/thermometer.png" alt=""/></li>
-        <li class="upcoming-temperature"> {{ post | number: '1.0-0' }} °C</li>
+        <li class="upcoming-temperature"> {{ temperature | number: '1.0-0' }} °C</li>
     </ul>
     <button (click)="readMore('The details will be available soon')"  class="more-info">
         <img src="../assets/caret-circle-right.png" alt=""/>
