@@ -1,8 +1,3 @@
-// export interface WeatherForTheDayApi {
-//     data: WeatherForTheDay[]
-// };
-
-
 export interface WeatherForTheDay {
     latitude: number,
     longitude: number,
