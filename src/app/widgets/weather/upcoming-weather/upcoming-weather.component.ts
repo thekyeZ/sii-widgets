@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Event } from '@angular/router';
 import { WeatherData} from '../shared/weather-data.model';
+import { SelectedDayIdService } from '../shared/selected-day-id.service.ts.service';
 
 @Component({
   selector: 'app-upcoming-weather',
@@ -15,5 +16,9 @@ export class UpcomingWeatherComponent {
   readMore(value: string) {
     this.showDetails.emit(value);
   }
+
+  // constructor(private selectedDay: SelectedDayIdService) {
+  //   this.selectedDay.selectedDay = 2;
+  // }
 
 }

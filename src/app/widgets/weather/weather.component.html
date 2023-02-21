@@ -1,7 +1,8 @@
 <div class="card">
     <div class="card-body">
+        <p>{{days[selectedDay]}}</p>
         <app-weather-settings></app-weather-settings>
-        <app-current-weather [currentWeather]="currentWeather" [currentDate]="currentDate"></app-current-weather>
+        <app-current-weather *ngIf="weatherForTheDay" [weatherForTheDay]="weatherForTheDay"></app-current-weather>
         <app-upcoming-weather *ngIf="weatherForTheDay" [weatherForTheDay]="weatherForTheDay" (showDetails)="readMore($event)"></app-upcoming-weather>
     </div>
 </div>
