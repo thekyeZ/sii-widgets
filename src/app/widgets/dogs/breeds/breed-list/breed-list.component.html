@@ -1,4 +1,4 @@
 
-<a href="#" class="list-group-item" *ngFor="let breed of breeds">
-    {{breed}} 
+<a class="list-group-item breedlist" *ngFor="let breedscat of catCat2" (click)="onBreed('{{ breedscat.id }}')">
+    {{ breedscat.name }}
 </a>

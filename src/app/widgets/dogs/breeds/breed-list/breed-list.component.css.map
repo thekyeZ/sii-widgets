@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"breed-list.component.css"}
+{"version":3,"sources":["breed-list.component.scss","breed-list.component.css"],"names":[],"mappings":"AAMA;EACI,cAPS;ACEb;;ADOA;EACI,eAAA;EACA,cAPG;EAQH,iBAAA;ACJJ;;ADOA;EACI,cAdgB;ACUpB","file":"breed-list.component.css"}

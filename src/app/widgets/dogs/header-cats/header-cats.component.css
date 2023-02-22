@@ -1,8 +1,10 @@
 .nav-link {
   cursor: pointer;
   color: #79aabf;
+  -webkit-text-decoration: solid;
+          text-decoration: solid;
 }
 
 .nav-link:hover {
-  color: #EAC7C7;
+  color: #e6a6a6;
 }/*# sourceMappingURL=header-cats.component.css.map */

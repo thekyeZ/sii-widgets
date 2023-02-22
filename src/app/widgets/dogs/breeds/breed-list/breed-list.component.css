@@ -1,1 +1,13 @@
-/*# sourceMappingURL=breed-list.component.css.map */
+.title {
+  color: #79aabf;
+}
+
+.breedlist {
+  cursor: pointer;
+  color: #767676;
+  font-size: 0.9rem;
+}
+
+.breedlist:hover {
+  color: #ebc3c3;
+}/*# sourceMappingURL=breed-list.component.css.map */

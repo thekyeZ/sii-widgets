@@ -1,0 +1,18 @@
+$text-color: #79aabf;
+$light-text-color: #e6a6a6;
+$background-beige:  #ebc3c3;
+$background-yellow-beige: #F7F5EB;
+$text: #767676;
+
+.title {
+    color: $text-color;
+}
+.breedlist {
+    cursor: pointer;
+    color: $text;
+    font-size: 0.9rem;
+}
+
+.breedlist:hover {
+    color:$background-beige;
+}

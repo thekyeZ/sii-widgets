@@ -1,0 +1,22 @@
+$text-color: #79aabf;
+$light-text-color: #e6a6a6;
+$background-beige:  #ebc3c3;
+$background-yellow-beige: #F7F5EB;
+$text: #767676;
+
+* {
+    color: $text;
+}
+.title{
+    color: $text-color;
+}
+.okrag{
+    margin-top: 0.3rem;
+    border-radius: 2%;
+}
+p {
+    font-size: 0.9rem;
+}
+.character {
+    font-style: italic; 
+}

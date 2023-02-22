@@ -1,1 +1,20 @@
-/*# sourceMappingURL=breed-description.component.css.map */
+* {
+  color: #767676;
+}
+
+.title {
+  color: #79aabf;
+}
+
+.okrag {
+  margin-top: 0.3rem;
+  border-radius: 2%;
+}
+
+p {
+  font-size: 0.9rem;
+}
+
+.character {
+  font-style: italic;
+}/*# sourceMappingURL=breed-description.component.css.map */

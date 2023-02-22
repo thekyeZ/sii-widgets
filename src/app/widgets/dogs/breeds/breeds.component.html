@@ -1,12 +1,11 @@
-<div class="row mb-2">
+<div class="row mb-2 breeds">
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 ">Breed list</strong>
-          <ul class="list-group list-group-flush">
-          
-            <app-breed-list [breeds]="listOfBreeds"></app-breed-list>
-            
+          <h6 class="d-inline-block mb-2 title">{{title | titlecase}}</h6>
+          <ul class="list-group list-group-flush lista">
+
+            <app-breed-list [catCat2]="catCat"></app-breed-list>
           </ul>
         </div>
       </div>
@@ -16,7 +15,7 @@
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
 
-            <app-breed-description></app-breed-description>
+            <app-breed-description [catCat2]="catCat"></app-breed-description>
           
         </div>
       </div>
