@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { SelectedDayIdService } from './shared/selected-day-id.service.ts.service';
+// import { SelectedDayIdService } from './shared/selected-day-id.service.ts.service';
 import { WeatherData } from './shared/weather-data.model';
 
 @Component({
@@ -10,18 +10,18 @@ import { WeatherData } from './shared/weather-data.model';
 })
 export class WeatherComponent implements OnInit{
 
-  days = ['Monday', 'Tuesaday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday'];
-  selectedDay!: number;
+  // days = ['Monday', 'Tuesaday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday'];
+  // selectedDay!: number;
   weatherForTheDay: WeatherData | null = null;
   
   constructor(
     private http: HttpClient,
-    private selectedDayService: SelectedDayIdService
+    // private selectedDayService: SelectedDayIdService
     ) {}
   
   ngOnInit(): void {
     this.requestPosts();
-    this.selectedDay = this.selectedDayService.selectedDay;
+    // this.selectedDay = this.selectedDayService.selectedDay;
   }
 
   requestPosts() {
