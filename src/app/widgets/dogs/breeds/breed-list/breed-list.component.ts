@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Cat } from '../../interfaces/cat';
 import { BreedService } from '../breeds.service';
 
@@ -9,7 +9,7 @@ import { BreedService } from '../breeds.service';
 })
 
 export class BreedListComponent implements OnInit{
-breedsCats: Cat[]=[];
+breedsCats!: Cat[];
 
 constructor(private breedService: BreedService){}
 
@@ -20,11 +20,9 @@ this.breedsCats = breedApi;
 });
 }
 
-@Output() selectedItem = new EventEmitter<string>();
-
-onBreed(feature: string){
-this.selectedItem.emit(feature);
-// console.log(feature);
-
+onSelected(){
+this.breedService.breedSelected.emit();
+console.log(this.breedsCats);
 }
+
 }

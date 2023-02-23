@@ -1,4 +1,8 @@
 
-<a class="list-group-item breedlist" *ngFor="let cat of breedsCats" >
+<a class="list-group-item breedlist" 
+*ngFor="let cat of breedsCats" 
+(click)="onSelected()"
+
+>
     {{ cat.name }}
 </a>

@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 import { Component, Input, OnInit } from '@angular/core';
 import { Cat } from '../interfaces/cat';
 import { BreedService } from './breeds.service';
