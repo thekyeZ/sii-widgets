@@ -6,5 +6,5 @@ import { Character } from "../interfaces/Character";
   styleUrls: ["./character-details.component.scss"],
 })
 export class CharacterDetailsComponent {
-  @Input() characterDetails!: Character;
+  //@Input() characterDetails!: Character;
 }

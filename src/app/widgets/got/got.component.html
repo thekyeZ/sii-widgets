@@ -1,6 +1,7 @@
 <div class="card">
   <div class="card-body">
-    <app-header-listing [title]="currentTitle"></app-header-listing>
+    <app-header [title]="currentTitle"></app-header>
+    <app-selected-character></app-selected-character>
 
     <app-list-of-characters
       [characters]="listOfCharacters"

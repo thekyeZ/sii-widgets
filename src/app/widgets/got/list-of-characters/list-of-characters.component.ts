@@ -10,12 +10,13 @@ export class ListOfCharactersComponent {
   isFavourite = false;
   favCharacter!: Character;
   //to character-details
-  //@Output() characterDetails!: Character[];
+  // @Output() characterDetails!: Character;
 
   listingEntryClicked(character: Character) {
     console.log("Details from listing: ", character);
-    //this.characterDetails = character;
-    //console.log("Character details: ", this.characterDetails);
+    //to character-details
+    // this.characterDetails = character;
+    // console.log("Character details: ", this.characterDetails);
   }
   listingEntryFavClicked(character: Character) {
     //console.log("Favourite character: ", character);
