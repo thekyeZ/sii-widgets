@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { SelectedDayIdService } from './shared/selected-day-id.service.ts.service';
 import { WeatherData } from './shared/weather-data.model';
+import { CitiesService } from './shared/cities.service';
 
 @Component({
   selector: 'app-weather',
@@ -10,22 +10,22 @@ import { WeatherData } from './shared/weather-data.model';
 })
 export class WeatherComponent implements OnInit{
 
-  days = ['Monday', 'Tuesaday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday'];
-  selectedDay!: number;
   weatherForTheDay: WeatherData | null = null;
-  
+  cities: string[] = [];
+  // selectedCity!: number;
+
   constructor(
     private http: HttpClient,
-    private selectedDayService: SelectedDayIdService
+    private citiesService: CitiesService
     ) {}
   
   ngOnInit(): void {
     this.requestPosts();
-    this.selectedDay = this.selectedDayService.selectedDay;
+    this.cities = this.citiesService.cities;
+    // this.selectedCity = this.citiesService.selectedCity;
   }
 
   requestPosts() {
-    // this.http.get<WeatherData>('https://api.open-meteo.com/v1/forecast?latitude=50.06&longitude=19.94&daily=temperature_2m_max&timezone=Europe%2FBerlin').subscribe(results => console.log(results));
     this.http.get<WeatherData>('https://api.open-meteo.com/v1/forecast?latitude=50.06&longitude=19.94&daily=temperature_2m_max&timezone=Europe%2FBerlin').subscribe(results => this.weatherForTheDay = results);
   }
   

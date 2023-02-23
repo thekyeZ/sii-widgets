@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { WeatherData } from '../shared/weather-data.model';
-// import { SelectedDayIdService } from '../shared/selected-day-id.service.ts.service';
 
 @Component({
   selector: 'app-current-weather',
@@ -9,10 +8,14 @@ import { WeatherData } from '../shared/weather-data.model';
 })
 export class CurrentWeatherComponent {
 
-  // constructor(private selectedDay: SelectedDayIdService) {
-  //   this.selectedDay.selectedDay = 0;
-  // }
+
+  constructor() {}
+
+    ngOnInit(): void {
+
+    }
+
+
   @Input() weatherForTheDay!: WeatherData;
-  // @Input() currentWeather: string = '';
-  // @Input() currentDate: string = '';
+  @Input() cities: string[] = [];
 }
