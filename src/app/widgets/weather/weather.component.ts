@@ -12,7 +12,7 @@ export class WeatherComponent implements OnInit{
 
   weatherForTheDay: WeatherData | null = null;
   cities: string[] = [];
-  // selectedCity!: number;
+  selectedCity!: number;
 
   constructor(
     private http: HttpClient,
@@ -22,7 +22,7 @@ export class WeatherComponent implements OnInit{
   ngOnInit(): void {
     this.requestPosts();
     this.cities = this.citiesService.cities;
-    // this.selectedCity = this.citiesService.selectedCity;
+    this.selectedCity = this.citiesService.selectedCity;
   }
 
   requestPosts() {

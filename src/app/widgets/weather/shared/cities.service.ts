@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CitiesService {
+  selectedCity = 1;
   cities = ['Kraków', 'Gdańsk', 'Bydgoszcz', 'Warszawa', 'Poznań'];
-  // selectedCity = 1;
 
   
 }
