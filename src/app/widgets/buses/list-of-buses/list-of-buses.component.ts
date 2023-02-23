@@ -1,5 +1,5 @@
-import { Component, Input} from "@angular/core";
-import { busStopNames } from "../interfaces/busStop";
+import { Component, Input } from "@angular/core";
+import { busStopNames } from "../interfaces-buses/busStop";
 
 @Component({
   selector: "app-list-of-buses",

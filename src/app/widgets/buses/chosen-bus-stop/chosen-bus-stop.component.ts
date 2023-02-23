@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { busStopName } from "../interfaces/busStop";
+import { busStopName } from "../interfaces-buses/busStop";
 
 @Component({
   selector: "app-chosen-bus-stop",
@@ -10,4 +10,3 @@ export class ChosenBusStopComponent {
   @Input() busStops: busStopName[] = [];
   @Input() selectedBusStop: number = 0;
 }
-

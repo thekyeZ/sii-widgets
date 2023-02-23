@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
-import { busStopId, busStopName } from "./interfaces/busStop";
+import { busStopId, busStopName } from "./interfaces-buses/busStop";
 
 @Component({
   selector: "app-buses",
