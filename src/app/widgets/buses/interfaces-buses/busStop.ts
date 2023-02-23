@@ -13,7 +13,11 @@ export interface busStopName {
 
 export type busStopNames = busStopName[];
 
-export interface busStopId {
-  id: string;
-  name: string;
+export interface busArrivals {
+  [id: string]: {
+    time: string;
+    line: string;
+    destination: string;
+    stop: string;
+  }
 }

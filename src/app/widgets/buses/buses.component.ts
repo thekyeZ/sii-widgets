@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
-import { busStopId, busStopName } from "./interfaces-buses/busStop";
+import { busArrivals, busStopName } from "./interfaces-buses/busStop";
 
 @Component({
   selector: "app-buses",
@@ -10,6 +10,7 @@ import { busStopId, busStopName } from "./interfaces-buses/busStop";
 export class BusesComponent implements OnInit {
   selectedBusStop: number = 2;
   busStops: busStopName[] = [];
+  busArrivals: busArrivals[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -24,12 +25,4 @@ export class BusesComponent implements OnInit {
       )
       .subscribe((busStops) => (this.busStops = busStops));
   }
-
-  incomingBuses = [
-    "44 - 13min",
-    "52 - 20min",
-    "55 - 30min",
-    "4 - 40min",
-    "12 - 45min",
-  ];
 }

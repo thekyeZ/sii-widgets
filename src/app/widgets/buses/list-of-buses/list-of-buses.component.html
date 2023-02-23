@@ -1,10 +1,10 @@
 <div class="container overflow-auto">
   <ul class="list-group list-group-horizontal">
     <li
-      *ngFor="let busStop of getNames(busStops)"
+      *ngFor="let busStop of getUpperCaseNames(busStops)"
       class="list-group-item"
     >
-      {{ busStop | titlecase }}
+      {{ busStop.name | titlecase }}
     </li>
   </ul>
 </div>

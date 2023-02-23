@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { busStopNames } from "../interfaces-buses/busStop";
+import { UpperCaseBusStopsService } from "../upper-case-bus-stops.service";
 
 @Component({
   selector: "app-list-of-buses",
@@ -9,17 +10,14 @@ import { busStopNames } from "../interfaces-buses/busStop";
 export class ListOfBusesComponent {
   @Input() busStops: busStopNames = [];
 
-  getNames(busStops: busStopNames) {
-    const upperCaseNames = new Set<string>();
+  constructor(private upperCaseBusStopsService: UpperCaseBusStopsService) {}
 
-    if (busStops) {
-      for (const busStop of Object.values(busStops)) {
-        const name = busStop.name;
-        if (name === name.toUpperCase()) {
-          upperCaseNames.add(name);
-        }
-      }
-    }
-    return Array.from(upperCaseNames);
+  getUpperCaseNames(busStops: busStopNames) {
+    return this.upperCaseBusStopsService.getUpperCaseNames(busStops);
   }
+
+  ngOnInit() {
+    this.busStops = Object.values(this.busStops);
+  }
+
 }
