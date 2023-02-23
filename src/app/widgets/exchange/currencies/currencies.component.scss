@@ -1,0 +1,35 @@
+ul {
+  list-style-type: none;
+}
+
+.pairs {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 15px;
+  gap: 5px;
+}
+
+td {
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 1cqb;
+  cursor: pointer;
+}
+
+td:hover {
+  background-color: rgb(180, 141, 141);
+  color: black;
+  font-weight: bold;
+}
+
+.card {
+  background-color: rgb(87, 2, 2);
+}
+
+table {
+  background-color: rgb(107, 61, 61);
+  margin: 20px;
+  border-radius: 1cqb;
+}

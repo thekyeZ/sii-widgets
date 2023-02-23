@@ -1,0 +1,13 @@
+<div class="card">
+  <ul class="list-group list-group-flush">
+    <table>
+      <tr class="pairs">
+        <td *ngFor="let pairs of exchange">
+          {{ pairs.currencyFirst }}
+          -
+          {{ pairs.currencySecond }}
+        </td>
+      </tr>
+    </table>
+  </ul>
+</div>

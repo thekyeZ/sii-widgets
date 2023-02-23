@@ -1,0 +1,37 @@
+<div class="header">
+  <h1>{{ title }}</h1>
+  <hr />
+
+  <div class="amount-from-to">
+    <div class="from">
+      <label for="from" class="from-label"> From </label>
+      <div class="buttonCurrency">
+        <button class="btn btn-secondary" type="button">USD</button>
+      </div>
+    </div>
+
+    <div class="to">
+      <label for="to" class="to-label"> To </label>
+      <div>
+        <button class="btn btn-secondary" type="button">EUR</button>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="#" class="dropdown-toggle" role="button">Currency</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="converterofcurrency">
+      <h2>
+        {{ currencyPipe1 | currency : "USD" }} USD =
+        {{ currencyPipe2 | currency : "EUR" }} EUR
+      </h2>
+      <div class="converterofdate">
+        <h6>{{ todayDate | date : "medium" }}</h6>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr />
