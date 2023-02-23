@@ -7,6 +7,5 @@ import { Cat } from '../../interfaces/cat';
   styleUrls: ['./breed-description.component.scss']
 })
 export class BreedDescriptionComponent {
-  @Input() catCat2: Cat[]=[];
-  // https://api.thecatapi.com/v1/images/search?breed_ids={breed.id} to zdjecia
+
 }

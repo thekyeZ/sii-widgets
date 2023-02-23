@@ -9,7 +9,6 @@ import { HeaderCatsComponent } from './header-cats/header-cats.component';
 import { FavoritesCatsComponent } from './favorites-cats/favorites-cats.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-// import { SortPipe } from './sort.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,7 @@ import { FormsModule } from '@angular/forms';
     BreedListComponent,
     HeaderCatsComponent,
     FavoritesCatsComponent,
-    // SortPipe
+
   ],
   imports: [
     CommonModule,

@@ -10,5 +10,7 @@ export class HeaderCatsComponent {
 
 onMenu(feature: string){
 this.selectedItem.emit(feature);
+console.log(feature);
+
 }
 }

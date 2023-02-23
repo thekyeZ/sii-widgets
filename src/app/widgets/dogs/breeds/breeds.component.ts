@@ -1,16 +1,16 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { Cat } from '../interfaces/cat';
+import { BreedService } from './breeds.service';
 
 @Component({
   selector: 'app-breeds',
   templateUrl: './breeds.component.html',
-  styleUrls: ['./breeds.component.scss']
+  styleUrls: ['./breeds.component.scss'],
+  providers: [BreedService],
 })
-export class BreedsComponent implements OnInit{
-@Input() catCat: Cat[]=[];
+export class BreedsComponent{
 
-  ngOnInit(): void {}
-  
   title:string = 'breed list';
-
+  
 }
