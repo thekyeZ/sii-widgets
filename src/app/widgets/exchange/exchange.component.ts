@@ -1,5 +1,5 @@
 import { SelectedCurrencyIdService } from "./selected-currency-id.service";
-import { ExchangeResult, Exchange } from "./../../interfaces/Currency";
+import { ExchangeResult, Exchange } from "./interfaces/Currency";
 import { Component, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { map, pipe } from "rxjs";
@@ -22,7 +22,16 @@ export class ExchangeComponent implements OnInit {
 
   ngOnInit(): void {
     this.requestCurrencies();
+    this.selectedCurrencyy();
   }
+
+  selectedCurrencyy() {
+    this.selectedCurrencyService.selectedCurrency.subscribe(
+      (selectedCurrencyFromService: any) =>
+        (this.selectedCurrency = selectedCurrencyFromService)
+    );
+  }
+
   requestCurrencies() {
     this.http
       .get<ExchangeResult>("/api/live", {})
@@ -40,7 +49,6 @@ export class ExchangeComponent implements OnInit {
         console.log(exchange);
         this.exchange = exchange;
       });
-    this.selectedCurrency = this.selectedCurrencyService.selectedCurrency;
   }
 
   maintitle = " Exchange currency";

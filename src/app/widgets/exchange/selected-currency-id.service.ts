@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
 
 @Injectable({
   providedIn: "root",
 })
 export class SelectedCurrencyIdService {
-  selectedCurrency = 1;
-  constructor() {}
+  selectedCurrency = new BehaviorSubject(2);
 }

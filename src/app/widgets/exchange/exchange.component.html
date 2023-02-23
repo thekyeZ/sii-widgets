@@ -1,18 +1,11 @@
 <div class="card">
   <div class="card-body">
     <app-header [title]="maintitle"></app-header>
+    <br />
     <!-- <app-currencies [currencies]="listOfCurrencies"></app-currencies> -->
     <!-- <button (click)="requestPosts()">GET Currencies</button> -->
+    Selected Index: {{ selectedCurrency }} <br />
     {{ currenciesList[selectedCurrency] }}
   </div>
   <app-currencies [exchange]="exchange"></app-currencies>
-  <!-- <table>
-    <tr class="pairs">
-      <td *ngFor="let pairs of exchange">
-        {{ pairs.currencyFirst }}
-        -
-        {{ pairs.currencySecond }}
-      </td>
-    </tr>
-  </table> -->
 </div>

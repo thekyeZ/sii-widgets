@@ -16,20 +16,21 @@ td {
   padding: 5px;
   border-radius: 1cqb;
   cursor: pointer;
+  background-color: rgb(155, 146, 146);
 }
 
 td:hover {
-  background-color: rgb(180, 141, 141);
+  background-color: rgb(180, 158, 158);
   color: black;
   font-weight: bold;
 }
 
 .card {
-  background-color: rgb(87, 2, 2);
+  background-color: rgb(51, 19, 19);
 }
 
 table {
-  background-color: rgb(107, 61, 61);
+  background-color: rgb(143, 128, 128);
   margin: 20px;
   border-radius: 1cqb;
 }

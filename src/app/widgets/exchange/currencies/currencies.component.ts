@@ -1,4 +1,4 @@
-import { Exchange } from "./../../../interfaces/Currency";
+import { Exchange } from "../interfaces/Currency";
 import { Component, Input } from "@angular/core";
 
 @Component({

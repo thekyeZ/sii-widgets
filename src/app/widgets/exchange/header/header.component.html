@@ -24,6 +24,7 @@
 
     <div class="converterofcurrency">
       <h2>
+        <img src="./assets/USD.png" width="50px" />
         {{ currencyPipe1 | currency : "USD" }} USD =
         {{ currencyPipe2 | currency : "EUR" }} EUR
       </h2>
@@ -35,3 +36,10 @@
 </div>
 
 <hr />
+
+<button (click)="setSelectedCurrency(0)">WALUTA 1</button>
+<button (click)="setSelectedCurrency(1)">WALUTA 2</button>
+<button (click)="setSelectedCurrency(2)">WALUTA 3</button>
+<button (click)="setSelectedCurrency(3)">WALUTA 4</button>
+<button (click)="setSelectedCurrency(4)">WALUTA 5</button>
+<br />
