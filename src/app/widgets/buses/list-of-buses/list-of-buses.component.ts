@@ -20,7 +20,6 @@ export class ListOfBusesComponent {
         }
       }
     }
-
     return Array.from(upperCaseNames);
   }
 }

@@ -12,3 +12,8 @@ export interface busStopName {
 }
 
 export type busStopNames = busStopName[];
+
+export interface busStopId {
+  id: string;
+  name: string;
+}
