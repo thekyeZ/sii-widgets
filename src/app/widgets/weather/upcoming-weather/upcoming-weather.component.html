@@ -1,8 +1,8 @@
-<div class="upcoming-weather-component" *ngFor="let weather of weatherForTheDay.daily.time; index as i">
+<div class="upcoming-weather-component" *ngFor="let weather of weatherData.daily.time; index as i">
     <ul class="upcoming-weather">
-        <li class="upcoming-date"> {{ weatherForTheDay.daily.time[i] | date:'EEEE, d.MM' }}</li>
+        <li class="upcoming-date"> {{ weatherData.daily.time[i] | date:'EEEE, d.MM' }}</li>
         <li><img src="../assets/thermometer.png" alt=""/></li>
-        <li class="upcoming-temperature"> {{ weatherForTheDay.daily.temperature_2m_max[i] | number: '1.0-0' }} °C</li>
+        <li class="upcoming-temperature"> {{ weatherData.daily.temperature_2m_max[i] | number: '1.0-0' }} °C</li>
     </ul>
     <button (click)="readMore('The details will be available soon')" class="more-info">
         <img src="../assets/caret-circle-right.png" alt=""/>

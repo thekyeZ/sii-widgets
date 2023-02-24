@@ -1,8 +1,8 @@
 <div class="current-weather-component">
     <div class="current-weather">
         <img src="../assets/cloud-sun.png" alt=""/>
-        <div class="current-temperature">{{ weatherForTheDay.daily.temperature_2m_max[0] | number: '1.0-0' }} °C</div>
+        <div class="current-temperature">{{ weatherData.daily.temperature_2m_max[0] | number: '1.0-0' }} °C</div>
     </div>
-        <div class="current-city"></div>
-    <div class="current-date">{{ weatherForTheDay.daily.time[0] | date:'EEEE, d MMMM' }}</div>
+        <div class="current-city">{{ selectedDay }}</div>
+    <div class="current-date">{{ weatherData.daily.time[0] | date:'EEEE, d MMMM' }}</div>
 </div>

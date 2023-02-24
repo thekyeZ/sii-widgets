@@ -10,7 +10,7 @@ import { WeatherData} from '../shared/weather-data.model';
 
 export class UpcomingWeatherComponent {
 
-  @Input() weatherForTheDay!: WeatherData;
+  @Input() weatherData!: WeatherData;
   @Output() showDetails = new EventEmitter<string>();
 
   readMore(value: string) {
