@@ -1,7 +1,6 @@
-import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
+import { BusStopsService } from "./bus-stops.service";
 import { busArrivals, busStopName } from "./interfaces-buses/busStop";
-
 @Component({
   selector: "app-buses",
   templateUrl: "./buses.component.html",
@@ -12,17 +11,11 @@ export class BusesComponent implements OnInit {
   busStops: busStopName[] = [];
   busArrivals: busArrivals[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private busStopsService: BusStopsService) {}
 
   ngOnInit(): void {
-    this.requestBusStops();
-  }
-
-  requestBusStops() {
-    this.http
-      .get<busStopName[]>(
-        "https://poland-public-transport.konhi.workers.dev/v1/zielonagora/mzk/stops"
-      )
+    this.busStopsService
+      .getBusStops()
       .subscribe((busStops) => (this.busStops = busStops));
   }
 }
