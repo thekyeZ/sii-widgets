@@ -1,30 +1,28 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { CryptoModel } from './crypto.model';
-import { map } from 'rxjs/operators';
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { CryptoModel } from "./crypto.model";
+import { map } from "rxjs/operators";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
-
-export class CryptoService{
+export class CryptoService {
   crypto: CryptoModel[] = [];
-  worstCrypto = []
+  worstCrypto = [];
 
   constructor(private http: HttpClient) {}
 
   fetchCryptoItem() {
-    return this.http.get<{data: CryptoModel[]}>('https://api.coincap.io/v2/assets')
-    .pipe(map(cryptos => {
-      return cryptos.data;
-    })
-    )
-  
-  };
-  
-  ngOnInit(){
-    this.fetchCryptoItem()
+    return this.http
+      .get<{ data: CryptoModel[] }>("https://api.coincap.io/v2/assets")
+      .pipe(
+        map((cryptos) => {
+          return cryptos.data.slice(0, 10);
+        })
+      );
   }
 
-  
+  ngOnInit() {
+    this.fetchCryptoItem();
+  }
 }
