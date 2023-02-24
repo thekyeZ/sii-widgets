@@ -11,6 +11,7 @@ import { NorrisModule } from './widgets/norris/norris.module';
 import { DogsModule } from './widgets/dogs/dogs.module';
 import { GotModule } from './widgets/got/got.module';
 import { BusesModule } from './widgets/buses/buses.module';
+import { CryptoService } from './widgets/crypto/crypto.service';
 
 @NgModule({
   declarations: [
@@ -26,9 +27,9 @@ import { BusesModule } from './widgets/buses/buses.module';
     NorrisModule,
     DogsModule,
     GotModule,
-    BusesModule
+    BusesModule,
   ],
-  providers: [],
+  providers: [CryptoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

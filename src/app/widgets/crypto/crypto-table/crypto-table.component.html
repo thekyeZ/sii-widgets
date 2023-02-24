@@ -1,0 +1,25 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Symbol</th>
+        <th scope="col">Price USD</th>
+        <th scope="col">24H chg%</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let crypto of crypto">
+        <th scope="row">{{ crypto.rank }}.</th>
+        <td>{{ crypto.name }}</td>
+        <td>{{ crypto.symbol }}</td>
+        <td>{{ crypto.priceUsd | number: "1.5-8" }}$</td>
+
+        <td *ngIf="crypto.changePercent24Hr > 0"
+         [ngStyle]="{color: 'green'}"> {{ crypto.changePercent24Hr / 100 | percent: "1.2-2" }} </td>
+
+         <td *ngIf="crypto.changePercent24Hr < 0"
+         [ngStyle]="{color: 'red'}"> {{ crypto.changePercent24Hr / 100 | percent: "1.2-2" }} </td>
+      </tr>
+    </tbody>
+  </table>
