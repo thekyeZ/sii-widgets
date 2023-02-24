@@ -11,7 +11,7 @@ import { SelectedDayService } from './shared/selected-day.service';
 
 export class WeatherComponent implements OnInit{
   weatherData: WeatherData | null = null;
-  selectedDay!: any;
+  selectedDay!: number;
 
   constructor(
     private weatherService: WeatherService,
@@ -21,11 +21,6 @@ export class WeatherComponent implements OnInit{
   ngOnInit(): void {
     this.weatherService.getWeatherData().subscribe(results => this.weatherData = results);
     this.selectedDayService.selectedDay.subscribe(selectedDayFromService => this.selectedDay = selectedDayFromService);
-  }
-
-  setSelectedDay() {
-    this.selectedDayService.selectedDay.next(0);
-    console.log(this.selectedDay);
   }
   
   readMore(details: string) {
