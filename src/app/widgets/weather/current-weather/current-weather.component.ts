@@ -9,7 +9,5 @@ import { WeatherData } from '../shared/weather-data.model';
 export class CurrentWeatherComponent {
 
   @Input() weatherForTheDay!: WeatherData;
-  @Input() cities: string[] = [];
-  @Input() selectedCity!: number;
 
 }
