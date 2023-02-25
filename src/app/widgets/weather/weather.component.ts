@@ -23,8 +23,8 @@ export class WeatherComponent implements OnInit{
     this.selectedDayService.selectedDay.subscribe(selectedDayFromService => this.selectedDay = selectedDayFromService);
   }
   
-  readMore(details: string) {
-    alert(details);
+  onShowDetails(value: string) {
+    alert(value);
   }
 
 }

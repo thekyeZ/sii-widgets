@@ -5,6 +5,6 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class SelectedDayService {
-  selectedDay = new BehaviorSubject(0);
+  selectedDay = new BehaviorSubject(1);
 
 }
