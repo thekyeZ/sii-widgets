@@ -10,7 +10,8 @@ import { SelectedDayService } from './shared/selected-day.service';
 })
 
 export class WeatherComponent implements OnInit{
-  weatherData: WeatherData | null = null;
+  weatherData!: WeatherData;
+  weatherSelected!: WeatherData;
   selectedDay!: number;
 
   constructor(
@@ -21,14 +22,21 @@ export class WeatherComponent implements OnInit{
   ngOnInit(): void {
     this.weatherService.getWeatherData().subscribe(results => this.weatherData = results);
     this.selectedDayService.selectedDay.subscribe(selectedDayFromService => this.selectedDay = selectedDayFromService);
+    
+    this.weatherService.weatherSelected.subscribe(
+      (weatherData: WeatherData) => {
+        this.weatherSelected = weatherData;
+        console.log(weatherData);
+      }
+    );
   }
   
   onShowDetails(value: string) {
     alert(value);
   }
 
-  onSelectingDay(value: string) {
-    console.log(value);
+  onSelected() {
+    console.log(this.weatherSelected);
   }
 
 }

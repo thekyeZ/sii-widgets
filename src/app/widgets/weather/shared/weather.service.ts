@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { WeatherData } from './weather-data.model';
 
@@ -6,6 +6,8 @@ import { WeatherData } from './weather-data.model';
   providedIn: 'root'
 })
 export class WeatherService {
+  weatherSelected = new EventEmitter<WeatherData>();
+
   constructor(private http: HttpClient) { }
 
   getWeatherData() {

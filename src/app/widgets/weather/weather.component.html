@@ -2,6 +2,6 @@
     <div class="card-body">
         <app-weather-settings></app-weather-settings>        
         <app-current-weather *ngIf="weatherData" [weatherData]="weatherData" [selectedDay]="selectedDay"></app-current-weather>
-        <app-upcoming-weather *ngIf="weatherData" [weatherData]="weatherData" (showDetails)="onShowDetails($event)" (selectDay)="onSelectingDay($event)"></app-upcoming-weather>
+        <app-upcoming-weather *ngIf="weatherData" [weatherData]="weatherData" (showDetails)="onShowDetails($event)"></app-upcoming-weather>
     </div>
 </div>
