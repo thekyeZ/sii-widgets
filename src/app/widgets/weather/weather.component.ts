@@ -27,4 +27,8 @@ export class WeatherComponent implements OnInit{
     alert(value);
   }
 
+  onSelectingDay(value: string) {
+    console.log(value);
+  }
+
 }

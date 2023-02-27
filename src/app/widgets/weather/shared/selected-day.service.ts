@@ -5,6 +5,10 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class SelectedDayService {
-  selectedDay = new BehaviorSubject(1);
+  selectedDay = new BehaviorSubject(2);
+  showSelectedDay() {
+    console.log("The selected day is" + this.selectedDay);
+  }
+
 
 }

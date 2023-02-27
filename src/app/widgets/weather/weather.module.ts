@@ -7,7 +7,6 @@ import { WeatherSettingsComponent } from './weather-settings/weather-settings.co
 import { HttpClientModule } from '@angular/common/http';
 
 
-
 @NgModule({
   declarations: [
     WeatherComponent,
