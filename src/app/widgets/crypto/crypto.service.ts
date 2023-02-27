@@ -8,7 +8,6 @@ import { map } from "rxjs/operators";
 })
 export class CryptoService {
   crypto: CryptoModel[] = [];
-  worstCrypto = [];
 
   constructor(private http: HttpClient) {}
 

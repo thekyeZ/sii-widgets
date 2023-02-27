@@ -10,10 +10,6 @@ import { CryptoService } from "../crypto.service";
 export class MainBodyComponent implements OnInit {
   crypto: CryptoModel[] = [];
 
-  getId() {
-    console.log("gettingId");
-  }
-
   constructor(private cryptoService: CryptoService) {}
 
   ngOnInit() {

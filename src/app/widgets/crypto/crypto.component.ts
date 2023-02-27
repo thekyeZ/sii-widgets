@@ -16,6 +16,5 @@ export class CryptoComponent implements OnInit {
     this.cryptoService
       .fetchCryptoItem()
       .subscribe((cryptoItems) => (this.crypto = cryptoItems));
-    console.log(this.crypto);
   }
 }

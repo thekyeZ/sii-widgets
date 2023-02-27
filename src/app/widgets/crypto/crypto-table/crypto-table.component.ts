@@ -10,13 +10,12 @@ import { CryptoService } from "../crypto.service";
 })
 export class CryptoTableComponent implements OnInit {
   crypto: CryptoModel[] = [];
-  cryptoId = "";
 
-  getId() {
-    const index = this.crypto.findIndex(
-      (crypto: { id: any }) => crypto.id == crypto.id
-    );
-    console.log(index);
+  getId(id: string) {
+    const cryptoId = this.crypto.find((crypto) => {
+      return crypto.id === id;
+    });
+    return console.log(cryptoId);
   }
 
   constructor(private cryptoService: CryptoService) {}
