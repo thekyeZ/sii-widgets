@@ -5,12 +5,15 @@
   </div>
  
   <div class="bodyImg">
-    <p  class="paragrafMem" *ngIf="dataUrl">{{ dataUrl }}</p> 
+    <p *ngIf="!giveMeMem" class="paragrafMem" >Select mem please </p>
+    <p   class="paragrafMem"> {{ giveMeMem }}  </p> 
   </div>
 
-  <div class="buttonDiv" (click)="onclick()">
-    <a href="#" class="btn btn-primary">Next mem</a>
+  <div class="buttonDiv"  >
+    <a (click)="sendData()" href="#" class="btn btn-primary" > <img class="img" src="assets/jpg/button4.svg" alt="" width="37px"> Losowanie</a>
+    
   </div>
+  
 <hr>
 
 

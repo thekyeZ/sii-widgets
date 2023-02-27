@@ -1,15 +1,20 @@
 .card-body {
-  padding: 3%;
+  max-width: 650px;
+  padding: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: #ccec99;
+  background-color: indigo;
+  background-image: url("/assets/jpg/Chuck_Norris_smile.jfif");
+  background-repeat: repeat;
+  background-size: 100%;
 }
 
 .card-body .twoIcon {
-  min-width: 400px;
+  width: 78%;
   display: flex;
   justify-content: space-around;
   margin-bottom: 15px;
@@ -30,20 +35,37 @@
   border: 1px solid black;
   border-radius: 15px;
   background-image: linear-gradient(#D7E9B9, #FAAB78);
-  padding: 10px;
-  padding-top: 15px;
-  padding-bottom: 30px;
+  padding: 15px;
   max-width: 400px;
 }
 
 .card-body .bodyImg .paragrafMem {
   max-width: 370px;
   margin: 14px;
+  font-size: 18px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .card-body .buttonDiv {
   min-width: 300px;
   display: flex;
   justify-content: center;
-  margin-top: 45px;
+  margin-top: 55px;
+}
+
+.card-body .buttonDiv .buttonDiv {
+  margin-right: 15px;
+  color: linear-gradient(90deg, #090979 5%, #00d4ff 100%);
+}
+
+.card-body .btn-primary {
+  background-color: linear-gradient(90deg, #090979 5%, #00d4ff 100%);
+  color: linear-gradient(90deg, #090979 5%, #00d4ff 100%);
+  padding: 10px;
+  padding-left: 22px;
+  padding-right: 22px;
+}
+
+.card-body .btn-primary .img {
+  padding-right: 5px;
 }
