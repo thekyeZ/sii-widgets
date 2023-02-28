@@ -1,6 +1,8 @@
-<div class="card">
+<div class="card" *ngIf="crypto.length > 0">
   <div class="card-body">
     <h5 class="card-title">Your crypto information</h5>
     <h6 class="card-subtitle mb-2 text-muted"></h6>
+    <p>{{ crypto[selectedCrypto].name }}</p>
+    <p>{{ crypto[selectedCrypto].changePercent24Hr }}</p>
   </div>
 </div>

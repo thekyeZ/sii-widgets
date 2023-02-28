@@ -1,4 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
+import { CryptoIdService } from "../crypto-id.service";
+
 import { CryptoModel } from "../crypto.model";
 import { CryptoService } from "../crypto.service";
 
@@ -9,16 +11,19 @@ import { CryptoService } from "../crypto.service";
 })
 export class MainBodyComponent implements OnInit {
   crypto: CryptoModel[] = [];
+  selectedCrypto!: number;
 
-  constructor(private cryptoService: CryptoService) {}
+  constructor(
+    private cryptoService: CryptoService,
+    private cryptoIdService: CryptoIdService
+  ) {}
 
   ngOnInit() {
     this.cryptoService
       .fetchCryptoItem()
       .subscribe((cryptoItems) => (this.crypto = cryptoItems));
+    this.cryptoIdService.selectedCrypto.subscribe((i) => {
+      this.selectedCrypto = i;
+    });
   }
-
-  // worstCrypto(){
-  //   return Math.min(...this.crypto)
-  // }
 }

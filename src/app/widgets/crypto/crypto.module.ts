@@ -5,6 +5,7 @@ import { MainBodyComponent } from "./main-body/main-body.component";
 import { ListingsComponent } from "./listings/listings.component";
 import { HttpClientModule } from "@angular/common/http";
 import { CryptoTableComponent } from "./crypto-table/crypto-table.component";
+import { MoreInfoComponent } from './crypto-table/more-info/more-info.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { CryptoTableComponent } from "./crypto-table/crypto-table.component";
     MainBodyComponent,
     ListingsComponent,
     CryptoTableComponent,
+    MoreInfoComponent,
   ],
   imports: [CommonModule, HttpClientModule],
   exports: [CryptoComponent],
