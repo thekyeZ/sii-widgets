@@ -6,6 +6,7 @@ import { WeatherData } from './weather-data.model';
   providedIn: 'root'
 })
 export class WeatherService {
+
   constructor(private http: HttpClient) { }
 
   getWeatherData() {
