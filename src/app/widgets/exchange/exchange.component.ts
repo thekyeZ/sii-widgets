@@ -1,6 +1,7 @@
-import { SelectedCurrencyIdService } from "./selected-currency-id.service";
+import { SelectedCurrencyIdService } from "./services/selected-currency-id.service";
+import { CurrenciesService } from "./services/currenciesList.service";
 import { ExchangeResult, Exchange } from "./interfaces/Currency";
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { map, pipe } from "rxjs";
 
@@ -8,48 +9,57 @@ import { map, pipe } from "rxjs";
   selector: "app-exchange",
   templateUrl: "./exchange.component.html",
   styleUrls: ["./exchange.component.scss"],
+  providers: [CurrenciesService],
 })
 export class ExchangeComponent implements OnInit {
   selectedCurrency!: number;
-  currenciesList = ["USD", "EUR", "PLN", "GBP", "SEK"];
+  ListOfCurrencies = ["USD", "EUR", "PLN", "GBP", "SEK"];
 
-  exchange!: Exchange[];
+  // exchange!: Exchange[];
+  exchange: Exchange[] = [];
 
   constructor(
-    private http: HttpClient,
-    private selectedCurrencyService: SelectedCurrencyIdService
+    // private http: HttpClient,
+    private selectedCurrencyService: SelectedCurrencyIdService,
+    private currencyListService: CurrenciesService
   ) {}
 
   ngOnInit(): void {
-    this.requestCurrencies();
-    this.selectedCurrencyy();
-  }
-
-  selectedCurrencyy() {
-    this.selectedCurrencyService.selectedCurrency.subscribe(
-      (selectedCurrencyFromService: any) =>
-        (this.selectedCurrency = selectedCurrencyFromService)
+    // this.selectedTheCurrency();
+    // this.requestCurrencies();
+    this.currencyListService
+      .requestCurrencies()
+      .subscribe((results) => (this.exchange = results));
+    this.selectedCurrencyService.selectedCurrency.subscribe((result) =>
+      console.log(result)
     );
   }
 
-  requestCurrencies() {
-    this.http
-      .get<ExchangeResult>("/api/live", {})
-      .pipe(
-        map((exchangeResult: any) => {
-          return exchangeResult.supportedPairs.map((currencies: any) => {
-            return {
-              currencyFirst: currencies.substring(0, 3),
-              currencySecond: currencies.substring(3),
-            };
-          });
-        })
-      )
-      .subscribe((exchange) => {
-        console.log(exchange);
-        this.exchange = exchange;
-      });
-  }
+  // selectedTheCurrency() {
+  //   this.selectedCurrencyService.selectedCurrency.subscribe(
+  //     (selectedCurrencyFromService: any) =>
+  //       (this.selectedCurrency = selectedCurrencyFromService)
+  //   );
+  // }
+
+  // requestCurrencies() {
+  //   this.http
+  //     .get<ExchangeResult>("/api/live", {})
+  //     .pipe(
+  //       map((exchangeResult: any) => {
+  //         return exchangeResult.supportedPairs.map((currencies: any) => {
+  //           return {
+  //             currencyFirst: currencies.substring(0, 3),
+  //             currencySecond: currencies.substring(3),
+  //           };
+  //         });
+  //       })
+  //     )
+  //     .subscribe((exchange) => {
+  //       console.log(exchange);
+  //       this.exchange = exchange;
+  //     });
+  // }
 
   maintitle = " Exchange currency";
 }

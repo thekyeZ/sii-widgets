@@ -1,3 +1,4 @@
+import { Exchange } from "./../interfaces/Currency";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 
@@ -5,5 +6,8 @@ import { BehaviorSubject } from "rxjs";
   providedIn: "root",
 })
 export class SelectedCurrencyIdService {
-  selectedCurrency = new BehaviorSubject(2);
+  selectedCurrency = new BehaviorSubject({
+    currencyFirst: "EUR",
+    currencySecond: "USD",
+  } as Exchange);
 }

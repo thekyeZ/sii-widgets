@@ -6,7 +6,7 @@ ul {
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+
   margin: 15px;
   gap: 5px;
 }
@@ -17,6 +17,9 @@ td {
   border-radius: 1cqb;
   cursor: pointer;
   background-color: rgb(155, 146, 146);
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 td:hover {

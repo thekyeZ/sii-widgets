@@ -6,14 +6,18 @@
     <div class="from">
       <label for="from" class="from-label"> From </label>
       <div class="buttonCurrency">
-        <button class="btn btn-secondary" type="button">USD</button>
+        <button class="btn btn-secondary" type="button">
+          {{ currentCurrency.currencyFirst }}
+        </button>
       </div>
     </div>
 
     <div class="to">
       <label for="to" class="to-label"> To </label>
       <div>
-        <button class="btn btn-secondary" type="button">EUR</button>
+        <button class="btn btn-secondary" type="button">
+          {{ currentCurrency.currencySecond }}
+        </button>
         <ul class="dropdown-menu">
           <li>
             <a href="#" class="dropdown-toggle" role="button">Currency</a>
@@ -37,9 +41,4 @@
 
 <hr />
 
-<button (click)="setSelectedCurrency(0)">WALUTA 1</button>
-<button (click)="setSelectedCurrency(1)">WALUTA 2</button>
-<button (click)="setSelectedCurrency(2)">WALUTA 3</button>
-<button (click)="setSelectedCurrency(3)">WALUTA 4</button>
-<button (click)="setSelectedCurrency(4)">WALUTA 5</button>
 <br />

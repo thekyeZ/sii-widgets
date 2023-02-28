@@ -1,12 +1,21 @@
-import { Component, Input } from "@angular/core";
-import { SelectedCurrencyIdService } from "../selected-currency-id.service";
+import { Exchange } from "./../interfaces/Currency";
+import { Component, Input, OnInit } from "@angular/core";
+import { SelectedCurrencyIdService } from "../services/selected-currency-id.service";
 
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.scss"],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+  ngOnInit() {
+    this.selectedCurrency.selectedCurrency.subscribe(
+      (exchange) => (this.currentCurrency = exchange)
+    );
+  }
+
+  currentCurrency: Exchange = {} as Exchange;
+
   constructor(public selectedCurrency: SelectedCurrencyIdService) {}
 
   todayDate: Date = new Date();
@@ -14,8 +23,4 @@ export class HeaderComponent {
   @Input() title = "Exchange currency";
   @Input() currencyPipe1 = "1";
   @Input() currencyPipe2 = "0.94";
-
-  setSelectedCurrency(index: number) {
-    this.selectedCurrency.selectedCurrency.next(index);
-  }
 }

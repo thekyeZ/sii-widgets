@@ -1,13 +1,28 @@
 <div class="card">
-  <ul class="list-group list-group-flush">
-    <table>
-      <tr class="pairs">
-        <td *ngFor="let pairs of exchange">
-          {{ pairs.currencyFirst }}
-          -
-          {{ pairs.currencySecond }}
-        </td>
-      </tr>
-    </table>
-  </ul>
+  <!-- <div class="row">
+    <div class="col-md-5">
+      <app-currency-list
+        *ngIf="selectedCurrency; else infoText"
+      ></app-currency-list>
+      <ng-template #infoText>Please select the currency</ng-template>
+    </div>
+  </div> -->
+  <!-- 
+  <button (click)="setSelectedCurrency(0)">WALUTA 1</button>
+  <button (click)="setSelectedCurrency(1)">WALUTA 2</button>
+  <button (click)="setSelectedCurrency(2)">WALUTA 3</button>
+  <button (click)="setSelectedCurrency(3)">WALUTA 4</button>
+  <button (click)="setSelectedCurrency(4)">WALUTA 5</button> -->
+  <table>
+    <tr class="pairs">
+      <td
+        *ngFor="let pairs of exchange | slice : 0 : 10; let i = index"
+        (click)="setSelectedCurrency(i)"
+      >
+        {{ pairs.currencyFirst }}
+        -
+        {{ pairs.currencySecond }}
+      </td>
+    </tr>
+  </table>
 </div>
