@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { busStopNames } from "./interfaces-buses/busStop";
+import { busStopNames } from "../interfaces-buses/busStop";
 
 @Injectable({
   providedIn: "root",
@@ -15,4 +15,3 @@ export class BusStopsService {
     );
   }
 }
-

@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { busStopNames } from "./interfaces-buses/busStop";
+import { busStopNames } from "../interfaces-buses/busStop";
 
 @Injectable({
   providedIn: "root",
@@ -19,4 +19,3 @@ export class UpperCaseBusStopsService {
     return upperCaseNames;
   }
 }
-

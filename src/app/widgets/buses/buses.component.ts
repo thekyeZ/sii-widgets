@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { BusStopsService } from "./bus-stops.service";
+import { BusStopsService } from "./services/bus-stops.service";
 import { busArrivals, busStopName } from "./interfaces-buses/busStop";
 @Component({
   selector: "app-buses",
@@ -7,7 +7,6 @@ import { busArrivals, busStopName } from "./interfaces-buses/busStop";
   styleUrls: ["./buses.component.scss"],
 })
 export class BusesComponent implements OnInit {
-  selectedBusStop: number = 2;
   busStops: busStopName[] = [];
   busArrivals: busArrivals[] = [];
 
