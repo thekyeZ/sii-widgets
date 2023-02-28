@@ -1,8 +1,7 @@
 <div class="container">
   <ul class="list-group list-group-horizontal">
-    <li *ngFor="let incomingBus of incomingBuses" class="list-group-item">
-      {{ incomingBus }}
+    <li *ngFor="let departure of busArrivalsData" class="list-group-item">
+      {{ departure.time }} - {{ departure.line }}
     </li>
   </ul>
 </div>
-

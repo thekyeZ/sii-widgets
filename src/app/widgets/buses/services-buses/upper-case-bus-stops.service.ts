@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { busStopNames } from "../interfaces-buses/busStop";
+import { busStopNames } from "../chosen-bus-stop/model-buses/busStop.model";
 
 @Injectable({
   providedIn: "root",

@@ -1,10 +1,9 @@
 import { Injectable } from "@angular/core";
-import { busStopName } from "../interfaces-buses/busStop";
+import { BehaviorSubject } from "rxjs";
 
 @Injectable({
   providedIn: "root",
 })
 export class SelectedBusStopService {
-  selectedBusStop: number = 1;
-
+  selectedBusStop = new BehaviorSubject(0);
 }

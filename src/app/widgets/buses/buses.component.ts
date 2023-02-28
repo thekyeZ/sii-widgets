@@ -1,16 +1,23 @@
 import { Component, OnInit } from "@angular/core";
-import { BusStopsService } from "./services/bus-stops.service";
-import { busArrivals, busStopName } from "./interfaces-buses/busStop";
+import { BusStopsService } from "./services-buses/bus-stops.service";
+import {
+  busArrivals,
+  busStopNames,
+} from "./chosen-bus-stop/model-buses/busStop.model";
+import { SelectedBusStopService } from "./services-buses/selected-bus-stop.service";
 @Component({
   selector: "app-buses",
   templateUrl: "./buses.component.html",
   styleUrls: ["./buses.component.scss"],
 })
 export class BusesComponent implements OnInit {
-  busStops: busStopName[] = [];
-  busArrivals: busArrivals[] = [];
+  busStops!: busStopNames;
+  busArrivals!: busArrivals;
 
-  constructor(private busStopsService: BusStopsService) {}
+  constructor(
+    private busStopsService: BusStopsService,
+    private selectedBusStopService: SelectedBusStopService
+  ) {}
 
   ngOnInit(): void {
     this.busStopsService

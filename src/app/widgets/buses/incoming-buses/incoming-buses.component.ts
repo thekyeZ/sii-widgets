@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
-import { busArrivals } from "../interfaces-buses/busStop";
+import { BusArrivalsService } from "../services-buses/bus-arrivals.service";
+import { busArrival } from "../chosen-bus-stop/model-buses/busStop.model";
 
 @Component({
   selector: "app-incoming-buses",
@@ -7,6 +8,16 @@ import { busArrivals } from "../interfaces-buses/busStop";
   styleUrls: ["./incoming-buses.component.scss"],
 })
 export class IncomingBusesComponent {
-  @Input() incomingBuses: busArrivals[] = [];
-}
+  busArrivalsData: busArrival[] = [];
 
+  @Input() id: string = "219";
+
+  constructor(private busArrivalsService: BusArrivalsService) {}
+
+  ngOnInit() {
+    this.busArrivalsService.getBusArrivals(this.id).subscribe((data) => {
+      // extract the values from the busArrivals object and store them in an array
+      this.busArrivalsData = Object.values(data);
+    });
+  }
+}

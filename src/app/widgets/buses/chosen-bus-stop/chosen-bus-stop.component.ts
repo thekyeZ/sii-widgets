@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { busStopNames } from "../interfaces-buses/busStop";
-import { SelectedBusStopService } from "../services/selected-bus-stop.service";
-import { UpperCaseBusStopsService } from "../services/upper-case-bus-stops.service";
+import { busStopNames } from "./model-buses/busStop.model";
+import { SelectedBusStopService } from "../services-buses/selected-bus-stop.service";
+import { UpperCaseBusStopsService } from "../services-buses/upper-case-bus-stops.service";
 
 @Component({
   selector: "app-chosen-bus-stop",
@@ -10,18 +10,9 @@ import { UpperCaseBusStopsService } from "../services/upper-case-bus-stops.servi
 })
 export class ChosenBusStopComponent {
   @Input() busStops: busStopNames = [];
-  selectedBusStop: number = 0;
+  @Input() selectedBusStop!: number;
 
-  constructor(
-    private selectedBusStopService: SelectedBusStopService,
-    private upperCaseBusStopsService: UpperCaseBusStopsService
-  ) {}
-  ngOnInit(): void {
-    const upperCaseBusStops = this.upperCaseBusStopsService.getUpperCaseNames(
-      this.busStops
-    );
-    this.selectedBusStop = this.selectedBusStopService.selectedBusStop;
-    
-    console.log(this.selectedBusStop);
-  }
+  constructor(private selectedBusStopService: SelectedBusStopService) {}
+
+  ngOnInit() {}
 }
