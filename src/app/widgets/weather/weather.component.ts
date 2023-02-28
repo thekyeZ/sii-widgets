@@ -21,7 +21,6 @@ export class WeatherComponent implements OnInit{
   
   ngOnInit(): void {
     this.weatherService.getWeatherData().subscribe(results => this.weatherData = results);
-    // this.selectedDayService.selectDay().subscribe(selectedDayFromService => this.selectedDay = selectedDayFromService);
     this.selectedDayService.selectedDay.subscribe(selectedDayFromService => this.selectedDay = selectedDayFromService);
   }
   
@@ -29,8 +28,8 @@ export class WeatherComponent implements OnInit{
     alert(value);
   }
 
-  onSelected(value: number){
-    console.log(value);
+  onSelected(i: number) {
+    this.selectedDayService.selectedDay.next(i);
   }
 
 }

@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { WeatherData} from '../shared/weather-data.model';
-import { SelectedDayService } from '../shared/selected-day.service';
 
 @Component({
   selector: 'app-upcoming-weather',
@@ -11,6 +10,7 @@ import { SelectedDayService } from '../shared/selected-day.service';
 export class UpcomingWeatherComponent {
 
   @Input() weatherData!: WeatherData;
+  @Output() selectDay = new EventEmitter<number>();
   @Output() showDetails = new EventEmitter<string>();
 
 
@@ -18,14 +18,8 @@ export class UpcomingWeatherComponent {
     this.showDetails.emit(value);
   }
 
-  constructor(
-    private selectedDayService: SelectedDayService,
-  ) {}
-
   onSelected(i: number) {
-    this.selectedDayService.selectedDay.next(i);
-    console.log(this.selectedDayService.selectedDay.value);
-
+    this.selectDay.emit(i);
   }
 
 }
