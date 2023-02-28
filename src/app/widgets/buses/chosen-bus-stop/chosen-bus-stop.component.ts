@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { busStopNames } from "./model-buses/busStop.model";
+import { busStopNames } from "../model-buses/busStop.model";
 import { SelectedBusStopService } from "../services-buses/selected-bus-stop.service";
 import { UpperCaseBusStopsService } from "../services-buses/upper-case-bus-stops.service";
 

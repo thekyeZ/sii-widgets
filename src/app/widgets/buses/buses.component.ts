@@ -1,9 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { BusStopsService } from "./services-buses/bus-stops.service";
-import {
-  busArrivals,
-  busStopNames,
-} from "./chosen-bus-stop/model-buses/busStop.model";
+import { busArrivals, busStopNames } from "./model-buses/busStop.model";
 import { SelectedBusStopService } from "./services-buses/selected-bus-stop.service";
 @Component({
   selector: "app-buses",

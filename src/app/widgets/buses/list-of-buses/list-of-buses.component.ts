@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
-import { busStopNames } from "../chosen-bus-stop/model-buses/busStop.model";
+import { busStopNames } from "../model-buses/busStop.model";
+import { SelectedBusStopService } from "../services-buses/selected-bus-stop.service";
 import { UpperCaseBusStopsService } from "../services-buses/upper-case-bus-stops.service";
 
 @Component({
@@ -14,7 +15,14 @@ export class ListOfBusesComponent {
     return this.upperCaseBusStopsService.getUpperCaseNames(busStops);
   }
 
-  constructor(private upperCaseBusStopsService: UpperCaseBusStopsService) {}
+  selectBusStop(id: string): void {
+    this.selectedBusStopService.updateSelectedBusStop(id);
+  }
+
+  constructor(
+    private upperCaseBusStopsService: UpperCaseBusStopsService,
+    private selectedBusStopService: SelectedBusStopService
+  ) {}
 
   ngOnInit() {
     this.busStops = Object.values(this.busStops);
