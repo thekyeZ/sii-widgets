@@ -1,4 +1,4 @@
-<div (click)="onSelected()" class="upcoming-weather-component" *ngFor="let weather of weatherData.daily.time; index as i" [id]="i">
+<div (click)="onSelected(i)" class="upcoming-weather-component" *ngFor="let weather of weatherData.daily.time; index as i">
     <ul class="upcoming-weather">
         <li class="upcoming-date"> {{ weatherData.daily.time[i] | date:'EEEE, d.MM' }}</li>
         <li><img src="../assets/thermometer.png" alt=""/></li>
