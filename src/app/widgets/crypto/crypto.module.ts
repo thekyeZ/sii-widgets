@@ -1,19 +1,17 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { CryptoComponent } from "./crypto.component";
-import { MainBodyComponent } from "./main-body/main-body.component";
+import { CryptoDetailsComponent } from "./crypto-details/crypto-details.component";
 import { ListingsComponent } from "./listings/listings.component";
 import { HttpClientModule } from "@angular/common/http";
 import { CryptoTableComponent } from "./crypto-table/crypto-table.component";
-import { MoreInfoComponent } from './crypto-table/more-info/more-info.component';
 
 @NgModule({
   declarations: [
     CryptoComponent,
-    MainBodyComponent,
+    CryptoDetailsComponent,
     ListingsComponent,
     CryptoTableComponent,
-    MoreInfoComponent,
   ],
   imports: [CommonModule, HttpClientModule],
   exports: [CryptoComponent],

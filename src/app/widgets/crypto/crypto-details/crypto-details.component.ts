@@ -5,11 +5,11 @@ import { CryptoModel } from "../crypto.model";
 import { CryptoService } from "../crypto.service";
 
 @Component({
-  selector: "app-main-body",
-  templateUrl: "./main-body.component.html",
-  styleUrls: ["./main-body.component.scss"],
+  selector: "app-crypto-details",
+  templateUrl: "./crypto-details.component.html",
+  styleUrls: ["./crypto-details.component.scss"],
 })
-export class MainBodyComponent implements OnInit {
+export class CryptoDetailsComponent implements OnInit {
   crypto: CryptoModel[] = [];
   selectedCrypto!: number;
 
