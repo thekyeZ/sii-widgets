@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { WeatherData} from '../shared/weather-data.model';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-upcoming-weather',
@@ -10,7 +11,7 @@ import { WeatherData} from '../shared/weather-data.model';
 export class UpcomingWeatherComponent {
 
   @Input() weatherData!: WeatherData;
-  @Output() selectDay = new EventEmitter<number>();
+  @Output() selectDay = new Subject<number>();
   @Output() showDetails = new EventEmitter<string>();
 
 
@@ -19,7 +20,7 @@ export class UpcomingWeatherComponent {
   }
 
   onSelected(i: number) {
-    this.selectDay.emit(i);
+    this.selectDay.next(i);
   }
 
 }
