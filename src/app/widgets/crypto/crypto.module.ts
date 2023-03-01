@@ -5,7 +5,7 @@ import { CryptoDetailsComponent } from "./crypto-details/crypto-details.componen
 import { HttpClientModule } from "@angular/common/http";
 import { CryptoTableComponent } from "./crypto-table/crypto-table.component";
 import { CryptoAdminComponent } from "./crypto-admin/crypto-admin.component";
-import { CryptoRoutingModule } from "./crypto-routing.module";
+import { AppRoutingModule } from "../../app-routing.module";
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { CryptoRoutingModule } from "./crypto-routing.module";
     CryptoTableComponent,
     CryptoAdminComponent,
   ],
-  imports: [CommonModule, HttpClientModule, CryptoRoutingModule],
+  imports: [CommonModule, HttpClientModule, AppRoutingModule],
   exports: [CryptoComponent],
 })
 export class CryptoModule {}

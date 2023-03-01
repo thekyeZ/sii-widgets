@@ -25,7 +25,11 @@
       </td>
 
       <td>
-        <button class="btn btn-outline-dark" (click)="selectedItem(i)">
+        <button
+          class="btn btn-outline-dark"
+          (click)="selectedItem(i)"
+          [routerLink]="['crypto/details']"
+        >
           More Info
         </button>
       </td>

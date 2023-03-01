@@ -3,6 +3,12 @@
     <h5 class="card-title">
       More infromation on: {{ crypto[selectedCrypto].name }} /
       {{ crypto[selectedCrypto].symbol }}
+      <img
+        class="exitImg float-end"
+        src="https://cdn-icons-png.flaticon.com/512/1828/1828665.png"
+        alt="Exit panel"
+        [routerLink]="['/']"
+      />
     </h5>
     <h6 class="card-subtitle mb-2 text-muted">
       If you want to learn more about a crypto, just click the more info button
@@ -23,16 +29,16 @@
 
       <hr />
 
-      <dt class="col-sm-8">Supply</dt>
+      <dt class="col-sm-8">Market cap</dt>
       <dd class="col-sm-4">
-        {{ crypto[selectedCrypto].supply | number : "1.0-0" }}
+        {{ crypto[selectedCrypto].marketCapUsd | currency : "USD" }}
       </dd>
 
       <hr />
 
-      <dt class="col-sm-8">Market cap</dt>
+      <dt class="col-sm-8">Supply</dt>
       <dd class="col-sm-4">
-        {{ crypto[selectedCrypto].marketCapUsd | currency : "USD" }}
+        {{ crypto[selectedCrypto].supply | number : "1.0-0" }}
       </dd>
 
       <hr *ngIf="crypto[selectedCrypto].maxSupply !== null" />

@@ -4,13 +4,11 @@
       class="adminIcon float-end"
       src="https://cdn-icons-png.flaticon.com/512/900/900834.png"
       alt="Admin"
-      [routerLink]="['admin/crypto']"
+      [routerLink]="['crypto/admin']"
     />
 
-    <app-crypto-details></app-crypto-details>
+    <router-outlet></router-outlet>
 
     <app-crypto-table></app-crypto-table>
-
-    <router-outlet></router-outlet>
   </div>
 </div>
