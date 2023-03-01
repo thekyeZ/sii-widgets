@@ -6,7 +6,6 @@ import { Character } from "../interfaces/Character";
   selector: "app-selected-character",
   templateUrl: "./selected-character.component.html",
   styleUrls: ["./selected-character.component.scss"],
-  providers: [SelectedCharacterIdService, CharactersService],
 })
 export class SelectedCharacterComponent implements OnInit {
   selectedCharacter!: number;
@@ -18,9 +17,15 @@ export class SelectedCharacterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.selectedCharacter = this.selectedCharacterService.selectedCharacterId;
+    this.selectedCharacterService.selectedCharacterId.subscribe(
+      (selectedCharacterFromService: number) => {
+        this.selectedCharacter = selectedCharacterFromService;
+        console.log("Subscribe ", this.selectedCharacter);
+      }
+    );
+
     this.charactersService
-      .fetchCharacters()
+      .requestCharacters()
       .subscribe((results) => (this.listOfCharacters = results));
   }
 }

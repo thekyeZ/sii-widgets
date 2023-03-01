@@ -5,20 +5,20 @@ import { ListOfCharactersComponent } from "./list-of-characters/list-of-characte
 import { HeaderComponent } from "./header/header.component";
 import { CharacterComponent } from "./character/character.component";
 import { HttpClientModule } from "@angular/common/http";
-import { CharacterDetailsComponent } from "./character-details/character-details.component";
 import { SelectedCharacterComponent } from "./selected-character/selected-character.component";
-//import { CharacterService } from "./character.service";
+
+import { CharactersService } from "./services/characters.service";
+import { SelectedCharacterIdService } from "./services/selected-character-id.service";
 @NgModule({
   declarations: [
     GotComponent,
     ListOfCharactersComponent,
     HeaderComponent,
     CharacterComponent,
-    CharacterDetailsComponent,
     SelectedCharacterComponent,
   ],
   imports: [CommonModule, HttpClientModule],
   exports: [GotComponent],
-  //providers: [CharacterService],
+  providers: [CharactersService, SelectedCharacterIdService],
 })
 export class GotModule {}

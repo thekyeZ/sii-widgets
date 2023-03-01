@@ -1,11 +1,15 @@
 <div class="card">
   <div class="card-body">
     <p class="heading"><strong>Selected character</strong></p>
-    <p>
+    <p *ngIf="listOfCharacters[selectedCharacter].name">
       <strong>Name:</strong>
-      {{ listOfCharacters[selectedCharacter].aliases }}
+      {{ listOfCharacters[selectedCharacter].name }}
     </p>
     <p>
+      <strong>Alias:</strong>
+      {{ listOfCharacters[selectedCharacter].aliases }}
+    </p>
+    <p *ngIf="listOfCharacters[selectedCharacter].culture">
       <strong>Culture:</strong>
       {{ listOfCharacters[selectedCharacter].culture }}
     </p>
