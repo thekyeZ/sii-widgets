@@ -8,7 +8,7 @@
     <ul class="current-weather-details">
         <li><img src="../assets/sun-horizon.png" alt=""/>{{ weatherData.daily.sunrise[selectedDay] | date:'h:mm a' }}</li>
         <li><img src="../assets/moon-stars.png" alt=""/>{{ weatherData.daily.sunset[selectedDay] | date:'h:mm a'}}</li>
-        <li><img src="../assets/thermometer-cold (1).png" alt=""/>{{ weatherData.daily.temperature_2m_min[selectedDay] }}</li>
+        <li><img src="../assets/thermometer-cold (1).png" alt=""/>{{ weatherData.daily.temperature_2m_min[selectedDay] | number: '1.0-0' }} °C</li>
         <li><img src="../assets/cloud-rain.png" alt=""/>{{ weatherData.daily.precipitation_sum[selectedDay] }}</li>
     </ul>
 </div>
