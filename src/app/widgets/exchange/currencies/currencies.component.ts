@@ -15,8 +15,8 @@ export class CurrenciesComponent {
 
   setSelectedCurrency(index: number) {
     this.selectedCurrencyService.selectedCurrency.next({
-      currencyFirst: this.exchange[index].currencyFirst,
-      currencySecond: this.exchange[index].currencySecond,
+      currencyFrom: this.exchange[index].currencyFrom,
+      currencyTo: this.exchange[index].currencyTo,
     });
   }
 }

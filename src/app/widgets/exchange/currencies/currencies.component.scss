@@ -4,14 +4,16 @@ ul {
 
 .pairs {
   box-sizing: border-box;
+  padding: 15px;
+  background-color: rgb(143, 128, 128);
   display: flex;
   flex-wrap: wrap;
-
   margin: 15px;
   gap: 5px;
+  border-radius: 1cqb;
 }
 
-td {
+.item {
   border: 1px solid black;
   padding: 5px;
   border-radius: 1cqb;
@@ -22,7 +24,7 @@ td {
   justify-content: center;
 }
 
-td:hover {
+.item:hover {
   background-color: rgb(180, 158, 158);
   color: black;
   font-weight: bold;

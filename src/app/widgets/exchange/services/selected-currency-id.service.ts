@@ -7,7 +7,7 @@ import { BehaviorSubject } from "rxjs";
 })
 export class SelectedCurrencyIdService {
   selectedCurrency = new BehaviorSubject({
-    currencyFirst: "EUR",
-    currencySecond: "USD",
+    currencyFrom: "EUR",
+    currencyTo: "USD",
   } as Exchange);
 }

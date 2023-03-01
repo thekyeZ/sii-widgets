@@ -7,7 +7,7 @@
       <label for="from" class="from-label"> From </label>
       <div class="buttonCurrency">
         <button class="btn btn-secondary" type="button">
-          {{ currentCurrency.currencyFirst }}
+          {{ currentCurrency.currencyFrom }}
         </button>
       </div>
     </div>
@@ -16,7 +16,7 @@
       <label for="to" class="to-label"> To </label>
       <div>
         <button class="btn btn-secondary" type="button">
-          {{ currentCurrency.currencySecond }}
+          {{ currentCurrency.currencyTo }}
         </button>
         <ul class="dropdown-menu">
           <li>
@@ -27,10 +27,11 @@
     </div>
 
     <div class="converterofcurrency">
-      <h2>
-        <img src="./assets/USD.png" width="50px" />
-        {{ currencyPipe1 | currency : "USD" }} USD =
-        {{ currencyPipe2 | currency : "EUR" }} EUR
+      <h2 *ngIf="currencyRate">
+        <!-- <img src="./assets/USD.png" width="50px" /> -->
+        1
+        {{ currentCurrency.currencyFrom }} = {{ currencyRate.rate }}
+        {{ currentCurrency.currencyTo }}
       </h2>
       <div class="converterofdate">
         <h6>{{ todayDate | date : "medium" }}</h6>
@@ -38,7 +39,3 @@
     </div>
   </div>
 </div>
-
-<hr />
-
-<br />

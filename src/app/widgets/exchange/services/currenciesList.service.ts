@@ -1,8 +1,9 @@
+import { map } from "rxjs";
+import { Rates } from "./../interfaces/Currency";
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { ExchangeResult } from "../interfaces/Currency";
-import { Exchange } from "../interfaces/Currency";
-import { map, take } from "rxjs";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { ExchangeResult, Exchange } from "../interfaces/Currency";
+
 // import { SelectedCurrencyIdService } from "./selected-currency-id.service";
 
 @Injectable({
@@ -11,16 +12,32 @@ import { map, take } from "rxjs";
 export class CurrenciesService {
   constructor(private http: HttpClient) {}
 
+  // currentCurrency: Exchange = {} as Exchange;
+
+  private headers = new HttpHeaders({
+    apikey: "AT7ksftGPKKmOKWkP6sh9RjBHzc4T4nT",
+  });
+
   requestCurrencies() {
-    return this.http.get<ExchangeResult>("/api/live", {}).pipe(
-      map((exchangeResult: any) => {
-        return exchangeResult.supportedPairs.map((currencies: any) => {
-          return {
-            currencyFirst: currencies.substring(0, 3),
-            currencySecond: currencies.substring(3),
-          };
-        });
+    return this.http
+      .get<ExchangeResult>("/api/live", {
+        headers: this.headers,
       })
-    );
+      .pipe(
+        map((exchangeResult: any) => {
+          return exchangeResult.supportedPairs.map((currencies: any) => {
+            return {
+              currencyFrom: currencies.substring(0, 3),
+              currencyTo: currencies.substring(3),
+            };
+          });
+        })
+      );
+  }
+
+  requestRates(pairs: string) {
+    return this.http.get<Rates>(`/api/live?pairs=${pairs}`, {
+      headers: this.headers,
+    });
   }
 }

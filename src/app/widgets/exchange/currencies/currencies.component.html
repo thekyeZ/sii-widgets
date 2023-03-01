@@ -13,16 +13,16 @@
   <button (click)="setSelectedCurrency(2)">WALUTA 3</button>
   <button (click)="setSelectedCurrency(3)">WALUTA 4</button>
   <button (click)="setSelectedCurrency(4)">WALUTA 5</button> -->
-  <table>
-    <tr class="pairs">
-      <td
-        *ngFor="let pairs of exchange | slice : 0 : 10; let i = index"
-        (click)="setSelectedCurrency(i)"
-      >
-        {{ pairs.currencyFirst }}
-        -
-        {{ pairs.currencySecond }}
-      </td>
-    </tr>
-  </table>
+
+  <div class="pairs">
+    <div
+      class="item"
+      *ngFor="let pairs of exchange | slice : 0 : 10; let i = index"
+      (click)="setSelectedCurrency(i)"
+    >
+      {{ pairs.currencyFrom }}
+      -
+      {{ pairs.currencyTo }}
+    </div>
+  </div>
 </div>
