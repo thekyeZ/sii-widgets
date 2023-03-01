@@ -18,7 +18,6 @@ export class ListOfBusesComponent {
   ) {}
 
   ngOnInit() {
-    this.busStops = Object.values(this.busStops);
   }
 
   getUpperCaseNames(busStops: busStopNames) {

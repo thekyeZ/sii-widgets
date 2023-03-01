@@ -14,7 +14,7 @@ export class ChosenBusStopComponent {
   constructor(private selectedBusStopService: SelectedBusStopService) {
     const selectedBusStopId = localStorage.getItem("selectedBusStopId");
     if (selectedBusStopId) {
-      const selectedBusStop = Object.values(this.busStops).find(
+      const selectedBusStop = this.busStops?.find(
         (stop) => stop.id === selectedBusStopId
       );
       if (selectedBusStop) {
