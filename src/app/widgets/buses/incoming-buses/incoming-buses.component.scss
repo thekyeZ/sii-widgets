@@ -3,8 +3,30 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  .list-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    .list-group-item {
+      background-color: #90ace1;
+      flex-wrap: wrap;
+      width: max-content;
+      text-align: center;
+      justify-content: center;
+      flex-grow: 1;
+      width: 12ch;
+      border-radius: 5px;
+    }
+  }
+}
 
-  .list-group-item {
-    background-color: #90ace1;
+.no-departures {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    color: #90ace1;
   }
 }

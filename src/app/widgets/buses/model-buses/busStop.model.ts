@@ -8,6 +8,7 @@ export interface busStop {
 }
 
 export interface busStopName {
+  id: string;
   name: string;
 }
 

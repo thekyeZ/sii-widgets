@@ -18,11 +18,9 @@ export class IncomingBusesComponent {
 
   ngOnInit() {
     this.selectedBusStopService.selectedBusStop.subscribe((id) => {
-      this.busArrivalsService
-        .getBusArrivals(id)
-        .subscribe((data) => {
-          this.busArrivalsData = Object.values(data);
-        });
+      this.busArrivalsService.getBusArrivals(id).subscribe((data) => {
+        this.busArrivalsData = Object.values(data);
+      });
     });
   }
 }

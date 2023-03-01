@@ -6,9 +6,13 @@ import { busStopName } from "../model-buses/busStop.model";
   providedIn: "root",
 })
 export class SelectedBusStopService {
-  selectedBusStop = new BehaviorSubject<string>('75');
+  localStorageKey = "selectedBusStop";
+  selectedBusStop = new BehaviorSubject<string>(
+    localStorage.getItem(this.localStorageKey) || ""
+  );
 
   updateSelectedBusStop(id: string): void {
     this.selectedBusStop.next(id);
+    localStorage.setItem(this.localStorageKey, id);
   }
 }

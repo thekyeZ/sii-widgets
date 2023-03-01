@@ -3,5 +3,14 @@
 }
 
 .card {
-  background-color: #677798;
+  padding: 2em;
+  border-style: none;
+  .card-body {
+    background-color: #677798;
+    border-radius: 1em;
+    gap: 2em;
+    -webkit-box-shadow: 8px 0px 100px 34px rgba(144, 172, 225, 1);
+    -moz-box-shadow: 8px 0px 100px 34px rgba(144, 172, 225, 1);
+    box-shadow: 8px 0px 100px 34px rgba(144, 172, 225, 1);
+  }
 }

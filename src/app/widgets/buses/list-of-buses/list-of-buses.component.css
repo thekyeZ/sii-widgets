@@ -1,3 +1,22 @@
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #e0f1ff;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #fce0a1;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -6,7 +25,8 @@
 
 .container .list-group {
   flex-wrap: wrap;
-  height: 300px;
+  height: 200px;
+  gap: 0.5em;
 }
 
 .container .list-group .list-group-item {
@@ -14,5 +34,10 @@
   text-align: center;
   justify-content: center;
   flex-grow: 1;
-  width: 17ch;
+  width: 19ch;
+  border-radius: 5px;
+}
+
+.container .list-group .list-group-item .list-group-item-hover .list-group-item:hover {
+  background-color: #f5f5f5;
 }

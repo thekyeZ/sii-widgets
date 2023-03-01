@@ -5,6 +5,30 @@
   align-items: center;
 }
 
-.container .list-group-item {
+.container .list-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.container .list-group .list-group-item {
   background-color: #90ace1;
+  flex-wrap: wrap;
+  width: max-content;
+  text-align: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 12ch;
+  border-radius: 5px;
+}
+
+.no-departures {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-departures p {
+  color: #90ace1;
 }

@@ -10,14 +10,7 @@ import { UpperCaseBusStopsService } from "../services-buses/upper-case-bus-stops
 })
 export class ListOfBusesComponent {
   @Input() busStops!: busStopNames;
-
-  getUpperCaseNames(busStops: busStopNames) {
-    return this.upperCaseBusStopsService.getUpperCaseNames(busStops);
-  }
-
-  selectBusStop(id: string): void {
-    this.selectedBusStopService.updateSelectedBusStop(id);
-  }
+  id!: string;
 
   constructor(
     private upperCaseBusStopsService: UpperCaseBusStopsService,
@@ -26,5 +19,12 @@ export class ListOfBusesComponent {
 
   ngOnInit() {
     this.busStops = Object.values(this.busStops);
+  }
+
+  getUpperCaseNames(busStops: busStopNames) {
+    return this.upperCaseBusStopsService.getUpperCaseNames(busStops);
+  }
+  onClick(busStopId: string) {
+    this.selectedBusStopService.updateSelectedBusStop(busStopId);
   }
 }
