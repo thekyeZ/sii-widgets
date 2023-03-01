@@ -21,7 +21,7 @@ export class ChosenBusStopComponent {
         this.selectedBusStopName = selectedBusStop.name;
         this.selectedBusStopService.updateSelectedBusStop(selectedBusStopId);
       } else {
-        this.selectedBusStopName = "Choose your bus stop";
+        this.selectedBusStopName = "Wybierz swój przystanek";
       }
     }
   }
