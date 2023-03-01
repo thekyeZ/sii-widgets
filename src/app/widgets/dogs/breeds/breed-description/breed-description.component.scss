@@ -20,3 +20,34 @@ p {
 .character {
     font-style: italic; 
 }
+
+.lista { 
+    margin-top: 0.3rem;
+    min-height: 450px;
+    max-height: 450px;
+    overflow-y: auto;
+  
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: $light-text-color #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 18px;
+
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: $light-text-color;
+    border-radius: 10px;
+    border: 4px solid #ffffff;
+  }

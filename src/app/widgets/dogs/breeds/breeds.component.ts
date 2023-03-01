@@ -10,7 +10,18 @@ import { BreedService } from './breeds.service';
   providers: [BreedService],
 })
 export class BreedsComponent{
-
-  title:string = 'breed list';
+selectedBreed!: Cat;
+title:string = 'breed list';
   
+constructor(private breedService: BreedService,
+){}
+
+ngOnInit(){
+  this.breedService.breedSelected.subscribe(
+    (cat:Cat) => {
+      this.selectedBreed=cat;
+    }
+  );
+};
 }
+

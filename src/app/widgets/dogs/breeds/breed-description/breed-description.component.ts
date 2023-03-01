@@ -7,5 +7,7 @@ import { Cat } from '../../interfaces/cat';
   styleUrls: ['./breed-description.component.scss']
 })
 export class BreedDescriptionComponent {
+  @Input()
+  cat!: Cat;
 
 }

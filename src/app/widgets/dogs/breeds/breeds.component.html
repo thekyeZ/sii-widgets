@@ -1,27 +1,24 @@
 <div class="row mb-2 breeds">
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <h6 class="d-inline-block mb-2 title">{{title | titlecase}}</h6>
-          <ul class="list-group list-group-flush lista">
-
-            <app-breed-list ></app-breed-list>
-          </ul>
-        </div>
-      </div>
-</div>
-
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-
-            <app-breed-description 
-            ></app-breed-description>
-          <!-- <ng-template #infoText>
-            <p>Wybierz rase</p>
-          </ng-template> -->
-        </div>
+  <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <h6 class="d-inline-block mb-2 title">{{title | titlecase}}</h6>
+        <ul class="list-group list-group-flush lista">
+          <app-breed-list></app-breed-list>
+        </ul>
       </div>
     </div>
   </div>
 
+  <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative ">
+      <div class="col p-4 d-flex flex-column position-static">
+
+        <app-breed-description *ngIf="selectedBreed; else infoText" [cat]="selectedBreed"></app-breed-description>
+        <ng-template #infoText>
+          <p>Select a breed from the list</p>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

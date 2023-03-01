@@ -4,6 +4,9 @@ $background-beige: #EAE0DA;
 $background-yellow-beige: #F7F5EB;
 $text: #494949;
 
+p {
+  color: $text;
+}
 .title {
     color: $text-color;
 }
