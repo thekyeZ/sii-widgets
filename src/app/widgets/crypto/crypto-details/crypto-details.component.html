@@ -5,43 +5,43 @@
       {{ crypto[selectedCrypto].symbol }}
     </h5>
     <h6 class="card-subtitle mb-2 text-muted">
-      If you want to learn more on a crypto, just click the more info button
+      If you want to learn more about a crypto, just click the more info button
     </h6>
 
     <dl class="row">
-      <dt class="col-sm-5">Supply</dt>
-      <dd class="col-sm-7">
-        {{ crypto[selectedCrypto].supply | number : "1.0-0" }}
-      </dd>
-
-      <hr *ngIf="crypto[selectedCrypto].maxSupply !== null" />
-
-      <dt class="col-sm-5" *ngIf="crypto[selectedCrypto].maxSupply !== null">
-        Max supply
-      </dt>
-      <dd class="col-sm-7">
-        {{ crypto[selectedCrypto].maxSupply | number : "1.0-0" }}
-      </dd>
-
-      <hr />
-
-      <dt class="col-sm-5">Market cap</dt>
-      <dd class="col-sm-7">
-        {{ crypto[selectedCrypto].marketCapUsd | currency : "USD" }}
-      </dd>
-
-      <hr />
-
-      <dt class="col-sm-5">Quantity of trading volume/24h</dt>
-      <dd class="col-sm-7">
+      <dt class="col-sm-8">Quantity of trading volume/24h</dt>
+      <dd class="col-sm-4">
         {{ crypto[selectedCrypto].volumeUsd24Hr | currency : "USD" }}
       </dd>
 
       <hr />
 
-      <dt class="col-sm-5">Volume weighted average price/24h</dt>
-      <dd class="col-sm-7">
+      <dt class="col-sm-8">Volume weighted average price/24h</dt>
+      <dd class="col-sm-4">
         {{ crypto[selectedCrypto].vwap24Hr | currency : "USD" }}
+      </dd>
+
+      <hr />
+
+      <dt class="col-sm-8">Supply</dt>
+      <dd class="col-sm-4">
+        {{ crypto[selectedCrypto].supply | number : "1.0-0" }}
+      </dd>
+
+      <hr />
+
+      <dt class="col-sm-8">Market cap</dt>
+      <dd class="col-sm-4">
+        {{ crypto[selectedCrypto].marketCapUsd | currency : "USD" }}
+      </dd>
+
+      <hr *ngIf="crypto[selectedCrypto].maxSupply !== null" />
+
+      <dt class="col-sm-8" *ngIf="crypto[selectedCrypto].maxSupply !== null">
+        Max supply
+      </dt>
+      <dd class="col-sm-4">
+        {{ crypto[selectedCrypto].maxSupply | number : "1.0-0" }}
       </dd>
     </dl>
   </div>
