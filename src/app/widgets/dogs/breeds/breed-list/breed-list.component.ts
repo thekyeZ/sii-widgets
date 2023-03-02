@@ -15,7 +15,7 @@ breedsCats!: Cat[];
 constructor(private breedService: BreedService){}
 
 ngOnInit(){
-this.breedService.getBreed().subscribe(breedApi => {        
+this.breedService.getBreeds().subscribe(breedApi => {        
 console.log(breedApi);
 this.breedsCats = breedApi;
 });

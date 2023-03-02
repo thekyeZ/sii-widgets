@@ -1,5 +1,5 @@
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Cat } from '../interfaces/cat';
 import { BreedService } from './breeds.service';
 
@@ -9,7 +9,8 @@ import { BreedService } from './breeds.service';
   styleUrls: ['./breeds.component.scss'],
   providers: [BreedService],
 })
-export class BreedsComponent{
+export class BreedsComponent implements OnInit{
+
 selectedBreed!: Cat;
 title:string = 'breed list';
   
@@ -18,8 +19,13 @@ constructor(private breedService: BreedService,
 
 ngOnInit(){
   this.breedService.breedSelected.subscribe(
-    (cat:Cat) => {
-      this.selectedBreed=cat;
+    (id: string) => {
+      this.breedService.getBreed(id).subscribe(
+        (cat) => {
+          this.selectedBreed=cat;
+        }
+      )
+      
     }
   );
 };

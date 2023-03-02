@@ -9,11 +9,11 @@ export class BreedService implements OnInit {
 
   breedsCats: Cat[] = [];
 
-  breedSelected: BehaviorSubject<Cat> = new BehaviorSubject(this.breedsCats[1]);
+  breedSelected = new BehaviorSubject('abys');
 
   constructor(
     private httpclient: HttpClient,
-    ) {}
+  ) { }
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -22,11 +22,16 @@ export class BreedService implements OnInit {
     })
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
-  getBreed() {
+  getBreeds() {
     return this.httpclient.get<Cat[]>('https://api.thecatapi.com/v1/breeds', { headers: this.httpOptions.headers })
   }
 
+  getBreed(id: string) {
+    return this.httpclient.get<Cat>(`https://api.thecatapi.com/v1/breeds/${id}`, { headers: this.httpOptions.headers })
+
+  }
 
 }

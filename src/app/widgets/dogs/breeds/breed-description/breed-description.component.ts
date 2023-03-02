@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 import { Cat } from '../../interfaces/cat';
+
 
 @Component({
   selector: 'app-breed-description',

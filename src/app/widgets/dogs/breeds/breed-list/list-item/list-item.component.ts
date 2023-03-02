@@ -13,7 +13,7 @@ export class ListItemComponent {
 
   constructor(private breedService: BreedService) { }
 
-  onSelected(cat: Cat) {
-    this.breedService.breedSelected.next(cat);
+  onSelected(id: string) {
+    this.breedService.breedSelected.next(id);
   }
 }
