@@ -9,35 +9,26 @@ import { SelectedBusStopService } from "../services-buses/selected-bus-stop.serv
 })
 export class ChosenBusStopComponent {
   @Input() busStops: busStopNames = [];
-  @Input() selectedBusStopName: string = "";
+  selectedBusStopName: string = "";
 
   constructor(private selectedBusStopService: SelectedBusStopService) {
-    const selectedBusStopId = localStorage.getItem("selectedBusStopId");
-    if (selectedBusStopId) {
-      const selectedBusStop = this.busStops?.find(
-        (stop) => stop.id === selectedBusStopId
-      );
-      if (selectedBusStop) {
-        this.selectedBusStopName = selectedBusStop.name;
-        this.selectedBusStopService.updateSelectedBusStop(selectedBusStopId);
-      } else {
-        this.selectedBusStopName = "Wybierz swój przystanek";
-      }
+    if (this.busStops && this.busStops.length > 0) {
+      this.selectedBusStopName = this.busStops[0].name;
+      this.selectedBusStopService.updateSelectedBusStop(this.busStops[0].id);
+    } else {
+      this.selectedBusStopName = "Wybierz swój przystanek";
     }
   }
 
   ngOnInit() {
-    const selectedBusStopId = localStorage.getItem("selectedBusStopId");
-    if (selectedBusStopId) {
-      this.selectedBusStopService.updateSelectedBusStop(selectedBusStopId);
-    }
     this.selectedBusStopService.selectedBusStop.subscribe((id) => {
-      const selectedBusStop = Object.values(this.busStops).find(
-        (stop) => stop.id === id
-      );
-      if (selectedBusStop) {
-        this.selectedBusStopName = selectedBusStop.name;
-        localStorage.setItem("selectedBusStopId", id);
+      if (this.busStops) {
+        const selectedBusStop = Object.values(this.busStops).find(
+          (stop) => stop.id === id
+        );
+        if (selectedBusStop) {
+          this.selectedBusStopName = selectedBusStop.name;
+        }
       }
     });
   }

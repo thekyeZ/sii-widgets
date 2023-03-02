@@ -5,13 +5,9 @@ import { BehaviorSubject } from "rxjs";
   providedIn: "root",
 })
 export class SelectedBusStopService {
-  localStorageKey = "selectedBusStop";
-  selectedBusStop = new BehaviorSubject<string>(
-    localStorage.getItem(this.localStorageKey) || ""
-  );
+  selectedBusStop = new BehaviorSubject<string>("");
 
   updateSelectedBusStop(id: string): void {
     this.selectedBusStop.next(id);
-    localStorage.setItem(this.localStorageKey, id);
   }
 }
