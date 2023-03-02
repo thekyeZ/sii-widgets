@@ -1,19 +1,18 @@
-     
+
+
+
 <div class="header">
-    <app-header></app-header>
+  <app-header></app-header>
 </div>
-        <app-mem-list
-        *ngIf="requestPosts"
-            [giveMeMem]  = dataValue 
-            (sendedData) = "sendedData($event)"
-            
-           
-        >
-       
-    </app-mem-list>
- 
-    <div class="footer">
-        <app-footer
-        
-        ></app-footer>
-    </div>
+
+<app-mem-list
+  *ngIf="requestPosts"
+  [giveMeMem]="dataValue"
+  (sendedData)="sendedData($event)"
+>
+
+</app-mem-list>
+
+<div class="footer">
+  <app-footer></app-footer>
+</div>

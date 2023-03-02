@@ -1,63 +1,18 @@
+<div class="card">
+  <p>Meme category: {{ selectedTeam }}</p>
 
-
- <div class="card">
-  <p>Meme category: {{ selectedTeam }} </p>
-
-  <select 
-  
-  class="form-select form-select-sm" 
-  aria-label=".form-select-sm example"
-  #teams (change)="onCategorySelected(teams.value)"
+  <select
+    class="form-select form-select-sm"
+    aria-label=".form-select-sm example"
+    #teams
+    (change)="onCategorySelected(teams.value)"
   >
-   <option 
-   *ngFor="let item of listOfCategories" [value]= "item">  {{item}} 
-  </option>
-  
+    <option
+      *ngFor="let item of listOfCategories$ | async; index as i"
+      [value]="item"
+    >
+      {{ item }}
+    </option>
   </select>
-   
-  </div>
+</div>
 
-
-
-
-
-
-
-
-
-
-
-  
-<!-- 
- <div class="card">
-  <p>Meme category: {{ selectedTeam }} </p>
-
-  <select 
-  
-  class="form-select form-select-sm" 
-  aria-label=".form-select-sm example"
-  #teams (change)="onCategorySelected(teams.value)"
-  >
-   <option 
-   
-
-   *ngFor="let item of listOfCategories" 
-   [value]= "item">  {{item}} 
-  
-  
-  </option>
-  
-  </select>
-   
- 
-
-  </div>
-
-
-
-
-
-
-
-
- -->

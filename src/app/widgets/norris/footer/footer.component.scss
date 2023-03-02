@@ -1,24 +1,25 @@
 .card {
-    max-width: 650px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    border: 1px solid black;
-    border-radius: 5px;
-    align-items: center;
-    padding: 6px;
-    background: linear-gradient(90deg,  rgba(9,9,121,1) 5%, rgba(0,212,255,1) 100%);
-    
-    p {
-        padding-top: 14px;
-    }
+  max-width: 650px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 1px solid black;
+  border-radius: 5px;
+  align-items: center;
+  padding: 6px;
+  background: linear-gradient(
+    90deg,
+    rgba(9, 9, 121, 1) 5%,
+    rgba(0, 212, 255, 1) 100%
+  );
 
-    
-    .form-select-sm {
-        
-     
-        background-color: inherit;
-        border: none;
-        width: 30%;
-    }
+  p {
+    padding-top: 14px;
+  }
+
+  .form-select-sm {
+    background-color: inherit;
+    border: none;
+    width: 30%;
+  }
 }

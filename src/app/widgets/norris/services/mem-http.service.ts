@@ -18,10 +18,12 @@ export class MemHttpServiceService {
   requestPosts() {
     if (!this.selectedMem.selectedCategory.value) {
       return this.http.get<Post>(`${this.randomApi}`);
-    } else
+    } else {
       return this.http.get<Post>(
         `${this.selectedApi}${this.selectedMem.selectedCategory.value}`
       );
+    }
+     
   }
 }
 

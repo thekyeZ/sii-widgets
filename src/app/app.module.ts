@@ -13,6 +13,7 @@ import { GotModule } from './widgets/got/got.module';
 import { BusesModule } from './widgets/buses/buses.module';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -28,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     DogsModule,
     GotModule,
     BusesModule,
-    HttpClientModule
+    HttpClientModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

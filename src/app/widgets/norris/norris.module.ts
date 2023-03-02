@@ -5,7 +5,7 @@ import { HeaderComponent } from './header/header.component';
 
 import { MemListComponent } from './mem/mem-list/mem-list.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { AdminComponent } from './adminPanel/admin/admin.component';
 
 
 
@@ -16,9 +16,10 @@ import { FooterComponent } from './footer/footer.component';
     
     MemListComponent,
     FooterComponent,
+    AdminComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     NorrisComponent
