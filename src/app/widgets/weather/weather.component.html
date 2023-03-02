@@ -1,6 +1,7 @@
 <div class="card">
     <div class="card-body">
-        <app-weather-settings></app-weather-settings>        
+        <app-weather-settings (openAdminPanel)="onOpenAdminPanel()" (submitSettings)="onSubmitSettings()"></app-weather-settings>
+        <router-outlet></router-outlet>
         <app-current-weather *ngIf="weatherData" [weatherData]="weatherData" [selectedDay]="selectedDay"></app-current-weather>
         <app-upcoming-weather *ngIf="weatherData" [weatherData]="weatherData" (showDetails)="onShowDetails($event)" (selectDay)="onSelected($event)"></app-upcoming-weather>
     </div>

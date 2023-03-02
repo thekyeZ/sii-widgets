@@ -5,6 +5,8 @@ import { CurrentWeatherComponent } from './current-weather/current-weather.compo
 import { UpcomingWeatherComponent } from './upcoming-weather/upcoming-weather.component';
 import { WeatherSettingsComponent } from './weather-settings/weather-settings.component';
 import { HttpClientModule } from '@angular/common/http';
+import { WeatherAdminComponent } from './weather-admin/weather-admin.component';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 
 @NgModule({
@@ -12,11 +14,13 @@ import { HttpClientModule } from '@angular/common/http';
     WeatherComponent,
     CurrentWeatherComponent,
     UpcomingWeatherComponent,
-    WeatherSettingsComponent
+    WeatherSettingsComponent,
+    WeatherAdminComponent
   ],
   imports: [
     CommonModule, 
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   exports: [
     WeatherComponent
