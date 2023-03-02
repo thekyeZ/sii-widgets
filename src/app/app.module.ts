@@ -20,7 +20,6 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     NgbModule,
     WeatherModule,
     ExchangeModule,
@@ -30,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     GotModule,
     BusesModule,
     HttpClientModule,
+    AppRoutingModule, //must be last
    
   ],
   providers: [],

@@ -12,6 +12,10 @@ const routes: Routes = [
   {
     path: 'admin/chuck', component: AdminComponent
   },
+  
+  {
+    path: '**', component: NorrisComponent
+  }  
 ];
 
 @NgModule({

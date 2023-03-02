@@ -13,5 +13,6 @@ export class HeaderComponent {
 
   navigate(){
     this.router.navigateByUrl('/admin/chuck')
+    
   }
 }
