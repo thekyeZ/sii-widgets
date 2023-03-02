@@ -9,7 +9,7 @@ export class BreedService implements OnInit {
 
   breedsCats: Cat[] = [];
 
-  breedSelected: BehaviorSubject<Cat> = new BehaviorSubject(this.breedsCats[0]);
+  breedSelected: BehaviorSubject<Cat> = new BehaviorSubject(this.breedsCats[1]);
 
   constructor(
     private httpclient: HttpClient,

@@ -10,6 +10,8 @@ import { FavoritesCatsComponent } from './favorites-cats/favorites-cats.componen
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ListItemComponent } from './breeds/breed-list/list-item/list-item.component';
+import { CatAdminComponent } from './cat-admin/cat-admin.component';
+import { DogRoutingModule } from './dog-routing.module';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,12 @@ import { ListItemComponent } from './breeds/breed-list/list-item/list-item.compo
     HeaderCatsComponent,
     FavoritesCatsComponent,
     ListItemComponent,
+    CatAdminComponent,
 
   ],
   imports: [
     CommonModule,
+    DogRoutingModule,
     HttpClientModule,
     FormsModule
   ],

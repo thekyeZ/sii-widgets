@@ -1,12 +1,13 @@
 <ul class="nav justify-content-center">
     <li class="nav-item">
-      <a class="nav-link" (click)="onMenu('breeds')">Breeds</a>
+      <a class="nav-link" routerLink="/cat/breeds">Breeds</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" (click)="onMenu('gallery')">Gallery</a>
+      <a routerLink="/cat/gallery"class="nav-link" >Gallery</a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" (click)="onMenu('favorites')">Favorites</a>
+      <a [routerLink]="['/cat/catadmin']" class="nav-link">cat-admin</a>
     </li>
+   
   </ul>
