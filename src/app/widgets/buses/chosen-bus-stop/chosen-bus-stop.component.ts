@@ -12,11 +12,11 @@ export class ChosenBusStopComponent {
   selectedBusStopName: string = "";
 
   constructor(private selectedBusStopService: SelectedBusStopService) {
-    if (this.busStops && this.busStops.length > 0) {
+    if (this.busStops.length > 0) {
       this.selectedBusStopName = this.busStops[0].name;
       this.selectedBusStopService.updateSelectedBusStop(this.busStops[0].id);
     } else {
-      this.selectedBusStopName = "Wybierz swój przystanek";
+      this.selectedBusStopName = "Barcikowice";
     }
   }
 
