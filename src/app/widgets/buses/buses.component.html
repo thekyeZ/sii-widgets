@@ -1,11 +1,10 @@
 <div class="card">
   <div class="card-body">
-    <app-settings-buses></app-settings-buses>
+    <app-settings-buses (openSettings)="onOpenSettings()"></app-settings-buses>
+    <router-outlet></router-outlet>
     <app-chosen-bus-stop [busStops]="busStops"></app-chosen-bus-stop>
     <app-incoming-buses></app-incoming-buses>
     <hr />
     <app-list-of-buses [busStops]="busStops"></app-list-of-buses>
   </div>
 </div>
-
-<!-- <router-outlet></router-outlet> -->

@@ -17,12 +17,12 @@ export class ListOfBusesComponent {
     private selectedBusStopService: SelectedBusStopService
   ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   getUpperCaseNames(busStops: busStopNames) {
     return this.upperCaseBusStopsService.getUpperCaseNames(busStops);
   }
+  
   onClick(busStopId: string) {
     this.selectedBusStopService.updateSelectedBusStop(busStopId);
   }

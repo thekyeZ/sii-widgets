@@ -12,6 +12,7 @@ import { DogsModule } from './widgets/dogs/dogs.module';
 import { GotModule } from './widgets/got/got.module';
 import { BusesModule } from './widgets/buses/buses.module';
 
+
 @NgModule({
   declarations: [
     AppComponent

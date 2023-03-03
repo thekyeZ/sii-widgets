@@ -1,21 +1,15 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { AdminBusesComponent } from "./widgets/buses/admin-buses/admin-buses.component";
 import { BusesComponent } from "./widgets/buses/buses.component";
-import { SettingsBusesComponent } from "./widgets/buses/settings-buses/settings-buses.component";
 
-const routes: Routes = [
-  {
-    path: "buses",
-    component: BusesComponent,
-  },
-  {
-    path: "buses/settings",
-    component: SettingsBusesComponent
-  },
+const busesRoutes: Routes = [
+  { path: "buses", component: BusesComponent },
+  { path: "buses-admin", component: AdminBusesComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(busesRoutes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
