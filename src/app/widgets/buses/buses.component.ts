@@ -9,23 +9,15 @@ import { Router } from "@angular/router";
   templateUrl: "./buses.component.html",
   styleUrls: ["./buses.component.scss"],
 })
-export class BusesComponent implements OnInit {
-  busStops!: busStopNames;
+export class BusesComponent {
+
   busArrivals!: busArrivals;
 
   constructor(
-    private busStopsService: BusStopsService,
-    private selectedBusStopService: SelectedBusStopService,
-    private router: Router
+    
+    private selectedBusStopService: SelectedBusStopService
   ) {}
 
-  ngOnInit(): void {
-    this.busStopsService
-      .getBusStops()
-      .subscribe((busStops) => (this.busStops = busStops));
-  }
+  
 
-  onOpenSettings() {
-    this.router.navigate(["buses-admin"]);
-  }
 }

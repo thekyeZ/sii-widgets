@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
-import { busStopNames } from "../model-buses/busStop.model";
-import { SelectedBusStopService } from "../services-buses/selected-bus-stop.service";
+import { busStopNames } from "../../model-buses/busStop.model";
+import { SelectedBusStopService } from "../../services-buses/selected-bus-stop.service";
 
 @Component({
   selector: "app-chosen-bus-stop",
