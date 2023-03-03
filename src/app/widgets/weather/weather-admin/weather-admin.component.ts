@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-weather-admin',
@@ -6,12 +6,5 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./weather-admin.component.scss']
 })
 export class WeatherAdminComponent {
-
-  @Output() submitSettings = new EventEmitter<Event>();
-
-  onSubmitSettings(event: Event) {
-    this.submitSettings.emit(event);
-  }
-
 
 }

@@ -29,10 +29,6 @@ export class WeatherComponent implements OnInit{
   onOpenAdminPanel() {
     this.router.navigate(['weather-admin']);
   }
-  //nie działa  a chciałbym, żeby wracało do strony głównej, odświeżało
-  onSubmitSettings() {
-    this.router.navigate(['weather']);
-  }
 
   onSelected(i: number) {
     this.selectedDayService.selectedDay.next(i);

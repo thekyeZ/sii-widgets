@@ -1,0 +1,42 @@
+.weather-admin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2em;
+    border-bottom: .15rem solid #9a7852;
+
+    h5 {
+        margin-bottom: 0;
+    }
+
+    input,
+    button {
+        margin: 0 0 1em 0;
+        padding: .2em .5em;
+    }
+
+    h5, 
+    button {
+        font-size: 1rem;
+    }
+
+    input,
+    button {
+        border: none;
+        border-radius: .5rem;
+        background: none;
+        color: #e4e4d8;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    button:hover,
+    input:hover {
+        box-shadow: 0 0 .5rem #616451;
+    }
+
+    .button-submit {
+        border: .15rem solid #9a7852;
+    }
+}
