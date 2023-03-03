@@ -1,10 +1,16 @@
 <div class="card">
   <div class="card-body">
-    <app-header [title]="currentTitle"></app-header>
-    <app-selected-character></app-selected-character>
+    <nav>
+      <div class="links">
+        <a [routerLink]="['characters']">characters</a>
+        <a [routerLink]="['books']">books</a>
+        <a [routerLink]="['houses']">houses</a>
+      </div>
 
-    <app-list-of-characters
-      [characters]="listOfCharacters"
-    ></app-list-of-characters>
+      <button class="btn btn-danger" (click)="navigateToAdmin()">Admin</button>
+    </nav>
+
+    <app-header [title]="currentTitle"></app-header>
+    <router-outlet></router-outlet>
   </div>
 </div>
