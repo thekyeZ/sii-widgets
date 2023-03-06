@@ -1,18 +1,16 @@
-
-
-
 <div class="header">
   <app-header></app-header>
 </div>
-
+ <!-- input, output for mem-List-Component. If user click button -> call http request -> fetch given mem on page paragraf -->
 <app-mem-list
-  *ngIf="requestPosts"
-  [giveMeMem]="dataValue"
-  (sendedData)="sendedData($event)"
+  *ngIf="requestHttp"
+  [loadMemOnPage]="memToDispFromHttpCall"
+  (httpReqToNorrisComp)="httpCallToDispNewMem($event)"
 >
-
 </app-mem-list>
 
 <div class="footer">
   <app-footer></app-footer>
 </div>
+
+

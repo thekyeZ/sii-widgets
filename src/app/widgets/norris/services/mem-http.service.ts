@@ -1,29 +1,29 @@
 import { Injectable } from "@angular/core";
 import { Post } from "../mem/interface/post.model";
 import { HttpClient } from "@angular/common/http";
-import { MemDataValueService } from "./selectedMemObservable.service";
+import { selectedMemService } from "./selectedMemObservable.service";
 
 @Injectable({
   providedIn: "root",
 })
-export class MemHttpServiceService {
+export class MemHttpService {
   constructor(
     private http: HttpClient,
-    private selectedMem: MemDataValueService
+    private selectedMemService: selectedMemService
   ) {}
 
-  selectedApi: string = "https://api.chucknorris.io/jokes/random?category=";
-  randomApi: string = "https://api.chucknorris.io/jokes/random?";
+  apiForSelectedCategory: string = "https://api.chucknorris.io/jokes/random?category=";
+  apiForRandomCategory: string = "https://api.chucknorris.io/jokes/random?";
 
-  requestPosts() {
-    if (!this.selectedMem.selectedCategory.value) {
-      return this.http.get<Post>(`${this.randomApi}`);
+  requestForApi() {
+    // choose this api if user select random cathegory (selectValue = "random")
+          if (this.selectedMemService.selectedCategory.value === "") {
+              return this.http.get<Post>(`${this.apiForRandomCategory}`);
     } else {
-      return this.http.get<Post>(
-        `${this.selectedApi}${this.selectedMem.selectedCategory.value}`
+  // choose this api if user select other cathegory (selectValue = "selectCathegory")
+           return this.http.get<Post>(
+              `${this.apiForSelectedCategory}${this.selectedMemService.selectedCategory.value}`
       );
     }
-     
   }
 }
-

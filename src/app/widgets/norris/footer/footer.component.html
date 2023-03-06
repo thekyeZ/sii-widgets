@@ -1,18 +1,18 @@
 <div class="card">
-  <p>Meme category: {{ selectedTeam }}</p>
+  <p>Meme category: {{ selectedMemRef.value }}</p>
 
   <select
     class="form-select form-select-sm"
     aria-label=".form-select-sm example"
-    #teams
-    (change)="onCategorySelected(teams.value)"
+    #selectedMemRef
+    (change)="onCategorySelected(selectedMemRef.value)"
   >
+    <option value="">random</option>
     <option
-      *ngFor="let item of listOfCategories$ | async; index as i"
-      [value]="item"
+      *ngFor="let singleCategoryName of listOfCategories$ | async; index as i"
+      [value]="singleCategoryName"
     >
-      {{ item }}
+      {{ singleCategoryName }}
     </option>
   </select>
 </div>
-

@@ -14,11 +14,13 @@ import { BusesModule } from './widgets/buses/buses.module';
 import { HttpClientModule } from '@angular/common/http';
 
 
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    
     BrowserModule,
     NgbModule,
     WeatherModule,
@@ -29,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     GotModule,
     BusesModule,
     HttpClientModule,
-    AppRoutingModule, //must be last
+    AppRoutingModule,
+    
    
   ],
   providers: [],

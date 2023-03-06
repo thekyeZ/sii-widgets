@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class MemDataValueService {
+export class selectedMemService {
 
   constructor() { }
 

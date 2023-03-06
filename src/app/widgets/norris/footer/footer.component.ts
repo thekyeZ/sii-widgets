@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { MemDataValueService } from "../services/selectedMemObservable.service";
+import { selectedMemService } from "../services/selectedMemObservable.service";
 import { HttpClient } from "@angular/common/http";
 
 @Component({
@@ -8,32 +8,22 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ["./footer.component.scss"],
 })
 export class FooterComponent implements OnInit {
-  selectedTeam = "";
-  API: string = "https://api.chucknorris.io/jokes/categories";
-
-  listOfCategories$ = this.http.get<string[]>(`${this.API}`);
+  listOfCategoriesURL: string = "https://api.chucknorris.io/jokes/categories";
+  listOfCategories$ = this.http.get<string[]>(`${this.listOfCategoriesURL}`);
 
   constructor(
-    private memDataValueService: MemDataValueService,
+    private selectedMemService: selectedMemService,
     private http: HttpClient
-  ) { }
-
-
+  ) {}
 
   onCategorySelected(value: string) {
     //przekazanie selecta (np. dev) do observable
-    this.memDataValueService.selectedCategory.next(value);
-    console.log(this.memDataValueService.selectedCategory.value);
+    this.selectedMemService.selectedCategory.next(value);
+    console.log(this.selectedMemService.selectedCategory.value);
 
     //complete task
-    this.memDataValueService.selectedCategory.complete();
+    // this.selectedMemService.selectedCategory.complete();
   }
 
-  
-  ngOnInit() {
-    this.memDataValueService.selectedCategory.subscribe(selectedMem => {
-      this.selectedTeam = selectedMem 
-    })
-  }
-
+  ngOnInit() {}
 }
