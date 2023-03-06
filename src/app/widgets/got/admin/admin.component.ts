@@ -7,7 +7,7 @@ import { Router } from "@angular/router";
 })
 export class AdminComponent {
   constructor(private router: Router) {}
-  navigateToMain() {
+  navigateToHome() {
     this.router.navigate([""]);
   }
 }

@@ -6,9 +6,9 @@ import { Router } from "@angular/router";
   styleUrls: ["./home-got.component.scss"],
 })
 export class HomeGotComponent {
-  // constructor(private router: Router) {}
-  // navigateToAdmin() {
-  //   this.router.navigate(["admin/got"]);
-  // }
+  constructor(private router: Router) {}
+  navigateToAdmin() {
+    this.router.navigate(["admin/got"]);
+  }
   currentTitle = "Game of Thrones!";
 }

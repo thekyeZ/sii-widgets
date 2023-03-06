@@ -1,18 +1,22 @@
 <nav>
-  <ul class="links nav">
-    <li
-      role="presentation"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-    >
-      <a [routerLink]="['/characters']">characters</a>
-    </li>
-    <li role="presentation" routerLinkActive="active">
-      <a [routerLink]="['/books']">books</a>
-    </li>
-    <li role="presentation" routerLinkActive="active">
-      <a [routerLink]="['/houses']">houses</a>
-    </li>
+  <ul class="nav">
+    <div class="links">
+      <li
+        role="presentation"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a [routerLink]="['/characters']">characters</a>
+      </li>
+      <li role="presentation" routerLinkActive="active">
+        <a [routerLink]="['/books']">books</a>
+      </li>
+      <li role="presentation" routerLinkActive="active">
+        <a [routerLink]="['/houses']">houses</a>
+      </li>
+    </div>
+
+    <button class="btn btn-danger" (click)="navigateToAdmin()">Admin</button>
   </ul>
 </nav>
 <app-header [title]="currentTitle"></app-header>
