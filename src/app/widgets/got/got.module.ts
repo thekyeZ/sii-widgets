@@ -15,6 +15,7 @@ import { SelectedCharacterIdService } from "./services/selected-character-id.ser
 import { AdminComponent } from "./admin/admin.component";
 import { CharactersComponent } from "./characters/characters.component";
 import { HomeGotComponent } from "./home-got/home-got.component";
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
 const appRoutes: Routes = [
   { path: "", component: HomeGotComponent },
@@ -22,6 +23,8 @@ const appRoutes: Routes = [
   { path: "characters", component: CharactersComponent },
   { path: "books", component: BooksComponent },
   { path: "houses", component: HousesComponent },
+  { path: "not-found", component: PageNotFoundComponent },
+  { path: "**", redirectTo: "/not-found" },
 ];
 @NgModule({
   declarations: [
@@ -35,6 +38,7 @@ const appRoutes: Routes = [
     AdminComponent,
     CharactersComponent,
     HomeGotComponent,
+    PageNotFoundComponent,
   ],
   imports: [CommonModule, HttpClientModule, RouterModule.forRoot(appRoutes)],
   exports: [GotComponent, RouterModule],
