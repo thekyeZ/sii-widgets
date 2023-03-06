@@ -27,11 +27,4 @@ export class CryptoTableComponent implements OnInit {
       .fetchCryptoItem()
       .subscribe((cryptoItems) => (this.crypto = cryptoItems));
   }
-
-  // getId(id: string) {
-  //   const cryptoId = this.crypto.find((crypto) => {
-  //     return crypto.id === id;
-  //   });
-  //   return console.log(cryptoId);
-  // }
 }
