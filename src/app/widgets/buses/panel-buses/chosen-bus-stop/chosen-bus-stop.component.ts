@@ -9,26 +9,17 @@ import { SelectedBusStopService } from "../../services-buses/selected-bus-stop.s
 })
 export class ChosenBusStopComponent {
   @Input() busStops: busStopNames = [];
-  selectedBusStopName: string = "";
+  selectedBusStopName!: string;
 
-  constructor(private selectedBusStopService: SelectedBusStopService) {
-    if (this.busStops.length > 0) {
-      this.selectedBusStopName = this.busStops[0].name;
-      this.selectedBusStopService.updateSelectedBusStop(this.busStops[0].id);
-    } else {
-      this.selectedBusStopName = "Barcikowice";
-    }
-  }
+  constructor(private selectedBusStopService: SelectedBusStopService) {}
 
   ngOnInit() {
     this.selectedBusStopService.selectedBusStop.subscribe((id) => {
-      if (this.busStops) {
-        const selectedBusStop = Object.values(this.busStops).find(
-          (stop) => stop.id === id
-        );
-        if (selectedBusStop) {
-          this.selectedBusStopName = selectedBusStop.name;
-        }
+      const selectedBusStop = Object.values(this.busStops).find(
+        (busStop) => busStop.id === id
+      );
+      if (selectedBusStop) {
+        this.selectedBusStopName = selectedBusStop.name;
       }
     });
   }

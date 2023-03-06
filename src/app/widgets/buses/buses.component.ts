@@ -11,13 +11,4 @@ import { Router } from "@angular/router";
 })
 export class BusesComponent {
 
-  busArrivals!: busArrivals;
-
-  constructor(
-    
-    private selectedBusStopService: SelectedBusStopService
-  ) {}
-
-  
-
 }
