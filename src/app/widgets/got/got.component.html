@@ -1,16 +1,8 @@
 <div class="card">
   <div class="card-body">
-    <nav>
-      <div class="links">
-        <a [routerLink]="['characters']">characters</a>
-        <a [routerLink]="['books']">books</a>
-        <a [routerLink]="['houses']">houses</a>
-      </div>
-
-      <button class="btn btn-danger" (click)="navigateToAdmin()">Admin</button>
-    </nav>
-
-    <app-header [title]="currentTitle"></app-header>
+    <!-- <app-home-got></app-home-got> -->
+    <button class="btn btn-danger" (click)="navigateToAdmin()">Admin</button>
+    <!-- <app-header [title]="currentTitle"></app-header> -->
     <router-outlet></router-outlet>
   </div>
 </div>

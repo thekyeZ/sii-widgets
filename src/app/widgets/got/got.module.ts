@@ -14,9 +14,10 @@ import { CharactersService } from "./services/characters.service";
 import { SelectedCharacterIdService } from "./services/selected-character-id.service";
 import { AdminComponent } from "./admin/admin.component";
 import { CharactersComponent } from "./characters/characters.component";
+import { HomeGotComponent } from "./home-got/home-got.component";
 
 const appRoutes: Routes = [
-  { path: " ", component: GotComponent },
+  { path: "", component: HomeGotComponent },
   { path: "admin/got", component: AdminComponent },
   { path: "characters", component: CharactersComponent },
   { path: "books", component: BooksComponent },
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
     HousesComponent,
     AdminComponent,
     CharactersComponent,
+    HomeGotComponent,
   ],
   imports: [CommonModule, HttpClientModule, RouterModule.forRoot(appRoutes)],
   exports: [GotComponent, RouterModule],

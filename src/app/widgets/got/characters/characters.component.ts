@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Character } from "../interfaces/Character";
 import { CharactersService } from "../services/characters.service";
-
+import { Router } from "@angular/router";
 @Component({
   selector: "app-characters",
   templateUrl: "./characters.component.html",
@@ -9,7 +9,10 @@ import { CharactersService } from "../services/characters.service";
 })
 export class CharactersComponent implements OnInit {
   listOfCharacters: Character[] = [];
-  constructor(private charactersService: CharactersService) {}
+  constructor(
+    private charactersService: CharactersService,
+    private router: Router
+  ) {}
   ngOnInit(): void {
     this.charactersService
       .requestCharacters()

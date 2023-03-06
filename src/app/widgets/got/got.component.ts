@@ -20,9 +20,8 @@ export class GotComponent {
   //     .requestCharacters()
   //     .subscribe((results) => (this.listOfCharacters = results));
   // }
-
-  currentTitle = "Game of Thrones!";
   navigateToAdmin() {
     this.router.navigate(["admin/got"]);
   }
+  // currentTitle = "Game of Thrones!";
 }
