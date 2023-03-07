@@ -1,7 +1,7 @@
 import { Component, Input } from "@angular/core";
-import { BusArrivalsService } from "../services-buses/bus-arrivals.service";
-import { busArrival } from "../model-buses/busStop.model";
-import { SelectedBusStopService } from "../services-buses/selected-bus-stop.service";
+import { BusArrivalsService } from "../../services-buses/bus-arrivals.service";
+import { busArrival } from "../../model-buses/busStop.model";
+import { SelectedBusStopService } from "../../services-buses/selected-bus-stop.service";
 
 @Component({
   selector: "app-incoming-buses",
