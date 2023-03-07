@@ -1,12 +1,28 @@
 <div class="container">
-<p>admin-panel-buses works!</p>
-</div>
-<div class="container">
-    <a (click)="onCloseSettings()">
-      <img
-        src="https://img.icons8.com/bubbles/256/checked-checkbox.png"
-        alt="Icon of settings"
-        width="75px"
-      />
-    </a>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div id="user-data">
+          <div class="form-group">
+            <label for="username">Choose your default bus stop:</label>
+            <input
+              type="text"
+              id="defaultBusStop"
+              class="form-control"
+              ngModel
+              name="defaultBusStop"
+            />
+          </div>
+        </div>
+        <a (click)="onSubmit(f)">
+          <img
+            src="https://img.icons8.com/bubbles/256/checked-checkbox.png"
+            alt="Icon of settings"
+            width="75px"
+          />
+        </a>
+      </form>
+    </div>
   </div>
+</div>
+

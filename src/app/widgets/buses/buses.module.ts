@@ -8,8 +8,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { SettingsBusesComponent } from "./panel-buses/settings-buses/settings-buses.component";
 import { AppRoutingModule } from "src/app/app-routing.module";
 import { PanelBusesComponent } from "./panel-buses/panel-buses.component";
-import { AdminPanelBusesComponent } from './admin-panel-buses/admin-panel-buses.component';
-import { BusesRoutingModule } from './buses-routing.module';
+import { AdminPanelBusesComponent } from "./admin-panel-buses/admin-panel-buses.component";
+import { BusesRoutingModule } from "./buses-routing.module";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,13 @@ import { BusesRoutingModule } from './buses-routing.module';
     PanelBusesComponent,
     AdminPanelBusesComponent,
   ],
-  imports: [CommonModule, HttpClientModule, AppRoutingModule, BusesRoutingModule],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    AppRoutingModule,
+    BusesRoutingModule,
+    FormsModule,
+  ],
   exports: [BusesComponent],
 })
 export class BusesModule {}

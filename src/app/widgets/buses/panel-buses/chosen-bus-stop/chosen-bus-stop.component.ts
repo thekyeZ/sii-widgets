@@ -15,12 +15,9 @@ export class ChosenBusStopComponent {
 
   ngOnInit() {
     this.selectedBusStopService.selectedBusStop.subscribe((id) => {
-      const selectedBusStop = Object.values(this.busStops).find(
-        (busStop) => busStop.id === id
-      );
-      if (selectedBusStop) {
-        this.selectedBusStopName = selectedBusStop.name;
-      }
+      this.selectedBusStopName =
+        Object.values(this.busStops || {}).find((busStop) => busStop.id === id)
+          ?.name || "";
     });
   }
 }
