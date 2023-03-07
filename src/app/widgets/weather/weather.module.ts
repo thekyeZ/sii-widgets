@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WeatherComponent } from './weather.component';
-import { CurrentWeatherComponent } from './current-weather/current-weather.component';
-import { UpcomingWeatherComponent } from './upcoming-weather/upcoming-weather.component';
-import { WeatherSettingsComponent } from './weather-settings/weather-settings.component';
+import { CurrentWeatherComponent } from './weather-forecast/current-weather/current-weather.component';
+import { UpcomingWeatherComponent } from './weather-forecast/upcoming-weather/upcoming-weather.component';
+import { WeatherSettingsComponent } from './weather-forecast/weather-settings/weather-settings.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherAdminComponent } from './weather-admin/weather-admin.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
-
+import { WeatherForecastComponent } from './weather-forecast/weather-forecast.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,8 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
     CurrentWeatherComponent,
     UpcomingWeatherComponent,
     WeatherSettingsComponent,
-    WeatherAdminComponent
+    WeatherAdminComponent,
+    WeatherForecastComponent,
   ],
   imports: [
     CommonModule, 

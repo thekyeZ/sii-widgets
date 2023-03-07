@@ -7,7 +7,7 @@
     border-bottom: .15rem solid #9a7852;
 
     h5 {
-        margin-bottom: 0;
+        margin-bottom: .5em;
     }
 
     input,
@@ -31,12 +31,16 @@
         font-weight: bold;
     }
 
-    button:hover,
-    input:hover {
+    button:hover {
+        box-shadow: 0 0 .5rem #616451;
+    }
+
+    input {
         box-shadow: 0 0 .5rem #616451;
     }
 
     .button-submit {
-        border: .15rem solid #9a7852;
+        // border: .15rem solid #9a7852;
+        margin: 0;
     }
 }

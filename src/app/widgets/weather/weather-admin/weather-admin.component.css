@@ -1,0 +1,38 @@
+.weather-admin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2em;
+  border-bottom: 0.15rem solid #9a7852;
+}
+.weather-admin h5 {
+  margin-bottom: 0.5em;
+}
+.weather-admin input,
+.weather-admin button {
+  margin: 0 0 1em 0;
+  padding: 0.2em 0.5em;
+}
+.weather-admin h5,
+.weather-admin button {
+  font-size: 1rem;
+}
+.weather-admin input,
+.weather-admin button {
+  border: none;
+  border-radius: 0.5rem;
+  background: none;
+  color: #e4e4d8;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.weather-admin button:hover {
+  box-shadow: 0 0 0.5rem #616451;
+}
+.weather-admin input {
+  box-shadow: 0 0 0.5rem #616451;
+}
+.weather-admin .button-submit {
+  margin: 0;
+}/*# sourceMappingURL=weather-admin.component.css.map */

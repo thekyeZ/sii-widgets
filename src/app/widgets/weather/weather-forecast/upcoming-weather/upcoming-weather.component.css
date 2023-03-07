@@ -17,9 +17,10 @@
 }
 .upcoming-weather-component .upcoming-weather li {
   list-style: none;
+  flex: 0.3;
 }
 .upcoming-weather-component .upcoming-weather .upcoming-date {
-  flex: 0.6;
+  flex: 1;
 }
 .upcoming-weather-component .upcoming-weather img {
   margin: 0;

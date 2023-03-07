@@ -31,4 +31,24 @@
   justify-content: center;
   font-size: 2rem;
   font-weight: bold;
+}
+.current-weather-component .current-weather-details {
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+  list-style: none;
+  padding: 0;
+  margin: 2em 0 0 0;
+}
+.current-weather-component .current-weather-details li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  font-weight: bold;
+}
+.current-weather-component .current-weather-details li img {
+  margin: 0 0.5em 0 0;
+  padding: 0;
+  max-height: 3rem;
 }/*# sourceMappingURL=current-weather.component.css.map */
