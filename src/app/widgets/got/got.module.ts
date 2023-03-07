@@ -9,13 +9,13 @@ import { SelectedCharacterComponent } from "./selected-character/selected-charac
 import { BooksComponent } from "./books/books.component";
 import { HousesComponent } from "./houses/houses.component";
 import { Routes, RouterModule } from "@angular/router";
-
 import { CharactersService } from "./services/characters.service";
 import { SelectedCharacterIdService } from "./services/selected-character-id.service";
 import { AdminComponent } from "./admin/admin.component";
 import { CharactersComponent } from "./characters/characters.component";
 import { HomeGotComponent } from "./home-got/home-got.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { ReactiveFormsModule } from "@angular/forms";
 
 const appRoutes: Routes = [
   { path: "", component: HomeGotComponent },
@@ -40,7 +40,12 @@ const appRoutes: Routes = [
     HomeGotComponent,
     PageNotFoundComponent,
   ],
-  imports: [CommonModule, HttpClientModule, RouterModule.forRoot(appRoutes)],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule,
+  ],
   exports: [GotComponent, RouterModule],
   providers: [CharactersService, SelectedCharacterIdService],
 })
