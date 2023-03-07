@@ -9,17 +9,19 @@ import { CryptoIdService } from "../crypto-id.service";
 export class CryptoAdminComponent implements OnInit {
   @ViewChild("input") inputName: any;
   favCrypto!: number;
+  value!: number;
 
   constructor(private cryptoIdService: CryptoIdService) {}
 
-  onAccept(value: string) {
+  onAccept(value: number) {
+    value = this.favCrypto;
     console.log(value);
     this.inputName.nativeElement.value = "";
   }
 
   ngOnInit() {
-    this.cryptoIdService.favCrypto.subscribe((i) => {
-      this.favCrypto = i;
+    this.cryptoIdService.favCrypto.subscribe((value) => {
+      this.favCrypto = value;
     });
   }
 }
