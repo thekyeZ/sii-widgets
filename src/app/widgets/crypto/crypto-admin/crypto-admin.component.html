@@ -9,6 +9,19 @@
   </div>
   <div class="card-body">
     <h5 class="card-title">Here you can set your preferences</h5>
-    <p class="card-text">skibidibidi pa pa parapa pą pa pa para pą</p>
+    <p>What's your name?</p>
+    <input
+      #input
+      type="text"
+      class="form-control name"
+      placeholder="Your name"
+      aria-label="Name"
+    />
   </div>
+
+  <button class="btn btn-success" (click)="onAccept(input.value)">
+    Accept
+  </button>
+
+  <button class="btn btn-danger" [routerLink]="['/']">Decline</button>
 </div>
