@@ -1,17 +1,16 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { CryptoIdService } from "../crypto-id.service";
-
 import { CryptoModel } from "../crypto.model";
 import { CryptoService } from "../crypto.service";
 
 @Component({
-  selector: "app-crypto-details",
-  templateUrl: "./crypto-details.component.html",
-  styleUrls: ["./crypto-details.component.scss"],
+  selector: "app-crypto-fav",
+  templateUrl: "./crypto-fav.component.html",
+  styleUrls: ["./crypto-fav.component.scss"],
 })
-export class CryptoDetailsComponent implements OnInit {
+export class CryptoFavComponent {
   crypto: CryptoModel[] = [];
-  selectedCrypto!: number;
+  favCrypto!: number;
 
   constructor(
     private cryptoService: CryptoService,
@@ -22,8 +21,8 @@ export class CryptoDetailsComponent implements OnInit {
     this.cryptoService
       .fetchCryptoItem()
       .subscribe((cryptoItems) => (this.crypto = cryptoItems));
-    this.cryptoIdService.selectedCrypto.subscribe((i) => {
-      this.selectedCrypto = i;
+    this.cryptoIdService.favCrypto.subscribe((i) => {
+      this.favCrypto = i;
     });
   }
 }

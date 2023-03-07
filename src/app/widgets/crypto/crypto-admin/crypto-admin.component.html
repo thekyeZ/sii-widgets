@@ -10,13 +10,12 @@
   <div class="card-body">
     <h5 class="card-title">Here you can set your preferences</h5>
     <div class="mb-3">
-      <label for="nameInput" class="form-label">Enter your name</label>
+      <label for="nameInput" class="form-label">Enter your fav crypto</label>
       <input
         #input
-        type="text"
+        type="number"
         class="form-control name"
-        placeholder="Your name"
-        aria-label="Name"
+        placeholder="Your fav crytpo name"
       />
       <button class="btn btn-success" (click)="onAccept(input.value)">
         Accept

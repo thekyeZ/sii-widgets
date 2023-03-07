@@ -1,14 +1,28 @@
 <div class="card" *ngIf="crypto.length > 0">
   <div class="card-body">
+    <img
+      class="exitImg float-end"
+      src="https://cdn-icons-png.flaticon.com/512/1828/1828665.png"
+      alt="Exit panel"
+      [routerLink]="['/']"
+    />
     <h5 class="card-title">
       More infromation on: {{ crypto[selectedCrypto].name }} /
       {{ crypto[selectedCrypto].symbol }}
     </h5>
     <h6 class="card-subtitle mb-2 text-muted">
-      If you want to learn more about a crypto, just click the more info button
+      If you want to learn more about a crypto, just click the
+      <strong>More Info</strong> button
     </h6>
 
     <dl class="row">
+      <dt class="col-sm-8">More exact prive</dt>
+      <dd class="col-sm-4">
+        ${{ crypto[selectedCrypto].priceUsd | number : "1.5-9" }}
+      </dd>
+
+      <hr />
+
       <dt class="col-sm-8">Quantity of trading volume/24h</dt>
       <dd class="col-sm-4">
         {{ crypto[selectedCrypto].volumeUsd24Hr | currency : "USD" }}
