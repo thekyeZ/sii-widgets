@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 
 @Component({
   selector: "app-crypto-admin",
@@ -6,7 +6,10 @@ import { Component } from "@angular/core";
   styleUrls: ["./crypto-admin.component.scss"],
 })
 export class CryptoAdminComponent {
+  @ViewChild("input") inputName: any;
+
   onAccept(value: string) {
     console.log(value);
+    this.inputName.nativeElement.value = "";
   }
 }
