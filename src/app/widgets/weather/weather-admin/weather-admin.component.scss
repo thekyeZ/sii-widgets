@@ -3,8 +3,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 2em;
-    border-bottom: .15rem solid #9a7852;
+
+    img {
+        margin: 0;
+        padding: 0;
+        max-height: 10rem;
+    }
 
     h5 {
         margin-bottom: .5em;
@@ -28,7 +32,6 @@
         background: none;
         color: #e4e4d8;
         font-size: 2rem;
-        font-weight: bold;
     }
 
     button:hover {
@@ -40,7 +43,16 @@
     }
 
     .button-submit {
-        // border: .15rem solid #9a7852;
         margin: 0;
+    }
+
+    button {
+        img {
+            margin: 0;
+            padding: 0;
+            max-height: 3rem;
+        }
+
+        font-weight: bold;
     }
 }
