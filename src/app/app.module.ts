@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -11,6 +10,7 @@ import { NorrisModule } from './widgets/norris/norris.module';
 import { DogsModule } from './widgets/dogs/dogs.module';
 import { GotModule } from './widgets/got/got.module';
 import { BusesModule } from './widgets/buses/buses.module';
+
 
 @NgModule({
   declarations: [
