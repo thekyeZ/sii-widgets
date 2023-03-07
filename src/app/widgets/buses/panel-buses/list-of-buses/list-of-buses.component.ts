@@ -10,7 +10,6 @@ import { UpperCaseBusStopsService } from "../../services-buses/upper-case-bus-st
 })
 export class ListOfBusesComponent {
   @Input() busStops!: busStopNames;
-  id!: string;
 
   constructor(
     private upperCaseBusStopsService: UpperCaseBusStopsService,
@@ -23,7 +22,7 @@ export class ListOfBusesComponent {
     return this.upperCaseBusStopsService.getUpperCaseNames(busStops);
   }
 
-  onClick(busStopId: string) {
-    this.selectedBusStopService.updateSelectedBusStop(busStopId);
+  onClick(id: string) {
+    this.selectedBusStopService.updateSelectedBusStop(id);
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-panel-buses',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AdminPanelBusesComponent {
 
+  constructor(private router: Router) {}
+
+  onCloseSettings() {
+    this.router.navigate([""]);
+  }
 }
