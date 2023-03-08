@@ -1,15 +1,23 @@
-<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+<form [formGroup]="adminForm" (ngSubmit)="onSubmit()">
     <div class="weather-admin">
+        <div class="close">
+            <a [routerLink]="['/']"><img src="../assets/x.png" alt=""/></a>
+        </div>
         <img src="../assets/cloud-sun.png" alt=""/>
         <label for="city">Type a City Name</label>
-        <input type="text" id="city" placeholder="Check the weather for..." [ngModel]=" 'Kraków' " name="city" required>
+            <div class="select-city">
+                <input type="text" id="city" placeholder="Check the weather for..." formControlName="city">
+                <span *ngIf="!adminForm.get('city')?.valid && adminForm.get('city')?.touched">Please, type a city name!</span>
+            </div>
         <label for="units">Select Units</label>
-        <div>
-        <img src="../assets/thermometer.png" alt=""/><select id="units" [ngModel]=" 'C' " name="units">
-            <option value="C">C</option>
-            <option value="F">F</option>
-        </select>
-        </div>
-        <button class="button-submit" type="submit" [disabled]="!f.valid">Submit</button>
+            <div class="select-units">
+                <img src="../assets/thermometer.png" alt=""/>
+                <select id="units" formControlName="unit">
+                    <option class="unit" value="C">C</option>
+                    <option value="F">F</option>
+                </select>
+            </div>
+        <span *ngIf="!adminForm.get('unit')?.valid && adminForm.get('unit')?.touched">Please, select units</span>
+        <button class="button-submit" type="submit">Submit</button>
     </div>
 </form>

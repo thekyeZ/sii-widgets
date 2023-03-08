@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { WeatherComponent } from './weather.component';
 import { CurrentWeatherComponent } from './weather-forecast/current-weather/current-weather.component';
 import { UpcomingWeatherComponent } from './weather-forecast/upcoming-weather/upcoming-weather.component';
@@ -23,7 +23,7 @@ import { WeatherForecastComponent } from './weather-forecast/weather-forecast.co
     CommonModule, 
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   exports: [
     WeatherComponent
