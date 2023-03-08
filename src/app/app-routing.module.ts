@@ -5,9 +5,9 @@ import { WeatherForecastComponent } from './widgets/weather/weather-forecast/wea
 
 const routes: Routes = [
   { path: '', component: WeatherForecastComponent},
-  { path: 'weather', component: WeatherForecastComponent},
+  // { path: 'weather', component: WeatherForecastComponent},
   { path: 'weather-admin', component: WeatherAdminComponent},
-  { path: 'forecast', component: WeatherForecastComponent}
+  // { path: 'forecast', component: WeatherForecastComponent}
 ];
 
 @NgModule({
