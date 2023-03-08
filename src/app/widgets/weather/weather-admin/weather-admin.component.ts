@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-weather-admin',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./weather-admin.component.scss']
 })
 export class WeatherAdminComponent {
+
+  onSubmit(form: NgForm) {
+    console.log(form.value);
+    form.reset();
+  }
 
 }
