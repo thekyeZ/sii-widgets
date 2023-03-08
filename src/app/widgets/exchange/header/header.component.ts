@@ -1,4 +1,3 @@
-import { pairs } from "rxjs";
 import {
   Exchange,
   ExchangeResult,
@@ -37,8 +36,4 @@ export class HeaderComponent implements OnInit {
   }
 
   todayDate: Date = new Date();
-
-  @Input() title = "Exchange currency";
-  @Input() currencyPipe1 = "1";
-  @Input() currencyPipe2 = "0.94";
 }

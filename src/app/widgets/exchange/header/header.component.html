@@ -1,5 +1,6 @@
 <div class="header">
-  <h1>{{ title }}</h1>
+  <h1>Exchange currency</h1>
+
   <hr />
 
   <div class="amount-from-to">
@@ -30,7 +31,8 @@
       <h2 *ngIf="currencyRate">
         <!-- <img src="./assets/USD.png" width="50px" /> -->
         1
-        {{ currentCurrency.currencyFrom }} = {{ currencyRate.rate }}
+        {{ currentCurrency.currencyFrom }} =
+        {{ currencyRate.rate | number : "1.2-2" }}
         {{ currentCurrency.currencyTo }}
       </h2>
       <div class="converterofdate">

@@ -7,3 +7,27 @@ hr {
   width: 90%;
   align-self: center;
 }
+
+.currencyPanel {
+  width: 30%;
+  border-radius: 0.375rem;
+  padding: 5px;
+  background-color: rgb(179, 138, 138);
+  color: rgb(20, 11, 11);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.adminPanel {
+  width: 30%;
+  border-radius: 0.375rem;
+  padding: 5px;
+  background-color: rgb(122, 57, 57);
+  color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+button:hover {
+  background-color: rgb(155, 148, 141);
+  font-weight: bold;
+}

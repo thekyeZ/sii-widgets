@@ -11,7 +11,7 @@ export class CurrenciesComponent {
   // @Input() currencies: string[] = [];
   @Input() exchange!: Exchange[];
 
-  constructor(public selectedCurrencyService: SelectedCurrencyIdService) {}
+  constructor(private selectedCurrencyService: SelectedCurrencyIdService) {}
 
   setSelectedCurrency(index: number) {
     this.selectedCurrencyService.selectedCurrency.next({

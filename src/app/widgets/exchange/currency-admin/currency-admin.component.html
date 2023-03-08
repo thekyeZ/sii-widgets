@@ -1,0 +1,29 @@
+<div class="register-form">
+  <br />
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-row align-items-center">
+      <div class="col-sm-3 my-1">
+        <select
+          id="defaultCurrency"
+          class="form-select"
+          aria-label="Default select example"
+        >
+          <option
+            class="item"
+            *ngFor="let pairs of exchange | slice : 0 : 10; let i = index"
+            [ngModel]=""
+          >
+            {{ pairs.currencyFrom }}
+            -
+            {{ pairs.currencyTo }}
+          </option>
+        </select>
+      </div>
+
+      <br />
+      <div class="col-auto my-1">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
