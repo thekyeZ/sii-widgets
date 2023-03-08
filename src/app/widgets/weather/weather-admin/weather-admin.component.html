@@ -1,12 +1,15 @@
-<div class="weather-admin">
-    <img src="../assets/cloud-sun.png" alt=""/>
-    <h5>Type a City Name</h5>
-    <input type="text" placeholder="Check the weather for...">
-    <h5>Select Units</h5>
-    <div>
-        <button><img src="../assets/thermometer.png" alt=""/>C</button>
-        or 
-        <button><img src="../assets/thermometer.png" alt=""/>F</button>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="weather-admin">
+        <img src="../assets/cloud-sun.png" alt=""/>
+        <label for="city">Type a City Name</label>
+        <input type="text" id="city" placeholder="Check the weather for..." [ngModel]=" 'Kraków' " name="city" required>
+        <label for="units">Select Units</label>
+        <div>
+        <img src="../assets/thermometer.png" alt=""/><select id="units" [ngModel]=" 'C' " name="units">
+            <option value="C">C</option>
+            <option value="F">F</option>
+        </select>
+        </div>
+        <button class="button-submit" type="submit" [disabled]="!f.valid">Submit</button>
     </div>
-    <button class="button-submit" routerLink="/">Submit</button>
-</div>
+</form>
