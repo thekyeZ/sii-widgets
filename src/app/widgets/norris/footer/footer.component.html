@@ -9,7 +9,7 @@
   >
     <option value="">random</option>
     <option
-      *ngFor="let singleCategoryName of listOfCategories$ | async; index as i"
+      *ngFor="let singleCategoryName of listOfCategories$ | async ; index as i"
       [value]="singleCategoryName"
     >
       {{ singleCategoryName }}

@@ -9,7 +9,7 @@ import { selectedMemService } from "./selectedMemObservable.service";
 export class MemHttpService {
   constructor(
     private http: HttpClient,
-    private selectedMemService: selectedMemService
+    private memService: selectedMemService
   ) {}
 
   apiForSelectedCategory: string = "https://api.chucknorris.io/jokes/random?category=";
@@ -17,12 +17,15 @@ export class MemHttpService {
 
   requestForApi() {
     // choose this api if user select random cathegory (selectValue = "random")
-          if (this.selectedMemService.selectedCategory.value === "") {
+          if (this.memService.selectedCategory.value === "") {
               return this.http.get<Post>(`${this.apiForRandomCategory}`);
+
+
     } else {
+      
   // choose this api if user select other cathegory (selectValue = "selectCathegory")
            return this.http.get<Post>(
-              `${this.apiForSelectedCategory}${this.selectedMemService.selectedCategory.value}`
+              `${this.apiForSelectedCategory}${this.memService.selectedCategory.value}`
       );
     }
   }
