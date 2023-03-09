@@ -12,10 +12,10 @@ import { CryptoService } from "../crypto.service";
 })
 export class CryptoAdminComponent implements OnInit {
   crypto: CryptoModel[] = [];
-  cryptoSelect = "";
+  cryptoSelect: string = "";
 
   form = new FormGroup({
-    cryptos: new FormControl(this.crypto),
+    cryptos: new FormControl(""),
   });
 
   constructor(
@@ -24,9 +24,11 @@ export class CryptoAdminComponent implements OnInit {
     private cryptoService: CryptoService
   ) {}
 
-  onAccept(formData: any) {
-    this.cryptoIdService.favCrypto.next(formData);
-    console.log(this.cryptoSelect);
+  onAccept() {
+    const selectedCrypto = this.form.get("cryptos")?.value;
+    if (selectedCrypto) {
+      this.cryptoIdService.favCrypto.next(selectedCrypto);
+    }
     this.router.navigate([""]);
   }
 

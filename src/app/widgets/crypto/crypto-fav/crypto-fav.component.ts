@@ -10,8 +10,7 @@ import { CryptoService } from "../crypto.service";
 })
 export class CryptoFavComponent {
   crypto: CryptoModel[] = [];
-  favCrypto!: number;
-  selectedFavCrypto = [];
+  selectedFavCrypto: CryptoModel | undefined;
 
   constructor(
     private cryptoService: CryptoService,
@@ -22,8 +21,12 @@ export class CryptoFavComponent {
     this.cryptoService
       .fetchCryptoItem()
       .subscribe((cryptoItems) => (this.crypto = cryptoItems));
-    this.cryptoIdService.favCrypto.subscribe((formData) => {
-      this.selectedFavCrypto = formData;
+    this.cryptoIdService.favCrypto.subscribe((selectedCryptoId) => {
+      this.cryptoService
+        .fetchCryptoDetails(selectedCryptoId)
+        .subscribe((cryptoItem) => {
+          this.selectedFavCrypto = cryptoItem;
+        });
     });
   }
 }

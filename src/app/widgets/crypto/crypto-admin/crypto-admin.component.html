@@ -11,27 +11,32 @@
   <div class="card-body">
     <h5 class="card-title">Here you can set your preferences</h5>
     <div class="mb-3">
-      <form [formGroup]="form">
+      <form [formGroup]="form" (ngSubmit)="onAccept()">
         <label for="name" class="form-label"
           >Select your favourite crypto:
         </label>
         <select
           name="cryptoSelect"
-          [(ngModel)]="cryptoSelect"
           class="form-select"
           formControlName="cryptos"
         >
-          <option *ngFor="let crypto of crypto; index as i" [ngValue]="crypto">
+          <option
+            *ngFor="let crypto of crypto; index as i"
+            [ngValue]="crypto.id"
+          >
             {{ i + 1 }}.{{ crypto.name }}
           </option>
         </select>
-        <p>Form Value: {{ form.value | json }}</p>
-        <button class="btn btn-success" (click)="onAccept(form.value)">
-          Accept
-        </button>
-        <button class="btn btn-danger float-end" (click)="onDecline()">
-          Decline
-        </button>
+        <div class="buttons">
+          <button class="btn btn-success" type="submit">Accept</button>
+          <button
+            class="btn btn-danger float-end"
+            type="button"
+            (click)="onDecline()"
+          >
+            Decline
+          </button>
+        </div>
       </form>
     </div>
   </div>
