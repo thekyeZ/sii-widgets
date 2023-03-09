@@ -10,7 +10,7 @@ import { CryptoService } from "../crypto.service";
 })
 export class CryptoFavComponent {
   crypto: CryptoModel[] = [];
-  selectedFavCrypto: CryptoModel | undefined;
+  selectedFavCrypto!: CryptoModel;
 
   constructor(
     private cryptoService: CryptoService,

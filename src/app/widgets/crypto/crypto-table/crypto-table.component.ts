@@ -1,5 +1,5 @@
 import { Component, Injectable, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { CryptoIdService } from "../crypto-id.service";
 import { CryptoModel } from "../crypto.model";
 import { CryptoService } from "../crypto.service";
@@ -16,7 +16,8 @@ export class CryptoTableComponent implements OnInit {
   constructor(
     private cryptoService: CryptoService,
     private cryptoIdService: CryptoIdService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   selectedItem(i: number) {

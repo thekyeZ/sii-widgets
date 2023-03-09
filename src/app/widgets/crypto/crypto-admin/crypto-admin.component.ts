@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
 import { CryptoIdService } from "../crypto-id.service";
@@ -13,10 +13,7 @@ import { CryptoService } from "../crypto.service";
 export class CryptoAdminComponent implements OnInit {
   crypto: CryptoModel[] = [];
   cryptoSelect: string = "";
-
-  form = new FormGroup({
-    cryptos: new FormControl(""),
-  });
+  form!: FormGroup;
 
   constructor(
     private cryptoIdService: CryptoIdService,
@@ -37,6 +34,10 @@ export class CryptoAdminComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.form = new FormGroup({
+      cryptos: new FormControl(null),
+    });
+
     this.cryptoService
       .fetchCryptoItem()
       .subscribe((cryptoItems) => (this.crypto = cryptoItems));
