@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <form>
         <div id="user-data">
           <div class="form-group">
             <label for="defaultBusStop">Choose the ID of your default bus stop:</label>
@@ -9,12 +9,11 @@
               type="select"
               id="defaultBusStop"
               class="form-control"
-              [(ngModel)]="defaultBusStop"
               name="defaultBusStop"
             />
           </div>
         </div>
-        <a (click)="onSubmit(f)">
+        <a (click)="onSubmit()">
           <img
             src="https://img.icons8.com/bubbles/256/checked-checkbox.png"
             alt="Icon of settings"

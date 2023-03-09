@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { BusArrivalsService } from "../../services-buses/bus-arrivals.service";
+import { FetchBusArrivalsService } from "../../services-buses/fetch-bus-arrivals.service";
 import { busArrival } from "../../model-buses/busStop.model";
 import { SelectedBusStopService } from "../../services-buses/selected-bus-stop.service";
 
@@ -13,7 +13,7 @@ export class IncomingBusesComponent {
   busStopSelected: boolean = false;
 
   constructor(
-    private busArrivalsService: BusArrivalsService,
+    private fetchBusArrivalsService: FetchBusArrivalsService,
     private selectedBusStopService: SelectedBusStopService
   ) {}
 
@@ -21,7 +21,7 @@ export class IncomingBusesComponent {
     this.selectedBusStopService.selectedBusStop.subscribe((id) => {
       if (id) {
         this.busStopSelected = true;
-        this.busArrivalsService.fetchBusArrivals(id).subscribe((data) => {
+        this.fetchBusArrivalsService.fetchBusArrivals(id).subscribe((data) => {
           this.busArrivalsData = Object.values(data);
         });
       } else {

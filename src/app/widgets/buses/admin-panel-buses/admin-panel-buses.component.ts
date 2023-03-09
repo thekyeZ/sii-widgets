@@ -1,6 +1,7 @@
-import { Component } from "@angular/core";
-import { NgForm } from "@angular/forms";
+import { Component, OnInit } from "@angular/core";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { busStopNames } from "../model-buses/busStop.model";
 import { SelectedBusStopService } from "../services-buses/selected-bus-stop.service";
 
 @Component({
@@ -16,9 +17,7 @@ export class AdminPanelBusesComponent {
     private selectedBusStopService: SelectedBusStopService
   ) {}
 
-  onSubmit(form: NgForm) {
-    const defaultBusStop = form.value.defaultBusStop;
-    this.selectedBusStopService.updateSelectedBusStop(defaultBusStop);
+  onSubmit() {
     this.router.navigate([""]);
   }
 }

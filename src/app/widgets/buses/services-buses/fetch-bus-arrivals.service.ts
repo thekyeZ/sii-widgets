@@ -6,7 +6,7 @@ import { busArrivals } from "../model-buses/busStop.model";
 @Injectable({
   providedIn: "root",
 })
-export class BusArrivalsService {
+export class FetchBusArrivalsService {
   constructor(private http: HttpClient) {}
 
   fetchBusArrivals(id: string): Observable<busArrivals> {

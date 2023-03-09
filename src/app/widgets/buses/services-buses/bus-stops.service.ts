@@ -1,17 +1,13 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
-import { busStopNames } from "../model-buses/busStop.model";
+import { Injectable } from '@angular/core';
+import { busStopNames } from '../model-buses/busStop.model';
+import { FetchBusStopsService } from './fetch-bus-stops.service';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root'
 })
 export class BusStopsService {
-  constructor(private http: HttpClient) {}
+  private busStops: busStopNames = [];
 
-  fetchBusStops(): Observable<busStopNames> {
-    return this.http.get<busStopNames>(
-      "https://poland-public-transport.konhi.workers.dev/v1/zielonagora/mzk/stops"
-    );
-  }
+  constructor(private fetchBusStopsService: FetchBusStopsService) {}
+
 }

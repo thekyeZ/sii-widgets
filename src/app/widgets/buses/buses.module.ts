@@ -10,9 +10,9 @@ import { AppRoutingModule } from "src/app/app-routing.module";
 import { PanelBusesComponent } from "./panel-buses/panel-buses.component";
 import { AdminPanelBusesComponent } from "./admin-panel-buses/admin-panel-buses.component";
 import { BusesRoutingModule } from "./buses-routing.module";
-import { FormsModule } from "@angular/forms";
 import { OnlyUpperCase } from "./pipes-buses/onlyUpperCase.pipe";
 import { NoRepeatsPipe } from "./pipes-buses/noRepeats.pipe";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { NoRepeatsPipe } from "./pipes-buses/noRepeats.pipe";
     HttpClientModule,
     AppRoutingModule,
     BusesRoutingModule,
-    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [BusesComponent],
 })
