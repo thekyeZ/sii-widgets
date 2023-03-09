@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CitiesData} from './shared/cities-data.model';
+// import { CitiesData} from './shared/cities-data.model';
 import { SelectedCityService } from './shared/selected-city.service';
 
 @Component({
@@ -16,7 +16,6 @@ export class WeatherAdminComponent implements OnInit {
   cities = ['Kraków', 'Gdańsk', 'Warszawa'];
   i!: number;
 
-
   constructor(
     private router: Router,
     private selectedCityService: SelectedCityService,
@@ -24,15 +23,20 @@ export class WeatherAdminComponent implements OnInit {
 
   ngOnInit(): void {
     this.adminForm = new FormGroup({
-      'city': new FormControl('Kraków', Validators.required),
+      // 'city': new FormControl(this.selectedCity, Validators.required),
       'unit': new FormControl('C', Validators.required),
     });
     this.selectedCityService.selectedCity.subscribe(selectedCityFromService => this.selectedCity = selectedCityFromService);
+
+  }
+
+  onSelectedCity(i: number) {
+    this.selectedCityService.selectedCity.next(i);
+    console.log(this.selectedCity);
   }
 
   onSubmit() {
     console.log(this.adminForm.value);
-    // this.selectedCityService.selectedCity.next(i);
     this.router.navigate(['/']);
 
   }

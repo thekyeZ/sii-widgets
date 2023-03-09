@@ -6,9 +6,11 @@
         <img src="../assets/cloud-sun.png" alt=""/>
         <label for="city">Type a City Name</label>
             <div class="select-city">
-                <select id="city" formControlName="city" placeholder="Check the weather for...">
-                    <option *ngFor="let city of cities; index as i">{{ cities[i] }}</option>
-                </select>
+                <input type="text" (click)="onSelectedCity(i)" *ngFor="let city of cities; index as i" value="{{ cities[i] }}">
+                <!-- <select id="city" formControlName="city">
+                    <option *ngFor="let city of cities; index as i" value="{{ cities[i] }}">{{ cities[i] }}</option>
+                </select> -->
+                <p>Check the weather for {{ cities[selectedCity] }}</p>
                 <span *ngIf="!adminForm.get('city')?.valid && adminForm.get('city')?.touched">Please, type a city name!</span>
             </div>
         <label for="units">Select Units</label>
@@ -20,6 +22,6 @@
                 </select>
             </div>
         <span *ngIf="!adminForm.get('unit')?.valid && adminForm.get('unit')?.touched">Please, select units</span>
-        <button class="button-submit" type="submit" [disabled]="!adminForm.valid" >Submit</button>
+        <button class="button-submit" type="submit" [disabled]="!adminForm.valid">Submit</button>
     </div>
 </form>
