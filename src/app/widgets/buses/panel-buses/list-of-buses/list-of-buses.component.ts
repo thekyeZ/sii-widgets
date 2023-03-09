@@ -18,9 +18,9 @@ export class ListOfBusesComponent {
 
   ngOnInit() {}
 
-  findUpperCaseNames(busStops: busStopNames) {
-    return this.upperCaseBusStopsService.findUpperCaseNames(busStops);
-  }
+  // findUpperCaseNames(busStops: busStopNames) {
+  //   return this.upperCaseBusStopsService.findUpperCaseNames(busStops);
+  // }
 
   onClick(id: string) {
     this.selectedBusStopService.updateSelectedBusStop(id);

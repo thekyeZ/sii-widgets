@@ -5,17 +5,17 @@ import { busStopNames } from "../model-buses/busStop.model";
   providedIn: "root",
 })
 export class UpperCaseBusStopsService {
-  findUpperCaseNames(busStops: busStopNames) {
-    const upperCaseNames: busStopNames = [];
+  // findUpperCaseNames(busStops: busStopNames) {
+  //   const upperCaseNames: busStopNames = [];
 
-    if (busStops) {
-      for (const busStop of Object.values(busStops)) {
-        const name = busStop.name;
-        if (name === name.toUpperCase()) {
-          upperCaseNames.push(busStop);
-        }
-      }
-    }
-    return upperCaseNames;
-  }
+  //   if (busStops) {
+  //     for (const busStop of Object.values(busStops)) {
+  //       const name = busStop.name;
+  //       if (name === name.toUpperCase()) {
+  //         upperCaseNames.push(busStop);
+  //       }
+  //     }
+  //   }
+  //   return upperCaseNames;
+  // }
 }

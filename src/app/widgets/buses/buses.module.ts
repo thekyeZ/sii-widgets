@@ -11,6 +11,7 @@ import { PanelBusesComponent } from "./panel-buses/panel-buses.component";
 import { AdminPanelBusesComponent } from "./admin-panel-buses/admin-panel-buses.component";
 import { BusesRoutingModule } from "./buses-routing.module";
 import { FormsModule } from "@angular/forms";
+import { OnlyUpperCase } from "./pipes-buses/onlyUpperCase.pipe";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FormsModule } from "@angular/forms";
     SettingsBusesComponent,
     PanelBusesComponent,
     AdminPanelBusesComponent,
+    OnlyUpperCase
   ],
   imports: [
     CommonModule,
