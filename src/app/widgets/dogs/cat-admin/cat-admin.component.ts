@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BreedService } from '../breeds/breeds.service';
+import { SelectedBreedService } from '../breeds/selected-breed.service';
 
 @Component({
   selector: 'app-cat-admin',
@@ -10,21 +11,17 @@ import { BreedService } from '../breeds/breeds.service';
 })
 export class CatAdminComponent implements OnInit{
   catForm: FormGroup = new FormGroup({
-    'idCat': new FormControl(null, Validators.required)
+    'idCat': new FormControl(null, [Validators.required])
   });
 
 constructor(
   private router: Router,
-  private breedsService: BreedService
+  private selectedBreed: SelectedBreedService
 ) {}
 
 onSubmit(){
-  console.log(this.catForm.value.idCat);
-
-  this.breedsService.breedSelected.next(this.catForm.value.idCat)
-  
-console.log(this.breedsService.breedSelected.value);
-this.router.navigate([""]);
+  this.selectedBreed.breedSelected.next(this.catForm.value.idCat)  
+  this.router.navigate([""]);
 }
 
 ngOnInit() {

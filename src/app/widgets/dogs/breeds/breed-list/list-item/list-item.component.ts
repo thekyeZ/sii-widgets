@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Cat } from '../../../interfaces/cat';
 import { BreedService } from '../../breeds.service';
+import { SelectedBreedService } from '../../selected-breed.service';
 
 @Component({
   selector: 'app-list-item',
@@ -11,9 +12,10 @@ export class ListItemComponent {
   @Input()
   cat!: Cat;
 
-  constructor(private breedService: BreedService) { }
+  constructor(private breedService: BreedService,
+    private selectedBreed: SelectedBreedService) { }
 
   onSelected(id: string) {
-    this.breedService.breedSelected.next(id);
+    this.selectedBreed.breedSelected.next(id);
   }
 }

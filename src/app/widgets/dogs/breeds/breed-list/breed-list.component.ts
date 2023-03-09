@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, EventEmitter, OnInit} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Cat } from '../../interfaces/cat';
 import { BreedService } from '../breeds.service';
 

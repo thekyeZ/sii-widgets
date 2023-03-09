@@ -10,11 +10,9 @@ export class BreedService implements OnInit {
 
   breedsCats: Cat[] = [];
 
-  breedSelected = new BehaviorSubject('abys');
-
   constructor(
     private httpclient: HttpClient,
-  ) { }
+  ) {}
 
   httpOptions = {
     headers: new HttpHeaders({

@@ -111,6 +111,18 @@ this.weight=weight;
 this.wikipedia_url= wikipedia_url;}
 }
 
+export class CatGallery {
+    public id: string;
+    public url: string;
+    public width: number;
+    public height: number;
+constructor(id: string, url: string, width: number, height: number,) {
+    this.id = id;
+    this.url = url;
+    this.width= width;
+    this.height=height
+   
+}}
 
 export interface Cats {
     number: number;

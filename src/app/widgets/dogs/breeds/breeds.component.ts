@@ -1,7 +1,7 @@
-
 import { Component, OnInit } from '@angular/core';
 import { Cat } from '../interfaces/cat';
 import { BreedService } from './breeds.service';
+import { SelectedBreedService } from './selected-breed.service';
 
 @Component({
   selector: 'app-breeds',
@@ -12,14 +12,15 @@ import { BreedService } from './breeds.service';
 export class BreedsComponent implements OnInit {
 
   selectedBreed!: Cat;
-  
+
   title: string = 'breed list';
 
   constructor(private breedService: BreedService,
+    private selectedBreedS: SelectedBreedService
   ) { }
 
   ngOnInit() {
-    this.breedService.breedSelected.subscribe(
+    this.selectedBreedS.breedSelected.subscribe(
       (id: string) => {
         this.breedService.getBreed(id).subscribe(
           (cat) => {

@@ -1,35 +1,26 @@
-
 <ul class="nav navigation">
   <div class="nav">
     <li class="nav-item">
-    Admin panel
+      Admin panel
     </li>
   </div>
   <div>
-    <img src="/assets/img/reject.png" alt="admin panel" routerLink="/cat/breeds" class="icon"/>
+    <img src="/assets/img/reject.png" alt="admin panel" routerLink="/cat/breeds" class="icon" />
   </div>
-  </ul>
-  <hr/>
+</ul>
+<hr />
 
 <form [formGroup]="catForm" (ngSubmit)="onSubmit
 ()">
-<div class="form-group mb-3">
-  <label for="idInput">Set as default</label>
-  <input
-  type="text"
-  id="idCat"
-  formControlName="idCat"
-  class="form-control"
-  >
+  <div class="form-group mb-3">
+    <label for="idInput">Set as default</label>
+    <input type="text" id="idCat" formControlName="idCat" class="form-control">
 
-  <!-- to use span disable the strict mode -->
-  <span
-  *ngIf="!catForm.get('idCat')!.valid && catForm.get('idCat')!.touched"
-  class="help-block">
-  Please enter a cat id 
-</span>
-   
-</div>
+    <span *ngIf="!catForm.get('idCat')!.valid && catForm.get('idCat')!.touched" class="help-block">
+      Please enter a cat id
+    </span>
 
-<button type="submit" class="btn btn-light">Submit</button>
+  </div>
+
+  <button type="submit" class="btn btn-light">Submit</button>
 </form>
