@@ -7,18 +7,13 @@ import { MemHttpService } from "./services/mem-http.service";
   styleUrls: ["./norris.component.scss"],
 })
 export class NorrisComponent implements OnInit {
-  memToDispFromHttpCall: string;
+  memToDispFromHttpCall?: string;
 
-  // call http request from MemHttpService
+  // call http request from MemHttpService, if user click button ("losuj") call http request from MemHttpService
   requestHttp() {
     this.memService.requestForApi().subscribe((results) => {
       this.memToDispFromHttpCall = results.value;
     });
-  }
-
-  // if user click button ("losuj") call http request from MemHttpService
-  httpCallToDispNewMem(data) {
-    data = this.requestHttp();
   }
 
   // Load mem on page start

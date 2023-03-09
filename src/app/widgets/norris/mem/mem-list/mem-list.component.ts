@@ -6,8 +6,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
   styleUrls: ["./mem-list.component.scss"],
 })
 export class MemListComponent implements OnInit {
-  @Output() httpReqToNorrisComp = new EventEmitter<string>();
-  @Input() loadMemOnPage;
+  @Output() httpReqToNorrisComp = new EventEmitter<Request>();
+  @Input() loadMemOnPage?: string;
 
   sendData() {
     this.httpReqToNorrisComp.emit();

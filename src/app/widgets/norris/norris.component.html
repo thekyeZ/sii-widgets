@@ -5,7 +5,7 @@
 <app-mem-list
   *ngIf="requestHttp"
   [loadMemOnPage]="memToDispFromHttpCall"
-  (httpReqToNorrisComp)="httpCallToDispNewMem($event)"
+  (httpReqToNorrisComp)="requestHttp()"
 >
 </app-mem-list>
 

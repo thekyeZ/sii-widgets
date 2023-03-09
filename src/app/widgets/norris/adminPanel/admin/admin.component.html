@@ -3,12 +3,12 @@
 
 
 <div class="ui segment">
-  Admin panel category {{user.category}} and id {{user.id}}
+  Admin panel category {{user?.category}} and id {{user?.id}}
 </div>
 
 <div class="ui segment">
 
-  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="simpleForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label class="categoryName" for="categoryName">Category</label>
       <input
@@ -16,17 +16,16 @@
         id="categoryName"
         name="categoryName"
         class="form-control"
-        formControlName="categoryName"
-        >
+        formControlName="categoryName">
         <span class="help-block"
-            *ngIf="signupForm.get('categoryName')?.errors?.['nameIsForbidden'] && signupForm.touched"
+            *ngIf="simpleForm?.get('categoryName')?.errors?.['nameIsForbidden'] && simpleForm?.touched"
             > Please enter valid category name: 
             animal, career, celebrity, dev, explicit, fashion, food, history, money, movie, music, political, religion, science, sport, travel </span>
 <br>
 <br>
 
           <span class="help-block"
-              *ngIf="signupForm.get('categoryName')?.errors?.['noSpaceAllowed']">
+              *ngIf="simpleForm?.get('categoryName')?.errors?.['noSpaceAllowed']">
                   Category name cannot contain space 
         </span>
 
@@ -35,7 +34,7 @@
     </div>
     <button 
     class="btn btn-primary" type="submit"
-    [disabled]="signupForm.get('categoryName').invalid   "
+    [disabled]="simpleForm?.get('categoryName')?.invalid   "
     
     >Save</button>
     <br>
