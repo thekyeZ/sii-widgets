@@ -18,7 +18,7 @@ export class PanelBusesComponent {
 
   ngOnInit(): void {
     this.busStopsService
-      .getBusStops()
+      .fetchBusStops()
       .subscribe((busStops) => (this.busStops = busStops));
   }
   onOpenSettings() {

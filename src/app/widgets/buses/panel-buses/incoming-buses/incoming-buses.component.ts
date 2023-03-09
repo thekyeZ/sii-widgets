@@ -18,7 +18,7 @@ export class IncomingBusesComponent {
 
   ngOnInit() {
     this.selectedBusStopService.selectedBusStop.subscribe((id) => {
-      this.busArrivalsService.getBusArrivals(id).subscribe((data) => {
+      this.busArrivalsService.fetchBusArrivals(id).subscribe((data) => {
         this.busArrivalsData = Object.values(data);
       });
     });

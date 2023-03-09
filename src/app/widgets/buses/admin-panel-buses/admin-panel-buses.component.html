@@ -4,12 +4,12 @@
       <form (ngSubmit)="onSubmit(f)" #f="ngForm">
         <div id="user-data">
           <div class="form-group">
-            <label for="username">Choose your default bus stop:</label>
+            <label for="defaultBusStop">Choose the ID of your default bus stop:</label>
             <input
-              type="text"
+              type="select"
               id="defaultBusStop"
               class="form-control"
-              ngModel
+              [(ngModel)]="defaultBusStop"
               name="defaultBusStop"
             />
           </div>

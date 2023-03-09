@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
+import { SelectedBusStopService } from "../services-buses/selected-bus-stop.service";
 
 @Component({
   selector: "app-admin-panel-buses",
@@ -8,10 +9,16 @@ import { Router } from "@angular/router";
   styleUrls: ["./admin-panel-buses.component.scss"],
 })
 export class AdminPanelBusesComponent {
-  constructor(private router: Router) {}
+  defaultBusStop!: string;
+
+  constructor(
+    private router: Router,
+    private selectedBusStopService: SelectedBusStopService
+  ) {}
 
   onSubmit(form: NgForm) {
-    console.log(form);
+    const defaultBusStop = form.value.defaultBusStop;
+    this.selectedBusStopService.updateSelectedBusStop(defaultBusStop);
     this.router.navigate([""]);
   }
 }

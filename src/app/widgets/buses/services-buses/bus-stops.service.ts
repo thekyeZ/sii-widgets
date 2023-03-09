@@ -9,7 +9,7 @@ import { busStopNames } from "../model-buses/busStop.model";
 export class BusStopsService {
   constructor(private http: HttpClient) {}
 
-  getBusStops(): Observable<busStopNames> {
+  fetchBusStops(): Observable<busStopNames> {
     return this.http.get<busStopNames>(
       "https://poland-public-transport.konhi.workers.dev/v1/zielonagora/mzk/stops"
     );

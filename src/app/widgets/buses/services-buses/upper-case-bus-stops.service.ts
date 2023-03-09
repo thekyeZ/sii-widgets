@@ -5,7 +5,7 @@ import { busStopNames } from "../model-buses/busStop.model";
   providedIn: "root",
 })
 export class UpperCaseBusStopsService {
-  getUpperCaseNames(busStops: busStopNames) {
+  findUpperCaseNames(busStops: busStopNames) {
     const upperCaseNames: busStopNames = [];
 
     if (busStops) {
