@@ -1,7 +1,7 @@
 <div class="container">
   <ul
     class="list-group list-group-horizontal"
-    *ngIf="busArrivalsData.length > 0 else noDepartures"
+    *ngIf="busArrivalsData.length > 0; else noDepartures"
   >
     <li *ngFor="let departure of busArrivalsData" class="list-group-item">
       {{ departure.time }} - {{ departure.line }}
@@ -10,7 +10,10 @@
 </div>
 <ng-template #noDepartures>
   <div class="no-departures">
-    <p>There are no departures for the selected bus stop.</p>
+    <p>
+      There're currently no departures for the selected bus stop. <br />
+      We apologize for the inconvenience.
+    </p>
     <img
       src="https://img.icons8.com/cute-clipart/256/cancel-2.png"
       alt="Icon of a unavailable sign"

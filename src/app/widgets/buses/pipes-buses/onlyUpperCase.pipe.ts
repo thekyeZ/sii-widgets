@@ -1,11 +1,11 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { busStopName } from "../model-buses/busStop.model";
+import { busStopNames } from "../model-buses/busStop.model";
 
 @Pipe({
   name: "onlyuppercase",
 })
 export class OnlyUpperCase implements PipeTransform {
-  transform(values: busStopName[]): busStopName[] {
+  transform(values: busStopNames): busStopNames {
     if (!values) {
       return [];
     }
