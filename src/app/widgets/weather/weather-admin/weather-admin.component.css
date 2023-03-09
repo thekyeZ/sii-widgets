@@ -31,6 +31,9 @@
 .weather-admin input,
 .weather-admin select,
 .weather-admin button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   border-radius: 0.5rem;
   background: none;
@@ -55,6 +58,8 @@
 .weather-admin .select-city span {
   display: flex;
   justify-content: center;
+  color: #9a7852;
+  font-weight: bold;
 }
 .weather-admin .select-units {
   display: flex;
@@ -71,10 +76,6 @@
 .weather-admin .select-units option option {
   background-color: #9fab95;
   border: none;
-}
-.weather-admin .select-units select option :hover,
-.weather-admin .select-units option option :hover {
-  background-color: red;
 }
 .weather-admin .select-units img {
   margin: 0;

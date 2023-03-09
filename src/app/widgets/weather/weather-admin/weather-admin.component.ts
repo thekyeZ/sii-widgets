@@ -16,7 +16,7 @@ export class WeatherAdminComponent implements OnInit {
 
   ngOnInit() {
     this.adminForm = new FormGroup({
-      'city': new FormControl(null, Validators.required),
+      'city': new FormControl('Kraków', Validators.required),
       'unit': new FormControl('C', Validators.required),
     });
   }
