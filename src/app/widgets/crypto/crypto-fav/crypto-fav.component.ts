@@ -11,6 +11,7 @@ import { CryptoService } from "../crypto.service";
 export class CryptoFavComponent {
   crypto: CryptoModel[] = [];
   favCrypto!: number;
+  selectedFavCrypto = [];
 
   constructor(
     private cryptoService: CryptoService,
@@ -21,8 +22,8 @@ export class CryptoFavComponent {
     this.cryptoService
       .fetchCryptoItem()
       .subscribe((cryptoItems) => (this.crypto = cryptoItems));
-    this.cryptoIdService.favCrypto.subscribe((i) => {
-      this.favCrypto = i;
+    this.cryptoIdService.favCrypto.subscribe((formData) => {
+      this.selectedFavCrypto = formData;
     });
   }
 }

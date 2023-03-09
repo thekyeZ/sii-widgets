@@ -11,8 +11,8 @@ import { CryptoService } from "../crypto.service";
   styleUrls: ["./crypto-admin.component.scss"],
 })
 export class CryptoAdminComponent implements OnInit {
-  @ViewChild("input") inputName: any;
   crypto: CryptoModel[] = [];
+  cryptoSelect = "";
 
   form = new FormGroup({
     cryptos: new FormControl(this.crypto),
@@ -24,9 +24,10 @@ export class CryptoAdminComponent implements OnInit {
     private cryptoService: CryptoService
   ) {}
 
-  onAccept() {
+  onAccept(formData: any) {
+    this.cryptoIdService.favCrypto.next(formData);
+    console.log(this.cryptoSelect);
     this.router.navigate([""]);
-    this.inputName.nativeElement.value = "";
   }
 
   onDecline() {

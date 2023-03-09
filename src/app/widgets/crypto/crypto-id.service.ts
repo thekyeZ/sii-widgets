@@ -6,7 +6,7 @@ import { BehaviorSubject } from "rxjs";
 })
 export class CryptoIdService {
   selectedCrypto = new BehaviorSubject(0);
-  favCrypto = new BehaviorSubject(0);
+  favCrypto = new BehaviorSubject([]);
 
   constructor() {}
 }
