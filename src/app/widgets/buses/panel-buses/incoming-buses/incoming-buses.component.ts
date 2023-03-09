@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component } from "@angular/core";
 import { BusArrivalsService } from "../../services-buses/bus-arrivals.service";
 import { busArrival } from "../../model-buses/busStop.model";
 import { SelectedBusStopService } from "../../services-buses/selected-bus-stop.service";
@@ -10,6 +10,7 @@ import { SelectedBusStopService } from "../../services-buses/selected-bus-stop.s
 })
 export class IncomingBusesComponent {
   busArrivalsData: busArrival[] = [];
+  busStopSelected: boolean = false;
 
   constructor(
     private busArrivalsService: BusArrivalsService,
@@ -18,9 +19,15 @@ export class IncomingBusesComponent {
 
   ngOnInit() {
     this.selectedBusStopService.selectedBusStop.subscribe((id) => {
-      this.busArrivalsService.fetchBusArrivals(id).subscribe((data) => {
-        this.busArrivalsData = Object.values(data);
-      });
+      if (id) {
+        this.busStopSelected = true;
+        this.busArrivalsService.fetchBusArrivals(id).subscribe((data) => {
+          this.busArrivalsData = Object.values(data);
+        });
+      } else {
+        this.busStopSelected = false;
+        this.busArrivalsData = [];
+      }
     });
   }
 }

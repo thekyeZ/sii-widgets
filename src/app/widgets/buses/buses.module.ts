@@ -12,7 +12,7 @@ import { AdminPanelBusesComponent } from "./admin-panel-buses/admin-panel-buses.
 import { BusesRoutingModule } from "./buses-routing.module";
 import { FormsModule } from "@angular/forms";
 import { OnlyUpperCase } from "./pipes-buses/onlyUpperCase.pipe";
-import { NoRepeatsPipe } from "./pipes-buses/norepeats.pipe";
+import { NoRepeatsPipe } from "./pipes-buses/noRepeats.pipe";
 
 @NgModule({
   declarations: [

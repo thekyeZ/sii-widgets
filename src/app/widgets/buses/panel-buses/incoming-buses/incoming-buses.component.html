@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="busStopSelected">
   <ul
     class="list-group list-group-horizontal"
     *ngIf="busArrivalsData.length > 0; else noDepartures"
@@ -12,7 +12,8 @@
   <div class="no-departures">
     <p>
       There're currently no departures for the selected bus stop. <br />
-      Please check <a href="https://www.mzk.zgora.pl/">mzk.zgora.pl</a> for more informations. <br />
+      Please check <a href="https://www.mzk.zgora.pl/">mzk.zgora.pl</a> for more
+      informations. <br />
       We apologize for the inconvenience.
     </p>
   </div>
