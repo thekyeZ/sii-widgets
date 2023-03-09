@@ -7,21 +7,23 @@
       [routerLink]="['/']"
     />
   </div>
+
   <div class="card-body">
     <h5 class="card-title">Here you can set your preferences</h5>
     <div class="mb-3">
-      <label for="nameInput" class="form-label">Enter your fav crypto</label>
-      <input
-        #input
-        type="number"
-        class="form-control name"
-        placeholder="Your fav crytpo name"
-      />
-      <button class="btn btn-success" (click)="onAccept(value)">Accept</button>
-
-      <button class="btn btn-danger float-end" [routerLink]="['/']">
-        Decline
-      </button>
+      <form [formGroup]="form">
+        <label for="name" class="form-label">Select your fav crypto: </label>
+        <select class="form-select" formControlName="cryptos">
+          <option *ngFor="let crypto of crypto" [ngValue]="crypto">
+            {{ crypto.name }}
+          </option>
+        </select>
+        <p>Form Value: {{ form.value | json }}</p>
+        <button class="btn btn-success" (click)="onAccept()">Accept</button>
+        <button class="btn btn-danger float-end" (click)="onDecline()">
+          Decline
+        </button>
+      </form>
     </div>
   </div>
 </div>

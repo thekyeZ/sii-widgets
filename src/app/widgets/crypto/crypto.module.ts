@@ -8,6 +8,7 @@ import { CryptoAdminComponent } from "./crypto-admin/crypto-admin.component";
 import { CryptoRoutingModule } from "./crypto-routing.module";
 import { CryptoHomeComponent } from "./crypto-home/crypto-home.component";
 import { CryptoFavComponent } from "./crypto-fav/crypto-fav.component";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,12 @@ import { CryptoFavComponent } from "./crypto-fav/crypto-fav.component";
     CryptoHomeComponent,
     CryptoFavComponent,
   ],
-  imports: [CommonModule, HttpClientModule, CryptoRoutingModule],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    CryptoRoutingModule,
+    ReactiveFormsModule,
+  ],
   exports: [CryptoComponent],
 })
 export class CryptoModule {}
