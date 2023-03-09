@@ -46,6 +46,9 @@
 .weather-admin input, .weather-admin select {
   box-shadow: 0 0 0.5rem #616451;
 }
+.weather-admin button[disabled] {
+  opacity: 0;
+}
 .weather-admin .button-submit {
   margin: 0;
   font-weight: bold;
@@ -81,4 +84,7 @@
   margin: 0;
   padding: 0;
   max-height: 4rem;
+}
+.weather-admin input.ng-invalid.ng-touched {
+  border: 0.25rem solid #9a7852;
 }/*# sourceMappingURL=weather-admin.component.css.map */

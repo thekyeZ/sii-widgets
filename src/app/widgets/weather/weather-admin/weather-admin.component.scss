@@ -54,6 +54,10 @@
         box-shadow: 0 0 .5rem #616451;
     }
 
+    button[disabled] {
+        opacity: 0;
+    }
+
     .button-submit {
         margin: 0;
         font-weight: bold;
@@ -94,5 +98,9 @@
             padding: 0;
             max-height: 4rem;
         }
+    }
+
+    input.ng-invalid.ng-touched {
+        border: .25rem solid #9a7852;
     }
 }
