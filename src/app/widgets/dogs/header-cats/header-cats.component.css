@@ -7,4 +7,23 @@
 
 .nav-link:hover {
   color: #e6a6a6;
+}
+
+.icon {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.icon:hover {
+  height: 22px;
+  width: 22px;
+}
+
+.navigation {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
 }/*# sourceMappingURL=header-cats.component.css.map */

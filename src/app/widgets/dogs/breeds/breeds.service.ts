@@ -1,10 +1,11 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable, OnInit } from "@angular/core";
 import { Cat } from "../interfaces/cat";
-import { Subject } from "rxjs-compat";
 import { BehaviorSubject } from "rxjs/internal/BehaviorSubject";
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class BreedService implements OnInit {
 
   breedsCats: Cat[] = [];
@@ -26,7 +27,8 @@ export class BreedService implements OnInit {
   }
 
   getBreeds() {
-    return this.httpclient.get<Cat[]>('https://api.thecatapi.com/v1/breeds', { headers: this.httpOptions.headers })
+    return this.httpclient.get<Cat[]>('https://api.thecatapi.com/v1/breeds', { headers: this.httpOptions.headers 
+  }) 
   }
 
   getBreed(id: string) {

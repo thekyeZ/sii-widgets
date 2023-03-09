@@ -1,0 +1,14 @@
+.icon {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.navigation {
+  color: #79aabf;
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+}/*# sourceMappingURL=cat-admin.component.css.map */

@@ -6,12 +6,12 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { BreedDescriptionComponent } from './breeds/breed-description/breed-description.component';
 import { BreedListComponent } from './breeds/breed-list/breed-list.component';
 import { HeaderCatsComponent } from './header-cats/header-cats.component';
-import { FavoritesCatsComponent } from './favorites-cats/favorites-cats.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListItemComponent } from './breeds/breed-list/list-item/list-item.component';
 import { CatAdminComponent } from './cat-admin/cat-admin.component';
 import { DogRoutingModule } from './dog-routing.module';
+import { BreedDetailsComponent } from './breeds/breed-description/breed-details/breed-details.component';
 
 @NgModule({
   declarations: [
@@ -21,16 +21,17 @@ import { DogRoutingModule } from './dog-routing.module';
     BreedDescriptionComponent,
     BreedListComponent,
     HeaderCatsComponent,
-    FavoritesCatsComponent,
     ListItemComponent,
     CatAdminComponent,
+    BreedDetailsComponent,
 
   ],
   imports: [
     CommonModule,
     DogRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     DogsComponent

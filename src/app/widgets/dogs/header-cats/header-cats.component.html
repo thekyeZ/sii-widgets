@@ -1,13 +1,15 @@
-<ul class="nav justify-content-center">
+<ul class="nav navigation">
+  <div class="nav">
     <li class="nav-item">
       <a class="nav-link" routerLink="">Breeds</a>
     </li>
     <li class="nav-item">
       <a routerLink="/cat/gallery"class="nav-link" >Gallery</a>
     </li>
-
-    <li class="nav-item">
-      <a [routerLink]="['/cat/catadmin']" class="nav-link">cat-admin</a>
-    </li>
-   
+  </div>
+  <div>
+    <img src="/assets/img/gearcolor.png" alt="admin panel" routerLink="/cat/catadmin" class="icon"/>
+  </div>
   </ul>
+
+  <hr />

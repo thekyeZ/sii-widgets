@@ -1,0 +1,20 @@
+$text-color: #79aabf;
+$light-text-color: #e6a6a6;
+$background-beige: #EAE0DA;
+$background-yellow-beige: #F7F5EB;
+$text: #494949;
+
+.icon {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.navigation {
+    color: $text-color;
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+}

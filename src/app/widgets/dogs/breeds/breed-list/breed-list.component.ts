@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit} from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, OnInit} from '@angular/core';
 import { Cat } from '../../interfaces/cat';
 import { BreedService } from '../breeds.service';
 
@@ -15,10 +15,10 @@ breedsCats!: Cat[];
 constructor(private breedService: BreedService){}
 
 ngOnInit(){
-this.breedService.getBreeds().subscribe(breedApi => {        
-console.log(breedApi);
-this.breedsCats = breedApi;
-});
+  this.breedService.getBreeds().subscribe(breedApi => {        
+    console.log(breedApi);
+    this.breedsCats = breedApi;
+    });
 }
 
 

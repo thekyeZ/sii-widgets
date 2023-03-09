@@ -12,3 +12,21 @@ $background-yellow-beige: #F7F5EB;
 .nav-link:hover{
     color:$light-text-color;
 }
+
+.icon {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    background-color: transparent;
+}
+.icon:hover {
+    height: 22px;
+    width: 22px;
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+}

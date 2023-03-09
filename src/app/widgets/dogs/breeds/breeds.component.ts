@@ -9,25 +9,25 @@ import { BreedService } from './breeds.service';
   styleUrls: ['./breeds.component.scss'],
   providers: [BreedService],
 })
-export class BreedsComponent implements OnInit{
+export class BreedsComponent implements OnInit {
 
-selectedBreed!: Cat;
-title:string = 'breed list';
+  selectedBreed!: Cat;
   
-constructor(private breedService: BreedService,
-){}
+  title: string = 'breed list';
 
-ngOnInit(){
-  this.breedService.breedSelected.subscribe(
-    (id: string) => {
-      this.breedService.getBreed(id).subscribe(
-        (cat) => {
-          this.selectedBreed=cat;
-        }
-      )
-      
-    }
-  );
-};
+  constructor(private breedService: BreedService,
+  ) { }
+
+  ngOnInit() {
+    this.breedService.breedSelected.subscribe(
+      (id: string) => {
+        this.breedService.getBreed(id).subscribe(
+          (cat) => {
+            this.selectedBreed = cat;
+          }
+        )
+      }
+    );
+  };
 }
 
