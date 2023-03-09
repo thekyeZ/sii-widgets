@@ -1,23 +1,31 @@
 <div class="register-form">
   <br />
-  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <form [formGroup]="currencyForm" (ngSubmit)="onSubmit()">
     <div class="form-row align-items-center">
       <div class="col-sm-3 my-1">
         <select
-          id="defaultCurrency"
+          name="currencySelect"
           class="form-select"
-          aria-label="Default select example"
+          formControlName="pairs"
         >
           <option
             class="item"
             *ngFor="let pairs of exchange | slice : 0 : 10; let i = index"
-            [ngModel]=""
+            [ngValue]="pairs"
           >
             {{ pairs.currencyFrom }}
             -
             {{ pairs.currencyTo }}
           </option>
         </select>
+        <span
+          *ngIf="
+            !currencyForm.get('pairs')!.valid &&
+            currencyForm.get('pairs')!.touched
+          "
+          class="help-block"
+          >Please select the currencies!</span
+        >
       </div>
 
       <br />

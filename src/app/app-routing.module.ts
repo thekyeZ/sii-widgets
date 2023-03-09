@@ -2,7 +2,6 @@ import { CurrencyHomeComponent } from "./widgets/exchange/currency-home/currency
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { CurrencyAdminComponent } from "./widgets/exchange/currency-admin/currency-admin.component";
-import { HeaderComponent } from "./widgets/exchange/header/header.component";
 
 const routes: Routes = [
   { path: "", component: CurrencyHomeComponent },

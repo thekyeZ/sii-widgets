@@ -29,10 +29,10 @@
 
     <div class="converterofcurrency">
       <h2 *ngIf="currencyRate">
-        <!-- <img src="./assets/USD.png" width="50px" /> -->
         1
         {{ currentCurrency.currencyFrom }} =
         {{ currencyRate.rate | number : "1.2-2" }}
+
         {{ currentCurrency.currencyTo }}
       </h2>
       <div class="converterofdate">

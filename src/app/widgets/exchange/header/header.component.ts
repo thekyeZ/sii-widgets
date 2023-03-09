@@ -4,7 +4,7 @@ import {
   Rate,
   Rates,
 } from "./../interfaces/Currency";
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { SelectedCurrencyIdService } from "../services/selected-currency-id.service";
 import { CurrenciesService } from "../services/currenciesList.service";
 
@@ -14,8 +14,8 @@ import { CurrenciesService } from "../services/currenciesList.service";
   styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent implements OnInit {
-  @Input() exchange!: ExchangeResult;
-  @Input() rate!: Rates;
+  exchange!: ExchangeResult;
+  rate!: Rates;
 
   currentCurrency!: Exchange;
   currencyRate: Rate | null = null;

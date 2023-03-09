@@ -2,17 +2,13 @@ import { map } from "rxjs";
 import { Rates } from "./../interfaces/Currency";
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { ExchangeResult, Exchange } from "../interfaces/Currency";
-
-// import { SelectedCurrencyIdService } from "./selected-currency-id.service";
+import { ExchangeResult } from "../interfaces/Currency";
 
 @Injectable({
   providedIn: "root",
 })
 export class CurrenciesService {
   constructor(private http: HttpClient) {}
-
-  // currentCurrency: Exchange = {} as Exchange;
 
   private headers = new HttpHeaders({
     apikey: "AT7ksftGPKKmOKWkP6sh9RjBHzc4T4nT",
@@ -24,7 +20,7 @@ export class CurrenciesService {
         headers: this.headers,
       })
       .pipe(
-        map((exchangeResult: any) => {
+        map((exchangeResult) => {
           return exchangeResult.supportedPairs.map((currencies: any) => {
             return {
               currencyFrom: currencies.substring(0, 3),

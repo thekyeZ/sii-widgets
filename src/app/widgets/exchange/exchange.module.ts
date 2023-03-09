@@ -7,7 +7,6 @@ import { HeaderComponent } from "./header/header.component";
 import { CurrenciesComponent } from "./currencies/currencies.component";
 import { HttpClientModule } from "@angular/common/http";
 import { CurrencyListComponent } from "./currencies/currency-list/currency-list.component";
-import { CurrencyItemComponent } from "./currencies/currency-list/currency-item/currency-item.component";
 import { AppRoutingModule } from "src/app/app-routing.module";
 import { CurrencyAdminComponent } from "./currency-admin/currency-admin.component";
 import { CurrencyHomeComponent } from "./currency-home/currency-home.component";
@@ -18,7 +17,6 @@ import { CurrencyHomeComponent } from "./currency-home/currency-home.component";
     HeaderComponent,
     CurrenciesComponent,
     CurrencyListComponent,
-    CurrencyItemComponent,
     CurrencyAdminComponent,
     CurrencyHomeComponent,
   ],

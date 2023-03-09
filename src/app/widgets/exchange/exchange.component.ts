@@ -1,7 +1,6 @@
-import { SelectedCurrencyIdService } from "./services/selected-currency-id.service";
 import { CurrenciesService } from "./services/currenciesList.service";
 import { Exchange } from "./interfaces/Currency";
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 
 @Component({
@@ -14,13 +13,8 @@ export class ExchangeComponent {
   selectedCurrency!: number;
 
   exchange!: Exchange[];
-  // exchange: Exchange[] = [];
 
-  constructor(
-    // private selectedCurrencyService: SelectedCurrencyIdService,
-    // private currencyListService: CurrenciesService,
-    private router: Router
-  ) {}
+  constructor(private router: Router) {}
 
   navigateToCurrency() {
     this.router.navigate([""]);
@@ -28,13 +22,4 @@ export class ExchangeComponent {
   navigateToCurrency2() {
     this.router.navigate(["currency/admin"]);
   }
-
-  // ngOnInit(): void {
-  //   this.currencyListService
-  //     .requestCurrencies()
-  //     .subscribe((results) => (this.exchange = results));
-  //   this.selectedCurrencyService.selectedCurrency.subscribe((result) =>
-  //     console.log(result)
-  //   );
-  // }
 }
