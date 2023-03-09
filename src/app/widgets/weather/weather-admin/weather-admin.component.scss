@@ -36,6 +36,9 @@
     input,
     select,
     button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border: none;
         border-radius: .5rem;
         background: none;
@@ -64,6 +67,8 @@
         span {
             display: flex;
             justify-content: center;
+            color:  #9a7852;
+            font-weight: bold;
         }
     }
 
@@ -81,10 +86,6 @@
             option {
                 background-color: #9fab95;
                 border: none;
-
-                :hover {
-                    background-color: red;
-                }
             }
         }
 
