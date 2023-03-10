@@ -18,7 +18,6 @@
 .weather-admin label {
   margin-bottom: 0.5em;
 }
-.weather-admin input,
 .weather-admin select,
 .weather-admin button {
   margin: 0 0 0.5em 0;
@@ -28,7 +27,6 @@
 .weather-admin button {
   font-size: 1rem;
 }
-.weather-admin input,
 .weather-admin select,
 .weather-admin button {
   display: flex;
@@ -43,8 +41,17 @@
 .weather-admin button:hover {
   box-shadow: 0 0 0.5rem #616451;
 }
-.weather-admin input, .weather-admin select {
+.weather-admin select {
   box-shadow: 0 0 0.5rem #616451;
+}
+.weather-admin select,
+.weather-admin option {
+  margin: 0;
+  font-weight: bold;
+}
+.weather-admin select option,
+.weather-admin option option {
+  background-color: #9fab95;
 }
 .weather-admin button[disabled] {
   opacity: 0;
@@ -58,32 +65,28 @@
   display: flex;
   flex-direction: column;
 }
-.weather-admin .select-city span {
+.weather-admin .select-city .span-city {
   display: flex;
   justify-content: center;
   color: #9a7852;
   font-weight: bold;
+  margin-top: 1em;
 }
 .weather-admin .select-units {
   display: flex;
   align-items: center;
   gap: 0.5em;
-  margin-bottom: 2em;
-}
-.weather-admin .select-units select,
-.weather-admin .select-units option {
-  margin: 0;
-  font-weight: bold;
-}
-.weather-admin .select-units select option,
-.weather-admin .select-units option option {
-  background-color: #9fab95;
-  border: none;
+  margin-bottom: 1em;
 }
 .weather-admin .select-units img {
   margin: 0;
   padding: 0;
   max-height: 4rem;
+}
+.weather-admin .span-units {
+  margin-top: 0;
+  color: #9a7852;
+  font-weight: bold;
 }
 .weather-admin input.ng-invalid.ng-touched {
   border: 0.25rem solid #9a7852;

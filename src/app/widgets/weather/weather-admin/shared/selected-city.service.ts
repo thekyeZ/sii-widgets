@@ -5,5 +5,5 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class SelectedCityService {
-  selectedCity = new BehaviorSubject(2);
+  selectedCity = new BehaviorSubject(0);
 }

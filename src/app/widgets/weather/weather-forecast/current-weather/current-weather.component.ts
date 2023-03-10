@@ -8,6 +8,7 @@ import { CitiesData } from '../.././weather-admin/shared/cities-data.model';
   styleUrls: ['./current-weather.component.scss']
 })
 export class CurrentWeatherComponent {
+  cities = ['Kraków', 'Gdańsk', 'Warszawa'];
 
   @Input() weatherData!: WeatherData;
   @Input() selectedDay!: number;

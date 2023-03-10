@@ -14,7 +14,7 @@ export class WeatherAdminComponent implements OnInit {
   // citiesData!: CitiesData;
   selectedCity!: number;
   cities = ['Kraków', 'Gdańsk', 'Warszawa'];
-  i!: number;
+  // i!: number;
 
   constructor(
     private router: Router,
@@ -23,22 +23,15 @@ export class WeatherAdminComponent implements OnInit {
 
   ngOnInit(): void {
     this.adminForm = new FormGroup({
-      // 'city': new FormControl(this.selectedCity, Validators.required),
-      'unit': new FormControl('C', Validators.required),
+      'city': new FormControl(null, Validators.required),
+      'unit': new FormControl(null, Validators.required),
     });
     this.selectedCityService.selectedCity.subscribe(selectedCityFromService => this.selectedCity = selectedCityFromService);
-
-  }
-
-  onSelectedCity(i: number) {
-    this.selectedCityService.selectedCity.next(i);
-    console.log(this.selectedCity);
   }
 
   onSubmit() {
-    console.log(this.adminForm.value);
+    this.selectedCityService.selectedCity.next(this.adminForm.get('city')?.value);
     this.router.navigate(['/']);
-
   }
 
 }
