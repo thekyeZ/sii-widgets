@@ -5,15 +5,14 @@
     </li>
   </div>
   <div>
-    <img src="/assets/img/reject.png" alt="admin panel" routerLink="/cat/breeds" class="icon" />
+    <a routerLink="/cat/breeds"><img src="/assets/img/reject.png" alt="admin panel" class="icon" /></a>
   </div>
 </ul>
 <hr />
 
-<form [formGroup]="catForm" (ngSubmit)="onSubmit
-()">
+<form [formGroup]="catForm" (ngSubmit)="onSubmit()">
   <div class="form-group mb-3">
-    <label for="idInput">Set as default</label>
+    <label for="idCat">Set as default</label>
     <input type="text" id="idCat" formControlName="idCat" class="form-control">
 
     <span *ngIf="!catForm.get('idCat')!.valid && catForm.get('idCat')!.touched" class="help-block">
@@ -22,5 +21,7 @@
 
   </div>
 
-  <button type="submit" class="btn btn-light">Submit</button>
+  <button type="submit" class="btn btn-light" [disabled]="catForm.invalid">
+    Submit
+  </button>
 </form>
