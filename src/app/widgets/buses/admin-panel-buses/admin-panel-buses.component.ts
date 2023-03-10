@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { busStopNames } from "../model-buses/busStop.model";
 import { FetchBusStopsService } from "../services-buses/fetch-bus-stops.service";
@@ -12,6 +13,8 @@ import { SelectedBusStopService } from "../services-buses/selected-bus-stop.serv
 export class AdminPanelBusesComponent implements OnInit {
   busStops: busStopNames = [];
 
+  defaultBusStopForm!: FormGroup;
+
   constructor(
     private router: Router,
     private fetchBusStopsService: FetchBusStopsService,
@@ -22,14 +25,16 @@ export class AdminPanelBusesComponent implements OnInit {
     this.fetchBusStopsService
       .fetchBusStops()
       .subscribe((busStops) => (this.busStops = Object.values(busStops)));
-  }
 
-  onSelectBusStop(event: any) {
-    const id = event.target.value;
-    this.selectedBusStopService.updateSelectedBusStop(id);
+    this.defaultBusStopForm = new FormGroup({
+      defaultBusStop: new FormControl(null, Validators.required),
+    });
   }
 
   onSubmit() {
+    this.selectedBusStopService.updateSelectedBusStop(
+      this.defaultBusStopForm.value.defaultBusStop
+    );
     this.router.navigate([""]);
   }
 }
