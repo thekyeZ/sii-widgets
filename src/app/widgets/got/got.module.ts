@@ -16,6 +16,7 @@ import { CharactersComponent } from "./characters/characters.component";
 import { HomeGotComponent } from "./home-got/home-got.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { ReactiveFormsModule } from "@angular/forms";
+import { ListOfHousesComponent } from './houses/list-of-houses/list-of-houses.component';
 
 const appRoutes: Routes = [
   { path: "", component: HomeGotComponent },
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
     CharactersComponent,
     HomeGotComponent,
     PageNotFoundComponent,
+    ListOfHousesComponent,
   ],
   imports: [
     CommonModule,

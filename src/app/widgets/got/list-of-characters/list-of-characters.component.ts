@@ -28,7 +28,6 @@ export class ListOfCharactersComponent {
   //   console.log("Details from listing: ", character);
   // }
   listingEntryFavClicked(character: Character) {
-    //console.log("Favourite character: ", character);
     this.favCharacter = character;
     console.log("character: ", this.favCharacter);
   }
