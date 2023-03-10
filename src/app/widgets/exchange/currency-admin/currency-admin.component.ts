@@ -13,9 +13,6 @@ import { SelectedCurrencyIdService } from "../services/selected-currency-id.serv
 export class CurrencyAdminComponent implements OnInit {
   exchange!: Exchange[];
   currencyForm!: FormGroup;
-  currencySelect: string = "";
-
-  submitted = false;
 
   constructor(
     private selectedCurrencyService: SelectedCurrencyIdService,
@@ -25,7 +22,7 @@ export class CurrencyAdminComponent implements OnInit {
 
   ngOnInit(): void {
     this.currencyForm = new FormGroup({
-      pairs: new FormControl(null, [Validators.required]),
+      pairs: new FormControl(null, Validators.required),
     });
     this.currencyListService
       .requestCurrencies()
@@ -36,6 +33,8 @@ export class CurrencyAdminComponent implements OnInit {
   }
 
   onSubmit(): void {
+    // console.log(this.currencyForm.value);
+
     const selectedCurrency = this.currencyForm.get("pairs")?.value;
     if (selectedCurrency) {
       this.selectedCurrencyService.selectedCurrency.next(selectedCurrency);
