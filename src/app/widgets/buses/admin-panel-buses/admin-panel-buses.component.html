@@ -1,26 +1,34 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div>
+      <form [formGroup]="defaultBusStopForm" (ngSubmit)="(onSubmit)">
         <div id="user-data">
           <div class="form-group">
-            <label for="username">Choose your default bus stop:</label>
-            <input
-              type="text"
-              id="defaultBusStop"
+            <label for="defaultBusStop" class="defaultBusStop"
+              >Please, choose your <br />default bus stop from the list:</label
+            >
+            <select
               class="form-control"
-              ngModel
-              name="defaultBusStop"
-            />
+              formControlName="defaultBusStop"
+              size="5"
+            >
+              <option
+                *ngFor="let busStop of busStops | onlyuppercase | norepeats"
+                [value]="busStop.id"
+              >
+                {{ busStop.name | titlecase }}
+              </option>
+            </select>
           </div>
         </div>
-        <a (click)="onSubmit(f)">
-          <img
-            src="https://img.icons8.com/bubbles/256/checked-checkbox.png"
-            alt="Icon of settings"
-            width="75px"
-          />
-        </a>
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="onSubmit()"
+          [disabled]="defaultBusStopForm.invalid"
+        >
+          Submit
+        </button>
       </form>
     </div>
   </div>

@@ -17,7 +17,15 @@ export class ChosenBusStopComponent {
     this.selectedBusStopService.selectedBusStop.subscribe((id) => {
       this.selectedBusStopName =
         Object.values(this.busStops || {}).find((busStop) => busStop.id === id)
-          ?.name || "";
+          ?.name || "Choose your bus stop";
+    });
+  }
+
+  ngOnChanges() {
+    this.selectedBusStopService.selectedBusStop.subscribe((id) => {
+      this.selectedBusStopName =
+        Object.values(this.busStops || {}).find((busStop) => busStop.id === id)
+          ?.name || "Choose your bus stop";
     });
   }
 }

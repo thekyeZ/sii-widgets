@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 import { busStopNames } from "../model-buses/busStop.model";
-import { BusStopsService } from "../services-buses/bus-stops.service";
+import { FetchBusStopsService } from "../services-buses/fetch-bus-stops.service";
 
 @Component({
   selector: "app-panel-buses",
@@ -12,14 +12,14 @@ export class PanelBusesComponent {
   busStops!: busStopNames;
 
   constructor(
-    private busStopsService: BusStopsService,
+    private fetchBusStopsService: FetchBusStopsService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.busStopsService
-      .getBusStops()
-      .subscribe((busStops) => (this.busStops = busStops));
+    this.fetchBusStopsService
+      .fetchBusStops()
+      .subscribe((busStops) => (this.busStops = Object.values(busStops)));
   }
   onOpenSettings() {
     this.router.navigate(["admin/buses"]);

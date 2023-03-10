@@ -6,10 +6,10 @@ import { busStopNames } from "../model-buses/busStop.model";
 @Injectable({
   providedIn: "root",
 })
-export class BusStopsService {
+export class FetchBusStopsService {
   constructor(private http: HttpClient) {}
 
-  getBusStops(): Observable<busStopNames> {
+  fetchBusStops(): Observable<busStopNames> {
     return this.http.get<busStopNames>(
       "https://poland-public-transport.konhi.workers.dev/v1/zielonagora/mzk/stops"
     );

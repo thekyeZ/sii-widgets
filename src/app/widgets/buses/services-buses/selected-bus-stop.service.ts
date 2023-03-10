@@ -9,5 +9,6 @@ export class SelectedBusStopService {
 
   updateSelectedBusStop(id: string): void {
     this.selectedBusStop.next(id);
+    
   }
 }
