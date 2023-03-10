@@ -1,45 +1,10 @@
-<p>GOT admin works!</p>
 <button class="btn btn-danger" (click)="navigateToHome()">Back</button>
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label for="username">Username</label>
-          <input
-            type="text"
-            id="username"
-            formControlName="userName"
-            class="form-control"
-          />
-          <span
-            *ngIf="
-              !signupForm.get('userName')!.valid &&
-              signupForm.get('userName')!.touched
-            "
-            class="help-block"
-            >Please enter a valid username!</span
-          >
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input
-            type="text"
-            id="email"
-            formControlName="email"
-            class="form-control"
-          />
-          <span
-            *ngIf="
-              !signupForm.get('email')!.valid &&
-              signupForm.get('email')!.touched
-            "
-            class="help-block"
-            >Please enter a valid email!</span
-          >
-        </div>
-        <div class="form-group">
-          <label for="number">Number</label>
+          <label for="number">Choose a number (0-9)</label>
           <input
             type="number"
             id="number"
@@ -55,17 +20,14 @@
             >Please enter a number!</span
           >
         </div>
-        <div class="radio" *ngFor="let gender of genders">
-          <label>
-            <input type="radio" [value]="gender" formControlName="gender" />{{
-              gender
-            }}
-          </label>
-        </div>
-        <span *ngIf="!signupForm.valid && signupForm.touched" class="help-block"
-          >Please enter a valid data!</span
+
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="!signupForm.valid"
         >
-        <button class="btn btn-primary" type="submit">Submit</button>
+          Submit
+        </button>
       </form>
     </div>
   </div>

@@ -22,4 +22,5 @@ export interface Character {
   povBooks: any[];
   tvSeries: string[];
   playedBy: string[];
+  // isFavourite?: boolean;
 }

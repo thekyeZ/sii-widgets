@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" *ngIf="listOfCharacters[selectedCharacter]">
   <div class="card-body">
     <p class="heading"><strong>Selected character</strong></p>
     <p *ngIf="listOfCharacters[selectedCharacter].name">

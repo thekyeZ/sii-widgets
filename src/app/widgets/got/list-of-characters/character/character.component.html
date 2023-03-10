@@ -12,13 +12,16 @@
     >
       Details
     </button>
-    <button class="btn" (click)="favButtonClick(character)">
-      <div *ngIf="isFavourite; else elseBlock" class="div-with-svg-inside">
+    <!-- <button class="btn" (click)="favButtonClick(character)">
+      <div
+        *ngIf="character.isFavourite; else elseBlock"
+        class="div-with-svg-inside"
+      >
         <img [src]="imgSrcFilled" alt="" fill="#fff" />
       </div>
       <ng-template #elseBlock
         ><img [src]="imgSrc" alt="" class="div-with-svg-inside"
       /></ng-template>
-    </button>
+    </button> -->
   </div>
 </li>
