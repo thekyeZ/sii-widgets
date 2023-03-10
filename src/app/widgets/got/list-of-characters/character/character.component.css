@@ -11,7 +11,7 @@ li {
 
 li:hover {
   background-color: #dddddd;
-  transform: scale(1.01, 1.1);
+  transform: scale(1.01, 1.01);
   z-index: 1;
   color: #f05454;
 }
@@ -28,4 +28,11 @@ li:hover {
 .btn-details {
   background-color: #30475e;
   color: #fff;
+}
+
+.person {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }/*# sourceMappingURL=character.component.css.map */

@@ -1,0 +1,13 @@
+li:hover {
+  font-weight: 700;
+}
+
+img {
+  height: 25px;
+}
+
+li {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-end;
+}/*# sourceMappingURL=list-of-houses.component.css.map */

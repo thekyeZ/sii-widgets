@@ -1,0 +1,23 @@
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ul .links {
+  display: flex;
+  gap: 1rem;
+}
+ul .links a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+ul .links a:hover {
+  color: #f05454;
+}
+
+.active-link {
+  -webkit-text-decoration: red wavy underline;
+          text-decoration: red wavy underline;
+}/*# sourceMappingURL=home-got.component.css.map */
