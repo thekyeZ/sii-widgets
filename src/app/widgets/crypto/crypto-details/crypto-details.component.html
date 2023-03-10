@@ -1,11 +1,20 @@
+<div class="card-title">
+  <a [routerLink]="['/crypto/admin']"
+    ><img
+      class="adminIcon float-end"
+      src="https://cdn-icons-png.flaticon.com/512/900/900834.png"
+      alt="Admin"
+  /></a>
+</div>
+
 <div class="card" *ngIf="crypto.length > 0">
   <div class="card-body">
-    <img
-      class="exitImg float-end"
-      src="https://cdn-icons-png.flaticon.com/512/1828/1828665.png"
-      alt="Exit panel"
-      [routerLink]="['/']"
-    />
+    <a [routerLink]="['/']"
+      ><img
+        class="exitImg float-end"
+        src="https://cdn-icons-png.flaticon.com/512/1828/1828665.png"
+        alt="Exit panel"
+    /></a>
     <h5 class="card-title">
       More infromation on: {{ crypto[selectedCrypto].name }} /
       {{ crypto[selectedCrypto].symbol }}
