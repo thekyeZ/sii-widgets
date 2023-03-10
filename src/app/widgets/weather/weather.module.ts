@@ -7,7 +7,7 @@ import { UpcomingWeatherComponent } from './weather-forecast/upcoming-weather/up
 import { WeatherSettingsComponent } from './weather-forecast/weather-settings/weather-settings.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherAdminComponent } from './weather-admin/weather-admin.component';
-import { AppRoutingModule } from 'src/app/app-routing.module';
+import { WeatherRoutingModule } from './weather-routing.module';
 import { WeatherForecastComponent } from './weather-forecast/weather-forecast.component';
 
 @NgModule({
@@ -22,7 +22,7 @@ import { WeatherForecastComponent } from './weather-forecast/weather-forecast.co
   imports: [
     CommonModule, 
     HttpClientModule,
-    AppRoutingModule,
+    WeatherRoutingModule,
     ReactiveFormsModule
   ],
   exports: [

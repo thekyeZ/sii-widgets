@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { WeatherData} from '../shared/weather-data.model';
+import { WeatherData} from '../../shared/weather-data.model';
 import { Subject } from 'rxjs';
 
 @Component({
