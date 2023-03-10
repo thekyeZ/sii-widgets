@@ -12,8 +12,7 @@ export class ListItemComponent {
   @Input()
   cat!: Cat;
 
-  constructor(private breedService: BreedService,
-    private selectedBreed: SelectedBreedService) { }
+  constructor( private selectedBreed: SelectedBreedService) { }
 
   onSelected(id: string) {
     this.selectedBreed.breedSelected.next(id);

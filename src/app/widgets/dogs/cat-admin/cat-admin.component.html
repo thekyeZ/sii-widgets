@@ -5,15 +5,29 @@
     </li>
   </div>
   <div>
-    <a routerLink="/cat/breeds"><img src="/assets/img/reject.png" alt="admin panel" class="icon" /></a>
+    <a routerLink=""><img src="/assets/img/reject.png" alt="admin panel" class="icon" /></a>
   </div>
 </ul>
 <hr />
 
+
+<!-- <form [formGroup]="catForm" (ngSubmit)="onSubmit()"> -->
+  <select>
+    <option *ngFor="let breed of breedsCats" [ngValue]="breed.name">
+      {{breed.id}}
+   </option>
+  </select>
+  
+  <!-- <button type="submit" class="btn btn-light" [disabled]="catForm.invalid">
+    Submit
+  </button> -->
+<!-- </form> -->
+
 <form [formGroup]="catForm" (ngSubmit)="onSubmit()">
   <div class="form-group mb-3">
-    <label for="idCat">Set as default</label>
-    <input type="text" id="idCat" formControlName="idCat" class="form-control">
+    <label for="idCat"> Enter cat ID</label>
+
+    <input type="text" id="idCat" formControlName="idCat" class="form-control" value="Aego">
 
     <span *ngIf="!catForm.get('idCat')!.valid && catForm.get('idCat')!.touched" class="help-block">
       Please enter a cat id

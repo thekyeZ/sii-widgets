@@ -22,6 +22,7 @@ export class BreedService implements OnInit {
   }
 
   ngOnInit() {
+    // console.log(this.breedsCats);
   }
 
   getBreeds() {

@@ -10,7 +10,7 @@ const routes: Routes = [
   // {path: '', redirectTo: 'cat/breeds', pathMatch: 'full'},
   { path: '', component: BreedsComponent },
   { path: 'cat/catadmin',component: CatAdminComponent},
-  { path: 'cat/breeds', component: BreedsComponent },
+  // { path: 'cat/breeds', component: BreedsComponent },
   { path: 'cat/gallery', component: GalleryComponent },
   { path: 'cat/breeds/:id', component: BreedDetailsComponent}
 ];
