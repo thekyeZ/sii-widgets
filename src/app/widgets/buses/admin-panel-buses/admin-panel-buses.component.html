@@ -15,7 +15,6 @@
               <option
                 *ngFor="let busStop of busStops | onlyuppercase | norepeats"
                 [value]="busStop.id"
-                [selected]="selectedBusStopId === busStop.id"
               >
                 {{ busStop.name | titlecase }}
               </option>

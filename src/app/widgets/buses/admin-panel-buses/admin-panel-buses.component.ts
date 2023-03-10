@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { busStopNames } from "../model-buses/busStop.model";
 import { FetchBusStopsService } from "../services-buses/fetch-bus-stops.service";
@@ -38,4 +37,3 @@ export class AdminPanelBusesComponent implements OnInit {
     this.router.navigate([""]);
   }
 }
-
