@@ -28,8 +28,8 @@ export class WeatherForecastComponent implements OnInit {
     ) {}
   
   ngOnInit(): void {
-    this.weatherService.getWeatherData().subscribe(results => this.weatherData = results);
     this.selectedDayService.selectedDay.subscribe(selectedDayFromService => this.selectedDay = selectedDayFromService);
+    this.weatherService.getWeatherData().subscribe(results => this.weatherData = results);
     this.selectedCityService.selectedCity.subscribe(selectedCityFromService => this.selectedCity = selectedCityFromService);
   }
 
