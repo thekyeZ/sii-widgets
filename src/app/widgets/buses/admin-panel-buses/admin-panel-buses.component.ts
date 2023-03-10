@@ -11,7 +11,6 @@ import { SelectedBusStopService } from "../services-buses/selected-bus-stop.serv
 })
 export class AdminPanelBusesComponent implements OnInit {
   busStops: busStopNames = [];
-  selectedBusStopId!: string;
 
   constructor(
     private router: Router,
@@ -23,9 +22,6 @@ export class AdminPanelBusesComponent implements OnInit {
     this.fetchBusStopsService
       .fetchBusStops()
       .subscribe((busStops) => (this.busStops = Object.values(busStops)));
-    this.selectedBusStopService.selectedBusStop.subscribe(
-      (id) => (this.selectedBusStopId = id)
-    );
   }
 
   onSelectBusStop(event: any) {
