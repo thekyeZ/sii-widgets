@@ -7,12 +7,12 @@ import { MemHttpService } from "./services/mem-http.service";
   styleUrls: ["./norris.component.scss"],
 })
 export class NorrisComponent implements OnInit {
-  memToDispFromHttpCall?: string;
+  memToDisplay?: string;
 
   // call http request from MemHttpService, if user click button ("losuj") call http request from MemHttpService
   requestHttp() {
     this.memService.requestForApi().subscribe((results) => {
-      this.memToDispFromHttpCall = results.value;
+      this.memToDisplay = results.value;
     });
   }
 

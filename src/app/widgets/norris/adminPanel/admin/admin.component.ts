@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { selectedMemService } from "../../services/selectedMemObservable.service";
+import { allowedUsernames } from "./utils/categoryNameTable";
 
 
 @Component({
@@ -14,31 +15,13 @@ export class AdminComponent implements OnInit {
   submitted: boolean = false;
   user?: { id?: string; category?: string };
 
-  allowedUsernames: string[] = [
-    "animal",
-    "career",
-    "celebrity",
-    "dev",
-    "explicit",
-    "fashion",
-    "food",
-    "history",
-    "money",
-    "movie",
-    "music",
-    "political",
-    "religion",
-    "science",
-    "sport",
-    "travel",
-  ];
-
   ngOnInit() {
     this.simpleForm = new FormGroup({
-      categoryName: new FormControl(null, [
+      categoryName: new FormControl<string>('', [
         Validators.required,
         this.allowedNames.bind(this),
         this.noSpaceAllowed.bind(this),
+        
       ]),
     });
     this.user = {
@@ -50,7 +33,7 @@ export class AdminComponent implements OnInit {
 
   //Validators
   allowedNames(control: FormControl) {
-    if (this.allowedUsernames.indexOf(control.value) === -1) {
+    if (allowedUsernames.indexOf(control.value) === -1) {
       return { nameIsForbidden: true };
     }
     return null

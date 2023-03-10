@@ -4,7 +4,7 @@
  <!-- input, output for mem-List-Component. If user click button -> call http request -> fetch given mem on page paragraf -->
 <app-mem-list
   *ngIf="requestHttp"
-  [loadMemOnPage]="memToDispFromHttpCall"
+  [loadMemOnPage]="memToDisplay"
   (httpReqToNorrisComp)="requestHttp()"
 >
 </app-mem-list>
