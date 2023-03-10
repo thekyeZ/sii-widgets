@@ -3,7 +3,7 @@
         <img src="../assets/cloud-sun.png" alt=""/>
         <div class="current-temperature">{{ weatherData.daily.temperature_2m_max[selectedDay] | number: '1.0-0' }} °C</div>
     </div>
-        <div class="current-city">{{ cities[selectedCity] }}</div>
+        <div class="current-city">{{ cities[selectedCity].name }}</div>
     <div class="current-date">{{ weatherData.daily.time[selectedDay] | date:'EEEE, d MMMM' }}</div>
     <ul class="current-weather-details">
         <li><img src="../assets/sun-horizon.png" alt=""/>{{ weatherData.daily.sunrise[selectedDay] | date:'h:mm a' }}</li>

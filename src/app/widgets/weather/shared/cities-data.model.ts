@@ -3,4 +3,3 @@ export interface CitiesData {
     latitude: number
     longitude: number
 }
-

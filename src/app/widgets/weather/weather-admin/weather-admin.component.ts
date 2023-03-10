@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-// import { CitiesData} from './shared/cities-data.model';
-import { SelectedCityService } from './shared/selected-city.service';
+import { CitiesService } from '../shared/cities.service';
+import { CitiesData} from '../shared/cities-data.model';
+import { SelectedCityService } from '../shared/selected-city.service';
 
 @Component({
   selector: 'app-weather-admin',
@@ -11,13 +12,13 @@ import { SelectedCityService } from './shared/selected-city.service';
 })
 export class WeatherAdminComponent implements OnInit {
   adminForm!: FormGroup;
-  // citiesData!: CitiesData;
   selectedCity!: number;
-  cities = ['Kraków', 'Gdańsk', 'Warszawa'];
-  // i!: number;
+  cities: CitiesData[] = this.citiesService.cities;
+
 
   constructor(
     private router: Router,
+    private citiesService: CitiesService,
     private selectedCityService: SelectedCityService,
     ) {}
 

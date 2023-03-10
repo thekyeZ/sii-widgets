@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { WeatherData } from '../weather-forecast/shared/weather-data.model';
-import { WeatherService } from '../weather-forecast/shared/weather.service';
-import { SelectedDayService } from '../weather-forecast/shared/selected-day.service';
-import { SelectedCityService } from '../weather-admin/shared/selected-city.service';
+import { WeatherData } from '../shared/weather-data.model';
+import { WeatherService } from '../shared/weather.service';
+import { SelectedDayService } from '../shared/selected-day.service';
+import { CitiesService } from '../shared/cities.service';
+import { CitiesData} from '../shared/cities-data.model';
+import { SelectedCityService } from '../shared/selected-city.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,11 +17,13 @@ export class WeatherForecastComponent implements OnInit {
   selectedDay!: number;
   selectedCity!: number;
   i!: number;
+  cities: CitiesData[] = this.citiesService.cities;
 
   constructor(
     private weatherService: WeatherService,
     private selectedDayService: SelectedDayService,
     private selectedCityService: SelectedCityService,
+    private citiesService: CitiesService,
     private router: Router
     ) {}
   

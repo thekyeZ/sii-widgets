@@ -7,7 +7,7 @@
         <label for="city">Check the weather for...</label>
             <div class="select-city">
                 <select id="city" formControlName="city">
-                    <option *ngFor="let city of cities; index as i" value="{{ i }}">{{ cities[i] }}</option>
+                    <option *ngFor="let city of cities; index as i" value="{{ i }}">{{ cities[i].name }}</option>
                 </select>
                 <span class="span-city" *ngIf="!adminForm.get('city')?.valid && adminForm.get('city')?.touched">Please, select a city name!</span>
             </div>
