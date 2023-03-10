@@ -19,7 +19,7 @@ export class IncomingBusesComponent {
 
   ngOnInit() {
     this.selectedBusStopService.selectedBusStop.subscribe((id) => {
-      if (id) {
+      if (id !== "") {
         this.busStopSelected = true;
         this.fetchBusArrivalsService.fetchBusArrivals(id).subscribe((data) => {
           this.busArrivalsData = Object.values(data);
