@@ -4,13 +4,22 @@
       <form>
         <div id="user-data">
           <div class="form-group">
-            <label for="defaultBusStop">Choose the ID of your default bus stop:</label>
-            <input
-              type="select"
+            <label for="defaultBusStop">Choose your default bus stop:</label>
+            <select
               id="defaultBusStop"
               class="form-control"
               name="defaultBusStop"
-            />
+              (change)="onSelectBusStop($event)"
+            >
+              <option value="">-- Select a bus stop --</option>
+              <option
+                *ngFor="let busStop of busStops | onlyuppercase | norepeats"
+                [value]="busStop.id"
+                [selected]="selectedBusStopId === busStop.id"
+              >
+                {{ busStop.name | titlecase }}
+              </option>
+            </select>
           </div>
         </div>
         <a (click)="onSubmit()">
