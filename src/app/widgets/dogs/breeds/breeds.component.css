@@ -6,7 +6,7 @@ p {
   color: #79aabf;
 }
 
-.lista {
+.description-card {
   margin-top: 0.3rem;
   max-height: 450px;
   overflow-y: auto;

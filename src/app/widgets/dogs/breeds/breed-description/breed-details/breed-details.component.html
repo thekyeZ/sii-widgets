@@ -1,2 +1,11 @@
 <app-header-cats></app-header-cats>
-<p>breed-details works!</p>
+<div *ngIf="selectedBreed" class="description-card text-center">
+    <img src="https://cdn2.thecatapi.com/images/{{selectedBreed.reference_image_id}}.jpg" alt="cat-picture" class="img-fluid rounded-img text-center" style="width: 18rem;">
+    <hr>
+    <p class="mb-auto text-center">{{selectedBreed.description}}</p>
+    <hr>
+    <div class="text-center diva">
+        <p class="character">{{selectedBreed.temperament}}</p>
+
+    </div>
+  

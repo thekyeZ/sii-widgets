@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"breed-details.component.css"}
+{"version":3,"sources":["breed-details.component.scss","breed-details.component.css"],"names":[],"mappings":"AAMA;EACI,cAHG;ACFP;;ADOA;EACI,cAVS;ACMb;;ADMA;EACI,kBAAA;EACA,iBAAA;ACHJ;;ADKA;EACI,iBAAA;ACFJ;ADII;EACE,kBAAA;ACFN;;ADMA;EACI,kBAAA;EACA,iBAAA;EACA,iBAAA;EACA,gBAAA;ACHJ;;ADOA,8BAAA;AACE,YAAA;AACA;EACE,qBAAA;EACA,gCAAA;ACJJ;;ADOE,6BAAA;AACA;EACE,WAAA;ACJJ;;ADQE;EACE,mBAAA;ACLJ;;ADQE;EACE,yBAjDe;EAkDf,mBAAA;EACA,yBAAA;ACLJ","file":"breed-details.component.css"}

@@ -6,7 +6,7 @@
   color: #79aabf;
 }
 
-.okrag {
+.rounded-img {
   margin-top: 0.3rem;
   border-radius: 2%;
 }
@@ -14,12 +14,11 @@
 p {
   font-size: 0.9rem;
 }
-
-.character {
+p.character {
   font-style: italic;
 }
 
-.lista {
+.description-card {
   margin-top: 0.3rem;
   min-height: 450px;
   max-height: 450px;

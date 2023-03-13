@@ -1,0 +1,54 @@
+$text-color: #79aabf;
+$light-text-color: #e6a6a6;
+$background-beige:  #ebc3c3;
+$background-yellow-beige: #F7F5EB;
+$text: #767676;
+
+* {
+    color: $text;
+}
+.title{
+    color: $text-color;
+}
+.rounded-img{
+    margin-top: 0.3rem;
+    border-radius: 2%;
+}
+p {
+    font-size: 0.9rem;
+
+    &.character {
+      font-style: italic; 
+  }
+}
+
+.description-card { 
+    margin-top: 0.3rem;
+    min-height: 450px;
+    max-height: 450px;
+    overflow-y: auto;
+  
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: $light-text-color #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 18px;
+
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: $light-text-color;
+    border-radius: 10px;
+    border: 4px solid #ffffff;
+  }
