@@ -1,4 +1,5 @@
 <app-list-item 
-*ngFor="let breed of breedsCats" 
-[cat]="breed" 
+*ngFor="let breed of breedsCats; let i=index" 
+[cat]="breed"
+[index]="i"
  ></app-list-item>

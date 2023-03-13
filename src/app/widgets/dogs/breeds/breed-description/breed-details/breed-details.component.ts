@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Cat } from '../../../interfaces/cat';
 
 @Component({
@@ -7,5 +8,11 @@ import { Cat } from '../../../interfaces/cat';
   styleUrls: ['./breed-details.component.scss']
 })
 export class BreedDetailsComponent {
-  catDetail!: Cat;
+  // catDetail!: Cat;
+
+  // constructor(
+  //   private route: ActivatedRoute
+  // ) {}
+
+
 }

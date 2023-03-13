@@ -10,11 +10,14 @@ import { SelectedBreedService } from '../../selected-breed.service';
 })
 export class ListItemComponent {
   @Input()
-  cat!: Cat;
+  index!: number;
+  @Input() cat!: Cat;
 
   constructor( private selectedBreed: SelectedBreedService) { }
 
   onSelected(id: string) {
     this.selectedBreed.breedSelected.next(id);
+    console.log(this.index);
+    
   }
 }

@@ -12,10 +12,16 @@ import { Cat } from '../interfaces/cat';
 })
 export class CatAdminComponent implements OnInit{
   breedsCats: Cat[]= []
- 
+
   catForm: FormGroup = new FormGroup({
     'idCat': new FormControl('', [Validators.required])
   });
+
+  constructor(
+    private selectedBreed: SelectedBreedService,
+    private breedService: BreedService,
+    private router: Router,
+ ) {}
 
   ngOnInit() {
     this.breedService.getBreeds().subscribe(breedApi => {        
@@ -23,11 +29,6 @@ export class CatAdminComponent implements OnInit{
       console.log(this.breedsCats);
       });
   }
-
-  constructor(
-  private selectedBreed: SelectedBreedService,
-  private breedService: BreedService,
-  private router: Router) {}
 
   changeBreed(e: any) {
     this.idCat?.setValue(e.target.value, {
