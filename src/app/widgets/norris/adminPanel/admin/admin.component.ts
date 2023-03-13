@@ -4,10 +4,9 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { selectedMemService } from "../../services/selectedMemObservable.service";
 import { allowedUsernames } from "./utils/categoryNameTable";
 
-
 @Component({
   selector: "app-admin",
-  templateUrl:"./admin.component.html",
+  templateUrl: "./admin.component.html",
   styleUrls: ["./admin.component.scss"],
 })
 export class AdminComponent implements OnInit {
@@ -17,18 +16,16 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
     this.simpleForm = new FormGroup({
-      categoryName: new FormControl<string>('', [
+      categoryName: new FormControl<string>("", [
         Validators.required,
         this.allowedNames.bind(this),
         this.noSpaceAllowed.bind(this),
-        
       ]),
     });
     this.user = {
       id: this.route.snapshot.params["id"],
       category: this.route.snapshot.params["category"],
     };
-
   }
 
   //Validators
@@ -36,14 +33,14 @@ export class AdminComponent implements OnInit {
     if (allowedUsernames.indexOf(control.value) === -1) {
       return { nameIsForbidden: true };
     }
-    return null
+    return null;
   }
 
   noSpaceAllowed(control: FormControl) {
     if (control.value != null && control.value.indexOf(" ") != -1) {
       return { noSpaceAllowed: true };
     }
-    return null
+    return null;
   }
 
   //Buttons
@@ -52,14 +49,13 @@ export class AdminComponent implements OnInit {
 
     if (this.simpleForm?.invalid) {
       return;
-
     } else {
       this.selectedMemService.selectedCategory.next(
         this.simpleForm?.get("categoryName")?.value
       );
       console.log(this.simpleForm);
-      console.log(this.simpleForm?.value)
-      this.simpleForm?.reset()
+      console.log(this.simpleForm?.value);
+      // this.simpleForm?.reset();
     }
   }
 
@@ -72,8 +68,7 @@ export class AdminComponent implements OnInit {
   constructor(
     private router: Router,
     private selectedMemService: selectedMemService,
-    
+
     private route: ActivatedRoute
   ) {}
 }
-

@@ -17,7 +17,7 @@ export class MemHttpService {
 
   requestForApi() {
     // choose this api if user select random cathegory (selectValue = "random")
-          if (this.memService.selectedCategory.value === "") {
+          if (this.memService.selectedCategory.value == "") {
               return this.http.get<Post>(`${this.apiForRandomCategory}`);
 
 
