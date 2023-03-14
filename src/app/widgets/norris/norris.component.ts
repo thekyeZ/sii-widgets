@@ -16,9 +16,10 @@ export class NorrisComponent implements OnInit {
     });
   }
 
-  // Load mem on page start
+  
   ngOnInit() {
-    this.requestHttp();
+    const loadMemOnPage = this.requestHttp();
+    loadMemOnPage
   }
   constructor(private memService: MemHttpService) {}
 }

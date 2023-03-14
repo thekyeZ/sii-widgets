@@ -22,6 +22,7 @@ import { MemListModule } from './mem/mem-list/module/module.module';
   ],
   exports: [
     NorrisComponent
-  ]
+  ],
+
 })
 export class NorrisModule { }

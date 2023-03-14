@@ -11,7 +11,7 @@ import { allowedUsernames } from "./utils/categoryNameTable";
 })
 export class AdminComponent implements OnInit {
   simpleForm?: FormGroup;
-  submitted: boolean = false;
+  isSubmitted: boolean = false;
   user?: { id?: string; category?: string };
 
   ngOnInit() {
@@ -45,7 +45,7 @@ export class AdminComponent implements OnInit {
 
   //Buttons
   onSubmit() {
-    this.submitted = true;
+    this.isSubmitted = true;
 
     if (this.simpleForm?.invalid) {
       return;
@@ -53,10 +53,13 @@ export class AdminComponent implements OnInit {
       this.selectedMemService.selectedCategory.next(
         this.simpleForm?.get("categoryName")?.value
       );
-      console.log(this.simpleForm);
-      console.log(this.simpleForm?.value);
-      // this.simpleForm?.reset();
     }
+  }
+
+  onButtonSave() {
+    const sendSimpleFormToLocalStorage = JSON.stringify(this.simpleForm?.value);
+    const formName = "form-data";
+    localStorage.setItem(formName, sendSimpleFormToLocalStorage);
   }
 
   //Navigation links
@@ -68,7 +71,8 @@ export class AdminComponent implements OnInit {
   constructor(
     private router: Router,
     private selectedMemService: selectedMemService,
-
     private route: ActivatedRoute
   ) {}
+
+  
 }

@@ -10,10 +10,10 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
-
+  
+// NAVIGATION
   navigateToAdminPanel() {
     this.router.navigate(["/admin/chuck"]);
-    // return (!this.router.navigated)
   }
 
   navigateToMain() {
