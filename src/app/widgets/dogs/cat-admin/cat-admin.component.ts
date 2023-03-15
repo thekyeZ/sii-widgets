@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { BreedService } from '../breeds/breeds.service';
 import { SelectedBreedService } from '../breeds/selected-breed.service';
 import { Cat } from '../interfaces/cat';
-import { LocalStorageService } from './local-storage-cat.service';
+
 
 @Component({
   selector: 'app-cat-admin',
@@ -23,7 +23,7 @@ export class CatAdminComponent implements OnInit {
     private selectedBreed: SelectedBreedService,
     private breedService: BreedService,
     private router: Router,
-    private admin: LocalStorageService,
+  
   ) { }
 
   ngOnInit() {
@@ -53,10 +53,10 @@ export class CatAdminComponent implements OnInit {
 
   saveData(){
     let dataS = this.catForm.value.idCat;
-    this.admin.setItem("defaultCatBreed", dataS);
+    localStorage.setItem("defaultCatBreed", dataS);
   }
   loadData() {
-    this.defaultCatBreedL = this.admin.getItem("defaultCatBreed");
+    this.defaultCatBreedL = localStorage.getItem("defaultCatBreed") || 'abys';
     this.selectedBreed.breedSelected.next(this.defaultCatBreedL);
     console.log(this.defaultCatBreedL);
     

@@ -22,13 +22,16 @@ export class BreedsComponent implements OnInit {
   ngOnInit() {
     this.selectedBreedS.breedSelected.subscribe(
       (id: string) => {
+        console.log(id);
         this.breedService.getBreed(id).subscribe(
           (cat) => {
+            console.log('cokolwoiek',id, cat);
             this.selectedBreed = cat;
           }
         )
       }
     );
+
 
   };
 }
