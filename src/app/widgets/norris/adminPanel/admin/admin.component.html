@@ -46,12 +46,12 @@
       *ngIf="simpleForm"
       [disabled]="simpleForm.get('categoryName')?.invalid">
       Save </button>
-      
-      <button
-      class="btn btn-primary" 
-      (click)="onButtonSave()"
-      
-      >
-      saveCategory </button>
+ 
   </form>
+  <button
+      class="btn btn-primary" 
+      (click)="onButtonSave()">
+      Local storage save</button>
 </div>
+
+

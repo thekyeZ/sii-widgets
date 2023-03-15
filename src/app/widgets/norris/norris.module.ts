@@ -7,9 +7,11 @@ import { FooterModule } from './footer/module/module.module';
 import { MemListModule } from './mem/mem-list/module/module.module';
 
 
+
 @NgModule({
   declarations: [
     NorrisComponent,
+   
    
   ],
 

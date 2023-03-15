@@ -1,3 +1,5 @@
+
+
 .card-body {
   //  max-width: 650px;
   padding: 5%;
@@ -45,11 +47,7 @@
     }
   }
 
-  .buttonDiv {
-    min-width: 300px;
-    display: flex;
-    justify-content: center;
-    margin-top: 55px;
+  
 
     .buttonDiv {
       margin-right: 15px;
@@ -58,26 +56,31 @@
         rgba(9, 9, 121, 1) 5%,
         rgba(0, 212, 255, 1) 100%
       );
-    }
-  }
 
-  .btn-primary {
-    background-color: linear-gradient(
-      90deg,
-      rgba(9, 9, 121, 1) 5%,
-      rgba(0, 212, 255, 1) 100%
-    );
-    color: linear-gradient(
-      90deg,
-      rgba(9, 9, 121, 1) 5%,
-      rgba(0, 212, 255, 1) 100%
-    );
-    padding: 10px;
-    padding-left: 22px;
-    padding-right: 22px;
 
-    .img {
-      padding-right: 5px;
+      .btn-primary {
+        background-color: linear-gradient(
+          90deg,
+          rgba(9, 9, 121, 1) 5%,
+          rgba(0, 212, 255, 1) 100%
+        );
+        color: linear-gradient(
+          90deg,
+          rgba(9, 9, 121, 1) 5%,
+          rgba(0, 212, 255, 1) 100%
+        );
+        padding: 10px;
+        padding-left: 22px;
+        padding-right: 22px;
+        margin-left: 10px;
+        margin-top: 50px;
+       
+       
+        .img {
+          padding-right: 5px;
+        }
+      }
     }
-  }
+  
+
 }

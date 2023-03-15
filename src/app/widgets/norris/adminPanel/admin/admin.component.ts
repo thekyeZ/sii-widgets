@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { selectedMemService } from "../../services/selectedMemObservable.service";
 import { allowedUsernames } from "./utils/categoryNameTable";
 
+
 @Component({
   selector: "app-admin",
   templateUrl: "./admin.component.html",
@@ -26,7 +27,16 @@ export class AdminComponent implements OnInit {
       id: this.route.snapshot.params["id"],
       category: this.route.snapshot.params["category"],
     };
+    
   }
+
+  // sendFormValueToObservable () {
+  //   const categoryNameValue = this.simpleForm?.value
+  //   const sendValueToObservable = this.localStorageService.localStorage.next(categoryNameValue)
+  //   sendValueToObservable
+  //   console.log(this.localStorageService.localStorage.value);
+   
+  // }
 
   //Validators
   allowedNames(control: FormControl) {
@@ -71,8 +81,12 @@ export class AdminComponent implements OnInit {
   constructor(
     private router: Router,
     private selectedMemService: selectedMemService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+   
   ) {}
-
-  
 }
+
+// przek formValue(np.dev) to observable przek to do localStoragewart 
+// wart z localStorage przek do observatora pobrać ją buttonem z innego komponentu
+// muszę mieć wart formValue w observatorze i na kliku przyp 
+// na kliku załaduj wart z localStorage do obserwatora

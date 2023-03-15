@@ -6,13 +6,17 @@ import { MemListComponent } from '../mem-list.component';
 
 @NgModule({
   declarations: [
-    MemListComponent
+    MemListComponent,
+    
+    
   ],
   exports: [
     MemListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    
+    
   ]
 })
 export class MemListModule { }
