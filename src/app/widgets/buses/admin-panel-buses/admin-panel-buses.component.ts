@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { busStopNames } from "../model-buses/busStop.model";
 import { FetchBusStopsService } from "../services-buses/fetch-bus-stops.service";
+import { LocalBusStorageService } from "../services-buses/local-bus-storage.service";
 import { SelectedBusStopService } from "../services-buses/selected-bus-stop.service";
 
 @Component({
@@ -18,7 +19,8 @@ export class AdminPanelBusesComponent implements OnInit {
   constructor(
     private router: Router,
     private fetchBusStopsService: FetchBusStopsService,
-    private selectedBusStopService: SelectedBusStopService
+    private selectedBusStopService: SelectedBusStopService,
+    private localBusStorageService: LocalBusStorageService
   ) {}
 
   ngOnInit(): void {
@@ -36,7 +38,7 @@ export class AdminPanelBusesComponent implements OnInit {
       this.defaultBusStopForm.value.defaultBusStop
     );
 
-    localStorage.setItem(
+    this.localBusStorageService.saveData(
       "selectedBusStop",
       this.defaultBusStopForm.value.defaultBusStop
     );
