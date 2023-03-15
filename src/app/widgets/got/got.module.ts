@@ -16,8 +16,8 @@ import { CharactersComponent } from "./characters/characters.component";
 import { HomeGotComponent } from "./home-got/home-got.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { ReactiveFormsModule } from "@angular/forms";
-import { ListOfHousesComponent } from './houses/list-of-houses/list-of-houses.component';
-
+import { ListOfHousesComponent } from "./houses/list-of-houses/list-of-houses.component";
+import { LocalService } from "./services/local.service";
 const appRoutes: Routes = [
   { path: "", component: HomeGotComponent },
   { path: "admin/got", component: AdminComponent },
@@ -50,6 +50,6 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
   ],
   exports: [GotComponent, RouterModule],
-  providers: [CharactersService, SelectedCharacterIdService],
+  providers: [CharactersService, SelectedCharacterIdService, LocalService],
 })
 export class GotModule {}

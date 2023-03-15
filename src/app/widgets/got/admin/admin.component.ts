@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { SelectedCharacterIdService } from "../services/selected-character-id.service";
+import { LocalService } from "../services/local.service";
 // import { ActivatedRoute } from "@angular/router";
 @Component({
   selector: "app-admin",
@@ -10,19 +11,28 @@ import { SelectedCharacterIdService } from "../services/selected-character-id.se
 })
 export class AdminComponent implements OnInit {
   signupForm: FormGroup = new FormGroup({
-    number: new FormControl(null, Validators.required),
+    number: new FormControl(
+      null || this.localStore.getData("id"),
+      Validators.required
+    ),
   });
   constructor(
     private router: Router,
-    private selectedCharacterService: SelectedCharacterIdService // private _route: ActivatedRoute
+    private selectedCharacterService: SelectedCharacterIdService,
+    private localStore: LocalService // private _route: ActivatedRoute
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.localStore.saveData("id", this.signupForm.value.number);
+    //console.log("data", this.localStore.getData("id"));
+  }
   onSubmit(): void {
     console.log(this.signupForm.value.number);
     this.selectedCharacterService.selectedCharacterId.next(
       this.signupForm.value.number
     );
+    this.localStore.saveData("id", this.signupForm.value.number);
+    console.log("Data from local storage: ", this.localStore.getData("id"));
     //this.signupForm.reset();
     this.router.navigate(["characters"]);
     if (this.signupForm.value.number >= 10) {
