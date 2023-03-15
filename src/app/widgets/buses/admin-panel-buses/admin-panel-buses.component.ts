@@ -35,6 +35,11 @@ export class AdminPanelBusesComponent implements OnInit {
     this.selectedBusStopService.updateSelectedBusStop(
       this.defaultBusStopForm.value.defaultBusStop
     );
+
+    localStorage.setItem(
+      "selectedBusStop",
+      this.defaultBusStopForm.value.defaultBusStop
+    );
     this.router.navigate([""]);
   }
 }
