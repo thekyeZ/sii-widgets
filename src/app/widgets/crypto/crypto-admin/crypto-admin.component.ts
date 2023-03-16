@@ -27,6 +27,7 @@ export class CryptoAdminComponent implements OnInit {
       this.cryptoIdService.favCrypto.next(selectedCrypto);
     }
     this.router.navigate([""]);
+    localStorage.setItem("form-data", this.form.get("cryptos")?.value);
   }
 
   onDecline() {

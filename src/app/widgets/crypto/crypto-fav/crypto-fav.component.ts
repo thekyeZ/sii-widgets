@@ -23,7 +23,7 @@ export class CryptoFavComponent {
       .subscribe((cryptoItems) => (this.crypto = cryptoItems));
     this.cryptoIdService.favCrypto.subscribe((selectedCryptoId) => {
       this.cryptoService
-        .fetchCryptoDetails(selectedCryptoId)
+        .fetchCryptoDetails(selectedCryptoId!)
         .subscribe((cryptoItem) => {
           this.selectedFavCrypto = cryptoItem;
         });
