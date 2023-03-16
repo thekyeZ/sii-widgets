@@ -10,4 +10,11 @@ export class SelectedCurrencyIdService {
     currencyFrom: "EUR",
     currencyTo: "USD",
   } as Exchange);
+
+  constructor() {
+    const savedCurrency = localStorage.getItem("form-data");
+    if (savedCurrency) {
+      this.selectedCurrency.next(JSON.parse(savedCurrency));
+    }
+  }
 }

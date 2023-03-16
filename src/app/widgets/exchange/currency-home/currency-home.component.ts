@@ -1,4 +1,3 @@
-import { SelectedCurrencyIdService } from "../services/selected-currency-id.service";
 import { CurrenciesService } from "../services/currenciesList.service";
 import { Exchange } from "../interfaces/Currency";
 import { Component, OnInit } from "@angular/core";
@@ -10,20 +9,13 @@ import { Component, OnInit } from "@angular/core";
   providers: [CurrenciesService],
 })
 export class CurrencyHomeComponent implements OnInit {
-  selectedCurrency!: number;
   exchange!: Exchange[];
 
-  constructor(
-    private selectedCurrencyService: SelectedCurrencyIdService,
-    private currencyListService: CurrenciesService
-  ) {}
+  constructor(private currencyListService: CurrenciesService) {}
 
   ngOnInit(): void {
     this.currencyListService
       .requestCurrencies()
       .subscribe((results) => (this.exchange = results));
-    this.selectedCurrencyService.selectedCurrency.subscribe((result) =>
-      console.log(result)
-    );
   }
 }

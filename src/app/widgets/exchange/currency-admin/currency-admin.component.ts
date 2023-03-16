@@ -27,9 +27,6 @@ export class CurrencyAdminComponent implements OnInit {
     this.currencyListService
       .requestCurrencies()
       .subscribe((results) => (this.exchange = results));
-    this.selectedCurrencyService.selectedCurrency.subscribe((result) =>
-      console.log(result)
-    );
   }
 
   onSubmit(): void {
@@ -38,7 +35,13 @@ export class CurrencyAdminComponent implements OnInit {
     const selectedCurrency = this.currencyForm.get("pairs")?.value;
     if (selectedCurrency) {
       this.selectedCurrencyService.selectedCurrency.next(selectedCurrency);
+      localStorage.setItem("form-data", JSON.stringify(selectedCurrency));
     }
+
     this.router.navigate([""]);
   }
 }
+
+// navigateToMainPage() {
+//   this.router.navigate([""]);
+// }
