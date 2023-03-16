@@ -18,8 +18,10 @@ export class WeatherService {
     private selectedCityService: SelectedCityService
     ) { }
 
-  getWeatherData() {
-    return this.http.get<WeatherData>(`https://api.open-meteo.com/v1/forecast?latitude=${this.cities[this.selectedCityService.selectedCity.value].latitude}&longitude=${this.cities[this.selectedCityService.selectedCity.value].longitude}&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum&timezone=Europe%2FBerlin`);
+  fetchWeatherData() {
+    let selectedLatitude = this.cities[this.selectedCityService.selectedCity.value].latitude;
+    let selectedLongitude = this.cities[this.selectedCityService.selectedCity.value].longitude;
+    return this.http.get<WeatherData>(`https://api.open-meteo.com/v1/forecast?latitude=${selectedLatitude}&longitude=${selectedLongitude}&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum&timezone=Europe%2FBerlin`);
 
   }
 }

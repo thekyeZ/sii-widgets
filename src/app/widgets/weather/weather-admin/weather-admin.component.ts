@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CitiesService } from '../shared/cities.service';
 import { CitiesData} from '../shared/cities-data.model';
 import { SelectedCityService } from '../shared/selected-city.service';
+import { StorageCityService } from '../shared/storage-city.service'
 
 @Component({
   selector: 'app-weather-admin',
@@ -20,6 +21,7 @@ export class WeatherAdminComponent implements OnInit {
     private router: Router,
     private citiesService: CitiesService,
     private selectedCityService: SelectedCityService,
+    private storageCityService: StorageCityService
     ) {}
 
   ngOnInit(): void {
@@ -32,7 +34,10 @@ export class WeatherAdminComponent implements OnInit {
 
   onSubmit() {
     this.selectedCityService.selectedCity.next(this.adminForm.get('city')?.value);
+    this.storageCityService.saveSelectedCity('miasto', this.selectedCity.toString());
     this.router.navigate(['/']);
+    // let cityStored = this.storageCityService.getSelectedCity('miasto');
+    // console.log(cityStored);
   }
 
 }
