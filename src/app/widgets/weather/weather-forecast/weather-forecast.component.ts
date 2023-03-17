@@ -18,6 +18,7 @@ export class WeatherForecastComponent implements OnInit {
   selectedCity!: number;
   i!: number;
   cities: CitiesData[] = this.citiesService.cities;
+  
 
   constructor(
     private weatherService: WeatherService,
@@ -29,7 +30,7 @@ export class WeatherForecastComponent implements OnInit {
   
   ngOnInit(): void {
     this.selectedDayService.selectedDay.subscribe(selectedDayFromService => this.selectedDay = selectedDayFromService);
-    this.weatherService.getWeatherData().subscribe(results => this.weatherData = results);
+    this.weatherService.fetchWeatherData().subscribe(results => this.weatherData = results);
     this.selectedCityService.selectedCity.subscribe(selectedCityFromService => this.selectedCity = selectedCityFromService);
   }
 
