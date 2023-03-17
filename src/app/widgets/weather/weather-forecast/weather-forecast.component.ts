@@ -6,6 +6,7 @@ import { CitiesService } from '../shared/cities.service';
 import { CitiesData} from '../shared/cities-data.model';
 import { SelectedCityService } from '../shared/selected-city.service';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-weather-forecast',
@@ -18,6 +19,9 @@ export class WeatherForecastComponent implements OnInit {
   selectedCity!: number;
   i!: number;
   cities: CitiesData[] = this.citiesService.cities;
+  selectedDayServiceSubscription!: Subscription;
+  weatherServiceSubscription!: Subscription;
+  selectedCityServiceSubscription!: Subscription;
   
 
   constructor(
@@ -29,9 +33,15 @@ export class WeatherForecastComponent implements OnInit {
     ) {}
   
   ngOnInit(): void {
-    this.selectedDayService.selectedDay.subscribe(selectedDayFromService => this.selectedDay = selectedDayFromService);
-    this.weatherService.fetchWeatherData().subscribe(results => this.weatherData = results);
-    this.selectedCityService.selectedCity.subscribe(selectedCityFromService => this.selectedCity = selectedCityFromService);
+    this.selectedDayServiceSubscription = this.selectedDayService.selectedDay.subscribe(selectedDayFromService => this.selectedDay = selectedDayFromService);
+    this.weatherServiceSubscription = this.weatherService.fetchWeatherData().subscribe(results => this.weatherData = results);
+    this.selectedCityServiceSubscription = this.selectedCityService.selectedCity.subscribe(selectedCityFromService => this.selectedCity = selectedCityFromService);
+  }
+
+  ngOnDestroy() {
+    this.selectedDayServiceSubscription.unsubscribe();
+    this.weatherServiceSubscription.unsubscribe();
+    this.selectedCityServiceSubscription.unsubscribe();
   }
 
   onOpenAdminPanel() {

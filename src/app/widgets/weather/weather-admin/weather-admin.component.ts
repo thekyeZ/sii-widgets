@@ -5,6 +5,7 @@ import { CitiesService } from '../shared/cities.service';
 import { CitiesData} from '../shared/cities-data.model';
 import { SelectedCityService } from '../shared/selected-city.service';
 import { StorageCityService } from '../shared/storage-city.service'
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-weather-admin',
@@ -15,6 +16,7 @@ export class WeatherAdminComponent implements OnInit {
   adminForm!: FormGroup;
   selectedCity!: number;
   cities: CitiesData[] = this.citiesService.cities;
+  selectedCityServiceSubscription!: Subscription;
 
 
   constructor(
@@ -29,7 +31,11 @@ export class WeatherAdminComponent implements OnInit {
       'city': new FormControl(this.storageCityService.getSelectedCity('storedCity') || '', Validators.required),
       'unit': new FormControl(null, Validators.required),
     });
-    this.selectedCityService.selectedCity.subscribe(selectedCityFromService => this.selectedCity = selectedCityFromService);
+    this.selectedCityServiceSubscription = this.selectedCityService.selectedCity.subscribe(selectedCityFromService => this.selectedCity = selectedCityFromService);
+  }
+
+  ngOnDestroy() {
+    this.selectedCityServiceSubscription.unsubscribe();
   }
 
   onSubmit() {
