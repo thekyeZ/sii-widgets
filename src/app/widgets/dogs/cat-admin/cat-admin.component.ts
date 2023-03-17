@@ -13,12 +13,13 @@ import { LocalStorageService } from './local-storage.service';
   styleUrls: ['./cat-admin.component.scss']
 })
 export class CatAdminComponent implements OnInit {
-  breedsCats: Cat[] = []
+  breedsCats: Cat[] = [];
+  defaultCatBreedL!: string;
+
   catForm: FormGroup = new FormGroup({
-    'idCat': new FormControl('', [Validators.required])
+    'idCat': new FormControl(this.localstorageService.getData("defaultCatBreed") || '', [Validators.required])
   });
 
-  defaultCatBreedL!: string;
 
   constructor(
     private selectedBreed: SelectedBreedService,
