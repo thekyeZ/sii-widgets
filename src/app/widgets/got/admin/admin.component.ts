@@ -11,10 +11,11 @@ import { LocalService } from "../services/local.service";
 })
 export class AdminComponent implements OnInit {
   signupForm: FormGroup = new FormGroup({
-    number: new FormControl(
-      null || this.localStore.getData("id"),
-      Validators.required
-    ),
+    number: new FormControl(null || this.localStore.getData("id"), [
+      Validators.required,
+      Validators.max(9),
+      Validators.min(0),
+    ]),
   });
   constructor(
     private router: Router,
@@ -22,10 +23,7 @@ export class AdminComponent implements OnInit {
     private localStore: LocalService // private _route: ActivatedRoute
   ) {}
 
-  ngOnInit(): void {
-    // this.localStore.saveData("id", this.signupForm.value.number);
-    //console.log("data", this.localStore.getData("id"));
-  }
+  ngOnInit(): void {}
   onSubmit(): void {
     console.log(this.signupForm.value.number);
     this.selectedCharacterService.selectedCharacterId.next(
@@ -35,10 +33,10 @@ export class AdminComponent implements OnInit {
     console.log("Data from local storage: ", this.localStore.getData("id"));
     //this.signupForm.reset();
     this.router.navigate(["characters"]);
-    if (this.signupForm.value.number >= 10) {
-      // alert("Please enter a number from range 0 to 9");
-      this.router.navigate(["admin/got"]);
-    }
+    // if (this.signupForm.value.number >= 10) {
+    //    alert("Please enter a number from range 0 to 9");
+    //   this.router.navigate(["admin/got"]);
+    // }
   }
   navigateToHome() {
     this.router.navigate([""]);

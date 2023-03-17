@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Router } from "@angular/router";
 import { HousesService } from "../services/houses.service";
 import { House } from "../interfaces/House";
@@ -7,7 +7,7 @@ import { House } from "../interfaces/House";
   templateUrl: "./houses.component.html",
   styleUrls: ["./houses.component.scss"],
 })
-export class HousesComponent implements OnInit {
+export class HousesComponent implements OnInit, OnDestroy {
   listOfHouses: House[] = [];
   constructor(private router: Router, private housesService: HousesService) {}
   ngOnInit(): void {
@@ -15,4 +15,5 @@ export class HousesComponent implements OnInit {
       .requestCharacters()
       .subscribe((results) => (this.listOfHouses = results));
   }
+  ngOnDestroy(): void {}
 }

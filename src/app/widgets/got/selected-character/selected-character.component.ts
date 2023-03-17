@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { SelectedCharacterIdService } from "../services/selected-character-id.service";
 import { CharactersService } from "../services/characters.service";
 import { Character } from "../interfaces/Character";
@@ -7,7 +7,7 @@ import { Character } from "../interfaces/Character";
   templateUrl: "./selected-character.component.html",
   styleUrls: ["./selected-character.component.scss"],
 })
-export class SelectedCharacterComponent implements OnInit {
+export class SelectedCharacterComponent implements OnInit, OnDestroy {
   selectedCharacter!: number;
   listOfCharacters: Character[] = [];
 
@@ -28,4 +28,5 @@ export class SelectedCharacterComponent implements OnInit {
       .requestCharacters()
       .subscribe((results) => (this.listOfCharacters = results));
   }
+  ngOnDestroy(): void {}
 }
