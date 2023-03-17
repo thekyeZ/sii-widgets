@@ -19,12 +19,15 @@
             class="help-block"
             >Please enter a number!</span
           >
+          <span class="help-block" *ngIf="signupForm.get('number')!.value > 9"
+            >Please enter a number from range 0 to 9</span
+          >
         </div>
 
         <button
           class="btn btn-primary"
           type="submit"
-          [disabled]="!signupForm.valid"
+          [disabled]="!signupForm.valid || signupForm.get('number')!.value > 9"
         >
           Submit
         </button>

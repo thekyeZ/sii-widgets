@@ -36,7 +36,7 @@ export class AdminComponent implements OnInit {
     //this.signupForm.reset();
     this.router.navigate(["characters"]);
     if (this.signupForm.value.number >= 10) {
-      alert("Please enter a number from range 0 to 9");
+      // alert("Please enter a number from range 0 to 9");
       this.router.navigate(["admin/got"]);
     }
   }
