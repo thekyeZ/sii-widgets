@@ -12,7 +12,7 @@ export class BreedService implements OnInit {
 
   constructor(
     private httpclient: HttpClient,
-  ) {}
+  ) { }
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -21,13 +21,12 @@ export class BreedService implements OnInit {
     })
   }
 
-  ngOnInit() {
-    // console.log(this.breedsCats);
-  }
+  ngOnInit() { }
 
   getBreeds() {
-    return this.httpclient.get<Cat[]>('https://api.thecatapi.com/v1/breeds', { headers: this.httpOptions.headers 
-  }) 
+    return this.httpclient.get<Cat[]>('https://api.thecatapi.com/v1/breeds', {
+      headers: this.httpOptions.headers
+    })
   }
 
   getBreed(id: string) {

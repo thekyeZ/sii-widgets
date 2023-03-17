@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { BreedService } from '../breeds/breeds.service';
 import { SelectedBreedService } from '../breeds/selected-breed.service';
 import { Cat } from '../interfaces/cat';
+import { LocalStorageService } from './local-storage.service';
 
 
 @Component({
@@ -23,19 +24,12 @@ export class CatAdminComponent implements OnInit {
     private selectedBreed: SelectedBreedService,
     private breedService: BreedService,
     private router: Router,
-  
+    private localstorageService: LocalStorageService,
   ) { }
 
   ngOnInit() {
     this.breedService.getBreeds().subscribe(breedApi => {
       this.breedsCats = breedApi;
-      // console.log(this.breedsCats);
-    });
-  }
-
-  changeBreed(e: any) {
-    this.idCat?.setValue(e.target.value, {
-      onlySelf: true,
     });
   }
 
@@ -44,22 +38,19 @@ export class CatAdminComponent implements OnInit {
   }
 
   onSubmit(): void {
-    // console.log(this.catForm.value.idCat);
     this.saveData();
     this.loadData();
     this.router.navigate([""]);
-
   }
 
-  saveData(){
+  saveData() {
     let dataS = this.catForm.value.idCat;
-    localStorage.setItem("defaultCatBreed", dataS);
+    this.localstorageService.setData("defaultCatBreed", dataS);
   }
+
   loadData() {
-    this.defaultCatBreedL = localStorage.getItem("defaultCatBreed") || 'abys';
+    this.defaultCatBreedL = this.localstorageService.getData("defaultCatBreed") || 'abys';
     this.selectedBreed.breedSelected.next(this.defaultCatBreedL);
-    console.log(this.defaultCatBreedL);
-    
   }
 
 }

@@ -19,7 +19,6 @@ export class GalleryComponent implements OnInit {
   newCatpic() {
     this.galleryService.getCatGallery().subscribe(galleryArray => {
       this.breedsGallery = galleryArray;
-
     });
   }
 }

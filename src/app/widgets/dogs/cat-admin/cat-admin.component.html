@@ -10,34 +10,11 @@
 </ul>
 <hr />
 
-
-<!-- 
 <form [formGroup]="catForm" (ngSubmit)="onSubmit()">
   <div class="form-group mb-3">
-    <label for="idCat"> Enter cat ID</label>
-
-    <input type="text" id="idCat" formControlName="idCat" class="form-control" value="Aego">
-
-    <span *ngIf="!catForm.get('idCat')!.valid && catForm.get('idCat')!.touched" class="help-block">
-      Please enter a cat id
-    </span>
-
-  </div>
-
-  <button type="submit" class="btn btn-light" [disabled]="catForm.invalid">
-    Submit
-  </button>
-</form> -->
-
-<form [formGroup]="catForm" (ngSubmit)="onSubmit()">
-  <div class="form-group mb-3">
-    <select
-      class="custom-select mb-3"
-      (change)="changeBreed($event)"
-      formControlName="idCat"
-    >
+    <select class="custom-select mb-3" formControlName="idCat">
       <option value="">Select breed</option>
-      <option *ngFor="let breed of breedsCats" [ngValue]="breed.id">
+      <option *ngFor="let breed of breedsCats" value={{breed.id}}>
         {{ breed.id }}
       </option>
     </select>
@@ -47,8 +24,8 @@
     </span>
 
   </div>
-    <button type="submit" class="btn btn-light" [disabled]="catForm.invalid">
-      Submit
-    </button>
+  <button type="submit" class="btn btn-light" [disabled]="catForm.invalid">
+    Submit
+  </button>
 
 </form>

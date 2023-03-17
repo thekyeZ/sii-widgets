@@ -2,12 +2,11 @@
 
 <div class="container text-center">
 
-    <div class="row" *ngFor="let catPicture of breedsGallery">
-      <div class="col">
-        <img src="{{catPicture.url}}" class="img-thumbnail">
-      </div>
+  <div class="row" *ngFor="let catPicture of breedsGallery">
+    <div class="col">
+      <img src="{{catPicture.url}}" class="img-thumbnail">
     </div>
-    <br/>
-    <button class="btn btn-light"(click)="newCatpic()">Next picture</button>
   </div>
-
+  <br />
+  <button class="btn btn-light" (click)="newCatpic()">Next picture</button>
+</div>
