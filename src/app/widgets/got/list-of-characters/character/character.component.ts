@@ -17,7 +17,6 @@ export class CharacterComponent {
 
   buttonClick(character: Character) {
     this.detailBtnClicked.emit(character);
-    // console.log(character);
   }
   // favButtonClick(character: Character) {
   //   this.favouriteBtnClicked.emit(character);
