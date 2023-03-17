@@ -26,7 +26,7 @@ export class WeatherAdminComponent implements OnInit {
 
   ngOnInit(): void {
     this.adminForm = new FormGroup({
-      'city': new FormControl(null, Validators.required),
+      'city': new FormControl(this.storageCityService.getSelectedCity('storedCity') || '', Validators.required),
       'unit': new FormControl(null, Validators.required),
     });
     this.selectedCityService.selectedCity.subscribe(selectedCityFromService => this.selectedCity = selectedCityFromService);
@@ -34,10 +34,8 @@ export class WeatherAdminComponent implements OnInit {
 
   onSubmit() {
     this.selectedCityService.selectedCity.next(this.adminForm.get('city')?.value);
-    this.storageCityService.saveSelectedCity('miasto', this.selectedCity.toString());
+    this.storageCityService.saveSelectedCity('storedCity', this.selectedCity.toString());
     this.router.navigate(['/']);
-    // let cityStored = this.storageCityService.getSelectedCity('miasto');
-    // console.log(cityStored);
   }
 
 }

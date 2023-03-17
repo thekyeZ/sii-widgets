@@ -5,7 +5,6 @@ import { SelectedDayService } from '../shared/selected-day.service';
 import { CitiesService } from '../shared/cities.service';
 import { CitiesData} from '../shared/cities-data.model';
 import { SelectedCityService } from '../shared/selected-city.service';
-import { StorageCityService } from '../shared/storage-city.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -26,16 +25,13 @@ export class WeatherForecastComponent implements OnInit {
     private selectedDayService: SelectedDayService,
     private selectedCityService: SelectedCityService,
     private citiesService: CitiesService,
-    private router: Router,
-    private storageCityService: StorageCityService
+    private router: Router
     ) {}
   
   ngOnInit(): void {
     this.selectedDayService.selectedDay.subscribe(selectedDayFromService => this.selectedDay = selectedDayFromService);
     this.weatherService.fetchWeatherData().subscribe(results => this.weatherData = results);
     this.selectedCityService.selectedCity.subscribe(selectedCityFromService => this.selectedCity = selectedCityFromService);
-    let cityStored = this.storageCityService.getSelectedCity('miasto');
-    console.log(cityStored);
   }
 
   onOpenAdminPanel() {
