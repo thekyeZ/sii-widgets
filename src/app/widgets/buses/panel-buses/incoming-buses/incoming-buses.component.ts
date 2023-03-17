@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { FetchBusArrivalsService } from "../../services-buses/fetch-bus-arrivals.service";
 import { busArrival } from "../../model-buses/busStop.model";
 import { SelectedBusStopService } from "../../services-buses/selected-bus-stop.service";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: "app-incoming-buses",
@@ -11,6 +12,8 @@ import { SelectedBusStopService } from "../../services-buses/selected-bus-stop.s
 export class IncomingBusesComponent {
   busArrivalsData: busArrival[] = [];
   busStopSelected: boolean = false;
+  selectBusArrivalsServiceSubscribe!: Subscription;
+  fetchBusArrivalsServiceSubscribe!: Subscription;
 
   constructor(
     private fetchBusArrivalsService: FetchBusArrivalsService,
@@ -18,10 +21,10 @@ export class IncomingBusesComponent {
   ) {}
 
   ngOnInit() {
-    this.selectedBusStopService.selectedBusStop.subscribe((id) => {
+    this.selectBusArrivalsServiceSubscribe = this.selectedBusStopService.selectedBusStop.subscribe((id) => {
       if (id !== "") {
         this.busStopSelected = true;
-        this.fetchBusArrivalsService.fetchBusArrivals(id).subscribe((data) => {
+        this.fetchBusArrivalsServiceSubscribe = this.fetchBusArrivalsService.fetchBusArrivals(id).subscribe((data) => {
           this.busArrivalsData = Object.values(data);
         });
       } else {
@@ -29,5 +32,10 @@ export class IncomingBusesComponent {
         this.busArrivalsData = [];
       }
     });
+  }
+
+  ngOnDestroy() {
+    this.selectBusArrivalsServiceSubscribe.unsubscribe();
+    this.fetchBusArrivalsServiceSubscribe.unsubscribe();
   }
 }
