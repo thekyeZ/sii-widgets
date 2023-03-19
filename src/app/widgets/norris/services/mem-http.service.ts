@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Post } from "../mem/interface/post.model";
 import { HttpClient } from "@angular/common/http";
 import { selectedMemService } from "./selectedMemObservable.service";
-import { catchError } from "rxjs";
+import { catchError, Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root",
@@ -16,7 +16,7 @@ export class MemHttpService {
   apiForSelectedCategory: string = "https://api.chucknorris.io/jokes/random?category=";
   apiForRandomCategory: string = "https://api.chucknorris.io/jokes/random?";
 
-  requestForApi() {
+  requestForApi() : Observable<Post> {
     // choose this api if user select random category (selectValue = "random")
     if (this.memService.selectedCategory.value == "") {
       return this.http.get<Post>(`${this.apiForRandomCategory}`).pipe(

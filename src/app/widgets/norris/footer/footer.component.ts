@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, ElementRef, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { selectedMemService } from "../services/selectedMemObservable.service";
 import { HttpClient } from "@angular/common/http";
 
@@ -7,7 +7,7 @@ import { HttpClient } from "@angular/common/http";
   templateUrl: "./footer.component.html",
   styleUrls: ["./footer.component.scss"],
 })
-export class FooterComponent implements OnInit, AfterContentInit {
+export class FooterComponent implements OnInit {
   constructor(
     private selectedMemService: selectedMemService,
     private http: HttpClient
@@ -26,9 +26,14 @@ export class FooterComponent implements OnInit, AfterContentInit {
     this.selectedMemService.selectedCategory.subscribe((categoryName) => {
       this.categoryChanged = categoryName;
       
+      
     });
   }
-  ngAfterContentInit(): void {
-    
+ 
+
+  ngOnDestroy() {
+    this.selectedMemService.selectedCategory.unsubscribe();
   }
+
+
 }

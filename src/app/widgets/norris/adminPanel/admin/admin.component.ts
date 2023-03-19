@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { selectedMemService } from "../../services/selectedMemObservable.service";
 import { allowedUsernames } from "./utils/categoryNameTable";
-
+import { LocalStorageService } from "../../services/local-storage.service";
 
 @Component({
   selector: "app-admin",
@@ -14,6 +14,7 @@ export class AdminComponent implements OnInit {
   simpleForm?: FormGroup;
   isSubmitted: boolean = false;
   user?: { id?: string; category?: string };
+  
 
   ngOnInit() {
     this.simpleForm = new FormGroup({
@@ -29,14 +30,6 @@ export class AdminComponent implements OnInit {
     };
     
   }
-
-  // sendFormValueToObservable () {
-  //   const categoryNameValue = this.simpleForm?.value
-  //   const sendValueToObservable = this.localStorageService.localStorage.next(categoryNameValue)
-  //   sendValueToObservable
-  //   console.log(this.localStorageService.localStorage.value);
-   
-  // }
 
   //Validators
   allowedNames(control: FormControl) {
@@ -64,12 +57,12 @@ export class AdminComponent implements OnInit {
         this.simpleForm?.get("categoryName")?.value
       );
     }
+    this.saveToLocalStorage()
   }
 
-  onButtonSave() {
-    const sendSimpleFormToLocalStorage = JSON.stringify(this.simpleForm?.value);
-    const formName = "form-data";
-    localStorage.setItem(formName, sendSimpleFormToLocalStorage);
+  saveToLocalStorage () {
+   const stringifySimpleForm = JSON.stringify(this.simpleForm?.value)
+   this.localStorageService.saveInLocalStorage('categoryValue', stringifySimpleForm)
   }
 
   //Navigation links
@@ -82,11 +75,6 @@ export class AdminComponent implements OnInit {
     private router: Router,
     private selectedMemService: selectedMemService,
     private route: ActivatedRoute,
-   
+    private localStorageService: LocalStorageService,
   ) {}
 }
-
-// przek formValue(np.dev) to observable przek to do localStoragewart 
-// wart z localStorage przek do observatora pobrać ją buttonem z innego komponentu
-// muszę mieć wart formValue w observatorze i na kliku przyp 
-// na kliku załaduj wart z localStorage do obserwatora

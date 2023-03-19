@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { selectedMemService } from "../../services/selectedMemObservable.service";
 
+
 @Component({
   selector: "app-mem-list",
   templateUrl: "./mem-list.component.html",
@@ -10,13 +11,11 @@ export class MemListComponent implements OnInit {
   @Output() httpReqToNorrisComp = new EventEmitter<Request>();
   @Input() loadMemOnPage?: string;
 
+  // stringifySimpleForm = JSON.stringify(this.simpleForm?.value)
+
   loadData() {
-    const localStorageData: any = localStorage.getItem("form-data");
-    const convertToJSON = JSON.parse(localStorageData);
-
-    console.log(localStorageData);
-    console.log(convertToJSON.categoryName);
-
+    const localStorageData: string = localStorage.getItem("categoryValue") || ''; 
+    const convertToJSON = JSON.parse(localStorageData)
     this.selectedMem.selectedCategory.next(convertToJSON.categoryName);
   }
 
@@ -24,7 +23,11 @@ export class MemListComponent implements OnInit {
     this.httpReqToNorrisComp.emit();
   }
 
-  constructor(private selectedMem: selectedMemService) {}
+  constructor(
+    private selectedMem: selectedMemService,
+    ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadData()
+  }
 }

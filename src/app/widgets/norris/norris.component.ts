@@ -13,13 +13,19 @@ export class NorrisComponent implements OnInit {
   requestHttp() {
     this.memService.requestForApi().subscribe((results) => {
       this.memToDisplay = results.value;
+     
     });
   }
 
   
   ngOnInit() {
-    // const loadMemOnPage = this.requestHttp();
-    // loadMemOnPage
+    const loadMemOnPage = this.requestHttp();
+    loadMemOnPage
   }
   constructor(private memService: MemHttpService) {}
+
+  ngOnDestroy() {
+    
+  }
+
 }
