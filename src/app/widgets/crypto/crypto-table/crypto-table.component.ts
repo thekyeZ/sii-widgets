@@ -1,4 +1,4 @@
-import { Component, Injectable, OnInit } from "@angular/core";
+import { Component, Injectable, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { CryptoIdService } from "../crypto-id.service";
 import { CryptoModel } from "../crypto.model";
@@ -10,8 +10,9 @@ import { CryptoService } from "../crypto.service";
   templateUrl: "./crypto-table.component.html",
   styleUrls: ["./crypto-table.component.scss"],
 })
-export class CryptoTableComponent implements OnInit {
+export class CryptoTableComponent implements OnInit, OnDestroy {
   crypto: CryptoModel[] = [];
+  cryptoServiceSubscribe!: any;
 
   constructor(
     private cryptoService: CryptoService,
@@ -29,8 +30,12 @@ export class CryptoTableComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.cryptoService
+    this.cryptoServiceSubscribe = this.cryptoService
       .fetchCryptoItem()
       .subscribe((cryptoItems) => (this.crypto = cryptoItems));
+  }
+
+  ngOnDestroy(): void {
+    this.cryptoServiceSubscribe.unsubscribe();
   }
 }

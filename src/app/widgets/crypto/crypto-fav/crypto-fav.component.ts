@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { switchMap } from "rxjs";
 import { CryptoIdService } from "../crypto-id.service";
 import { CryptoModel } from "../crypto.model";
 import { CryptoService } from "../crypto.service";
@@ -8,9 +9,11 @@ import { CryptoService } from "../crypto.service";
   templateUrl: "./crypto-fav.component.html",
   styleUrls: ["./crypto-fav.component.scss"],
 })
-export class CryptoFavComponent {
+export class CryptoFavComponent implements OnInit, OnDestroy {
   crypto: CryptoModel[] = [];
   selectedFavCrypto!: CryptoModel;
+  cryptoServiceSubscribe!: any;
+  cryptoIdServiceSubscribe!: any;
 
   constructor(
     private cryptoService: CryptoService,
@@ -18,15 +21,23 @@ export class CryptoFavComponent {
   ) {}
 
   ngOnInit() {
-    this.cryptoService
+    this.cryptoServiceSubscribe = this.cryptoService
       .fetchCryptoItem()
       .subscribe((cryptoItems) => (this.crypto = cryptoItems));
-    this.cryptoIdService.favCrypto.subscribe((selectedCryptoId) => {
-      this.cryptoService
-        .fetchCryptoDetails(selectedCryptoId!)
-        .subscribe((cryptoItem) => {
-          this.selectedFavCrypto = cryptoItem;
-        });
-    });
+    this.cryptoIdServiceSubscribe = this.cryptoIdService.favCrypto.subscribe(
+      (selectedCryptoId) => {
+        this.cryptoService
+          .fetchCryptoDetails(selectedCryptoId!)
+          .subscribe((cryptoItem) => {
+            this.selectedFavCrypto = cryptoItem;
+          });
+      }
+    );
+    // this.cryptoIdService.favCrypto.pipe(switchMap())
+  }
+
+  ngOnDestroy() {
+    this.cryptoServiceSubscribe.unsubscribe();
+    this.cryptoIdServiceSubscribe.unsubscribe();
   }
 }

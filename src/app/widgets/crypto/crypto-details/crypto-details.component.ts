@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { CryptoIdService } from "../crypto-id.service";
 
 import { CryptoModel } from "../crypto.model";
@@ -9,9 +9,11 @@ import { CryptoService } from "../crypto.service";
   templateUrl: "./crypto-details.component.html",
   styleUrls: ["./crypto-details.component.scss"],
 })
-export class CryptoDetailsComponent implements OnInit {
+export class CryptoDetailsComponent implements OnInit, OnDestroy {
   crypto: CryptoModel[] = [];
   selectedCrypto!: number;
+  cryptoServiceSubscribe!: any;
+  cryptoIdServiceSubscribe!: any;
 
   constructor(
     private cryptoService: CryptoService,
@@ -19,11 +21,17 @@ export class CryptoDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.cryptoService
+    this.cryptoServiceSubscribe = this.cryptoService
       .fetchCryptoItem()
       .subscribe((cryptoItems) => (this.crypto = cryptoItems));
-    this.cryptoIdService.selectedCrypto.subscribe((i) => {
-      this.selectedCrypto = i;
-    });
+    this.cryptoIdServiceSubscribe =
+      this.cryptoIdService.selectedCrypto.subscribe((i) => {
+        this.selectedCrypto = i;
+      });
+  }
+
+  ngOnDestroy() {
+    this.cryptoServiceSubscribe.unsubscribe();
+    this.cryptoIdServiceSubscribe.unsubscribe();
   }
 }
