@@ -11,8 +11,6 @@ export class MemListComponent implements OnInit {
   @Output() httpReqToNorrisComp = new EventEmitter<Request>();
   @Input() loadMemOnPage?: string;
 
-  // stringifySimpleForm = JSON.stringify(this.simpleForm?.value)
-
   loadData() {
     const localStorageData: string = localStorage.getItem("categoryValue") || ''; 
     const convertToJSON = JSON.parse(localStorageData)

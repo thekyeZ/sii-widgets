@@ -21,11 +21,12 @@ export class NorrisComponent implements OnInit {
   ngOnInit() {
     const loadMemOnPage = this.requestHttp();
     loadMemOnPage
+    
   }
   constructor(private memService: MemHttpService) {}
 
-  ngOnDestroy() {
-    
-  }
+  // ngOnDestroy() {
+  //    this.memService.requestForApi().unsubscribe()
+  // }
 
 }

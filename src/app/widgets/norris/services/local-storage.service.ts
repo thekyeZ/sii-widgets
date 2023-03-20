@@ -23,8 +23,3 @@ export class LocalStorageService {
 
 
 
-// onButtonSave () {
-//   const sendSimpleFormToLocalStorage: string = JSON.stringify(this.simpleForm?.value);
-//   const formName:string = "form-data";
-//   localStorage.setItem(formName, sendSimpleFormToLocalStorage);
-// }
