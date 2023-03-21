@@ -17,12 +17,12 @@ export class NorrisComponent implements OnInit {
   //loadMemOnPage
   ngOnInit() {
    this.requestHttp();
+  
   }
   
   constructor(private memService: MemHttpService) {}
 
   ngOnDestroy() {
-    // this.memService.requestForApi().unsubscribe()
     this.requestHttp().unsubscribe()
   }
 }

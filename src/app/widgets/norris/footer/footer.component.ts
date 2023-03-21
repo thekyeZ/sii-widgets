@@ -29,7 +29,7 @@ export class FooterComponent implements OnInit {
  
 
   ngOnDestroy() {
-    this.selectedMemService.selectedCategory.unsubscribe();
+    // this.selectedMemService.selectedCategory.unsubscribe();
   }
 
 

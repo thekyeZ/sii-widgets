@@ -53,7 +53,7 @@ export class AdminComponent implements OnInit {
 
   //Navigation links
   navigateToMainPage() {
-    this.router.navigate([""]);
+    this.router.navigate(["/"]);
   }
 
   //Constructor
