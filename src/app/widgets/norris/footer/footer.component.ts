@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { selectedMemService } from "../services/selectedMemObservable.service";
 import { HttpClient } from "@angular/common/http";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: "app-footer",
@@ -16,21 +17,18 @@ export class FooterComponent implements OnInit {
   listOfCategoriesURL: string = "https://api.chucknorris.io/jokes/categories";
   listOfCategories$ = this.http.get<string[]>(`${this.listOfCategoriesURL}`);
   categoryChanged?: string = "";
+  subscription?: Subscription;
 
   onCategorySelected(value: string) {
-    //przekazanie selecta (np. dev) do observable
     this.selectedMemService.selectedCategory.next(value);
   }
 
   ngOnInit() {
-    this.selectedMemService.selectedCategory.subscribe(categoryName => 
-      this.categoryChanged = categoryName);
+    this.subscription = this.selectedMemService.selectedCategory.subscribe(
+      (categoryName) => (this.categoryChanged = categoryName)
+    );
   }
- 
-
   ngOnDestroy() {
-    // this.selectedMemService.selectedCategory.unsubscribe();
+    this.subscription?.unsubscribe();
   }
-
-
 }

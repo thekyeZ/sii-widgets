@@ -28,8 +28,6 @@ export class AdminComponent implements OnInit {
       category: this.route.snapshot.params["category"],
     };
   }
-
-  //Buttons
   onSubmit() {
     this.isSubmitted = true;
 
@@ -51,12 +49,10 @@ export class AdminComponent implements OnInit {
     );
   }
 
-  //Navigation links
   navigateToMainPage() {
     this.router.navigate(["/"]);
   }
 
-  //Constructor
   constructor(
     private router: Router,
     private selectedMemService: selectedMemService,

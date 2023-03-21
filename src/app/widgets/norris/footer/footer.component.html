@@ -7,15 +7,12 @@
     class="form-select form-select-sm"
     aria-label=".form-select-sm example"
     (change)="onCategorySelected(selectedMemRef.value)"
-    [(ngModel)]="categoryChanged" 
-    
-    
+    [(ngModel)]="categoryChanged"
   >
     <option value="">random</option>
     <option
       *ngFor="let singleCategoryName of listOfCategories$ | async; index as i"
       [value]="singleCategoryName"
-      
     >
       {{ singleCategoryName }}
     </option>

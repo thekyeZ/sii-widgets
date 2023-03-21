@@ -17,26 +17,21 @@ export class MemHttpService {
   apiForRandomCategory: string = "https://api.chucknorris.io/jokes/random?";
 
   requestForApi() {
-    // choose this api if user select random category (selectValue = "random")
+    const displError = (error: Response) => {
+      throw new Error(`Błąd sieci: ${error.statusText} (${error.status})`)
+    }
     if (this.memService.selectedCategory.value == "") {
       return this.http.get<Post>(`${this.apiForRandomCategory}`).pipe(
-        catchError((error: Response) => {
-          throw new Error(`Błąd sieci: ${error.statusText} (${error.status})`);
-        })
-      );
+        catchError(displError)
+      )
     } else {
-      // choose this api if user select other category (selectValue = "selectCategory")
       return this.http
         .get<Post>(
           `${this.apiForSelectedCategory}${this.memService.selectedCategory.value}`
         )
-        .pipe(
-          catchError((error: Response) => {
-            throw new Error(
-              `Błąd sieci: ${error.statusText} (${error.status})`
-            );
-          })
-        );
+        .pipe (
+          catchError(displError)
+        )
     }
   }
 }

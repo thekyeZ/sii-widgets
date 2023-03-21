@@ -1,5 +1,3 @@
-//Validators
-
 import { FormControl } from "@angular/forms";
 import { allowedUsernames } from "./categoryNameTable";
 
