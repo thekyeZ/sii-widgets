@@ -16,7 +16,7 @@ export class MemHttpService {
   apiForSelectedCategory: string = "https://api.chucknorris.io/jokes/random?category=";
   apiForRandomCategory: string = "https://api.chucknorris.io/jokes/random?";
 
-  requestForApi() : Observable<Post> {
+  requestForApi() {
     // choose this api if user select random category (selectValue = "random")
     if (this.memService.selectedCategory.value == "") {
       return this.http.get<Post>(`${this.apiForRandomCategory}`).pipe(

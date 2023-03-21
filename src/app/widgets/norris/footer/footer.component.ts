@@ -23,11 +23,8 @@ export class FooterComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.selectedMemService.selectedCategory.subscribe((categoryName) => {
-      this.categoryChanged = categoryName;
-      
-      
-    });
+    this.selectedMemService.selectedCategory.subscribe(categoryName => 
+      this.categoryChanged = categoryName);
   }
  
 

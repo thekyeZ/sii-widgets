@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Subscribable, Subscriber } from "rxjs";
 import { MemHttpService } from "./services/mem-http.service";
 
 @Component({
@@ -11,22 +12,17 @@ export class NorrisComponent implements OnInit {
 
   // call http request from MemHttpService, if user click button ("losuj") call http request from MemHttpService
   requestHttp() {
-    this.memService.requestForApi().subscribe((results) => {
-      this.memToDisplay = results.value;
-     
-    });
+   return this.memService.requestForApi().subscribe( results => this.memToDisplay = results.value );
   }
-
-  
+  //loadMemOnPage
   ngOnInit() {
-    const loadMemOnPage = this.requestHttp();
-    loadMemOnPage
-    
+   this.requestHttp();
   }
+  
   constructor(private memService: MemHttpService) {}
 
-  // ngOnDestroy() {
-  //    this.memService.requestForApi().unsubscribe()
-  // }
-
+  ngOnDestroy() {
+    // this.memService.requestForApi().unsubscribe()
+    this.requestHttp().unsubscribe()
+  }
 }
