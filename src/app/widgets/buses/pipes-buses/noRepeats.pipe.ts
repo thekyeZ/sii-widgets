@@ -1,11 +1,11 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { busStopNames } from "../model-buses/busStop.model";
+import { BusStopNames } from "../model-buses/BusStop.model";
 
 @Pipe({
   name: "norepeats",
 })
 export class NoRepeatsPipe implements PipeTransform {
-  transform(values: busStopNames): busStopNames {
+  transform(values: BusStopNames): BusStopNames {
     const uniqueNames = new Set<string>();
     return values.filter((value) => {
       if (uniqueNames.has(value.name)) {

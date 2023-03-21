@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { FetchBusArrivalsService } from "../../services-buses/fetch-bus-arrivals.service";
-import { busArrival } from "../../model-buses/busStop.model";
+import { BusArrival } from "../../model-buses/BusStop.model";
 import { SelectedBusStopService } from "../../services-buses/selected-bus-stop.service";
 import { Subscription } from "rxjs";
 
@@ -10,7 +10,7 @@ import { Subscription } from "rxjs";
   styleUrls: ["./incoming-buses.component.scss"],
 })
 export class IncomingBusesComponent {
-  busArrivalsData: busArrival[] = [];
+  busArrivalsData: BusArrival[] = [];
   busStopSelected: boolean = false;
   selectBusArrivalsServiceSubscribe!: Subscription;
   fetchBusArrivalsServiceSubscribe!: Subscription;

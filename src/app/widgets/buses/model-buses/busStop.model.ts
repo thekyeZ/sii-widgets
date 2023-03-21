@@ -1,4 +1,4 @@
-export interface busStop {
+export interface BusStop {
   id: string;
   alt_id: string;
   name: string;
@@ -7,20 +7,20 @@ export interface busStop {
   lon: number;
 }
 
-export interface busStopName {
+export interface BusStopName {
   id: string;
   name: string;
 }
 
-export type busStopNames = busStopName[];
+export type BusStopNames = BusStopName[];
 
-export type busArrival = {
+export type BusArrival = {
   time: string;
   line: string;
   destination: string;
   stop: string;
 };
 
-export type busArrivals = {
-  [key: string]: busArrival;
+export type BusArrivals = {
+  [key: string]: BusArrival;
 };

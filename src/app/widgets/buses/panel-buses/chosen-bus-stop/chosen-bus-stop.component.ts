@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { busStopNames } from "../../model-buses/busStop.model";
+import { BusStopNames } from "../../model-buses/BusStop.model";
 import { SelectedBusStopService } from "../../services-buses/selected-bus-stop.service";
 
 @Component({
@@ -8,7 +8,7 @@ import { SelectedBusStopService } from "../../services-buses/selected-bus-stop.s
   styleUrls: ["./chosen-bus-stop.component.scss"],
 })
 export class ChosenBusStopComponent {
-  @Input() busStops: busStopNames = [];
+  @Input() busStops: BusStopNames = [];
   selectedBusStopName!: string;
 
   constructor(private selectedBusStopService: SelectedBusStopService) {}

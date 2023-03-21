@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
-import { busStopNames } from "../model-buses/busStop.model";
+import { BusStopNames } from "../model-buses/BusStop.model";
 import { FetchBusStopsService } from "../services-buses/fetch-bus-stops.service";
 
 @Component({
@@ -9,7 +9,7 @@ import { FetchBusStopsService } from "../services-buses/fetch-bus-stops.service"
   styleUrls: ["./panel-buses.component.scss"],
 })
 export class PanelBusesComponent {
-  busStops!: busStopNames;
+  busStops!: BusStopNames;
 
   constructor(
     private fetchBusStopsService: FetchBusStopsService,

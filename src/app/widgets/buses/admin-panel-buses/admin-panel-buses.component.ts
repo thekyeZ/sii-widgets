@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { busStopNames } from "../model-buses/busStop.model";
+import { BusStopNames } from "../model-buses/BusStop.model";
 import { FetchBusStopsService } from "../services-buses/fetch-bus-stops.service";
 import { LocalBusStorageService } from "../services-buses/local-bus-storage.service";
 import { SelectedBusStopService } from "../services-buses/selected-bus-stop.service";
@@ -12,7 +12,7 @@ import { SelectedBusStopService } from "../services-buses/selected-bus-stop.serv
   styleUrls: ["./admin-panel-buses.component.scss"],
 })
 export class AdminPanelBusesComponent implements OnInit {
-  busStops: busStopNames = [];
+  busStops: BusStopNames = [];
 
   defaultBusStopForm!: FormGroup;
 

@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { busStopNames } from "../../model-buses/busStop.model";
+import { BusStopNames } from "../../model-buses/BusStop.model";
 import { SelectedBusStopService } from "../../services-buses/selected-bus-stop.service";
 
 @Component({
@@ -8,7 +8,7 @@ import { SelectedBusStopService } from "../../services-buses/selected-bus-stop.s
   styleUrls: ["./list-of-buses.component.scss"],
 })
 export class ListOfBusesComponent {
-  @Input() busStops!: busStopNames;
+  @Input() busStops!: BusStopNames;
 
   constructor(
     private selectedBusStopService: SelectedBusStopService
