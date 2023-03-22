@@ -1,9 +1,23 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { FormGroup, FormControl, Validators } from "@angular/forms";
+
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  AbstractControl,
+  ValidationErrors,
+  ValidatorFn,
+} from "@angular/forms";
 import { SelectedCharacterIdService } from "../services/selected-character-id.service";
 import { LocalService } from "../services/local.service";
-// import { ActivatedRoute } from "@angular/router";
+
+export function allowedColorValidator(nameRe: RegExp): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const allowed = !nameRe.test(control.value);
+    return allowed ? { allowedColor: { value: control.value } } : null;
+  };
+}
 @Component({
   selector: "app-admin",
   templateUrl: "./admin.component.html",
@@ -16,11 +30,15 @@ export class AdminComponent implements OnInit {
       Validators.max(9),
       Validators.min(0),
     ]),
+    color: new FormControl("", [
+      Validators.required,
+      allowedColorValidator(/blue|green|red/i),
+    ]),
   });
   constructor(
     private router: Router,
     private selectedCharacterService: SelectedCharacterIdService,
-    private localStore: LocalService // private _route: ActivatedRoute
+    private localStore: LocalService
   ) {}
 
   ngOnInit(): void {}
@@ -33,10 +51,6 @@ export class AdminComponent implements OnInit {
     console.log("Data from local storage: ", this.localStore.getData("id"));
     //this.signupForm.reset();
     this.router.navigate(["characters"]);
-    // if (this.signupForm.value.number >= 10) {
-    //    alert("Please enter a number from range 0 to 9");
-    //   this.router.navigate(["admin/got"]);
-    // }
   }
   navigateToHome() {
     this.router.navigate([""]);
