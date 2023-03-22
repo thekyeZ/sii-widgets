@@ -37,8 +37,6 @@ export class CatAdminComponent implements OnInit, OnDestroy {
     });
   }
 
-
-
   get idCat() {
     return this.catForm.get('idCat');
   }
@@ -49,10 +47,7 @@ export class CatAdminComponent implements OnInit, OnDestroy {
   onSubmit(): void {
     this.saveData();
     this.loadData();
-    console.log(this.catForm);
-    console.log(this.catForm.value.inputCat);
-
-    // this.router.navigate([""]);
+    this.router.navigate([""]);
   }
 
   saveData() {
@@ -75,7 +70,7 @@ export class CatAdminComponent implements OnInit, OnDestroy {
 
   checkIfExist = (control: FormControl): { [key: string]: boolean } | null => {
     const inputCat = control.value;
-    
+
     if (inputCat && this.breedsCats.some(cat => cat.id === inputCat)) {
       return null;
     } else {
