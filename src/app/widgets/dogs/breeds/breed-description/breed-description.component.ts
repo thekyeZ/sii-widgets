@@ -10,5 +10,5 @@ import { Cat } from '../../interfaces/cat';
 export class BreedDescriptionComponent {
   @Input()
   cat!: Cat;
-
+constructor(){}
 }

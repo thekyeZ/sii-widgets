@@ -16,8 +16,6 @@ export class ListItemComponent {
   constructor( private selectedBreed: SelectedBreedService) { }
 
   onSelected(id: string) {
-    this.selectedBreed.breedSelected.next(id);
-    console.log(this.index);
-    
+    this.selectedBreed.breedSelected.next(id);   
   }
 }

@@ -11,7 +11,7 @@ export class SelectedBreedService {
 
   constructor(
     private localstorageService: LocalStorageService,
-  ) {}
+  ) { }
 
 }
 

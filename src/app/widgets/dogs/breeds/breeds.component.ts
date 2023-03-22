@@ -14,20 +14,20 @@ export class BreedsComponent implements OnInit {
 
   selectedBreed!: Cat;
   title: string = 'breed list';
-  SelectedSubscribe!: Subscription;
-  FetchSubscribe!: Subscription;
+  selectedSubscribe!: Subscription;
+  fetchSubscribe!: Subscription;
 
   constructor(private breedService: BreedService,
     private selectedBreedS: SelectedBreedService
   ) { }
 
   ngOnInit() {
-    this.SelectedSubscribe = this.selectedBreedS.breedSelected.subscribe(
+    this.selectedSubscribe = this.selectedBreedS.breedSelected.subscribe(
       (id: string) => {
-        console.log(id);
-        this.FetchSubscribe = this.breedService.getBreed(id).subscribe(
+
+        this.fetchSubscribe = this.breedService.getBreed(id).subscribe(
           (cat) => {
-            console.log('cokolwiek', id, cat);
+
             this.selectedBreed = cat;
           }
         )
@@ -37,8 +37,8 @@ export class BreedsComponent implements OnInit {
   };
 
   ngOnDestroy() {
-    this.SelectedSubscribe.unsubscribe();
-    this.FetchSubscribe.unsubscribe();
+    this.selectedSubscribe.unsubscribe();
+    this.fetchSubscribe.unsubscribe();
   }
 }
 

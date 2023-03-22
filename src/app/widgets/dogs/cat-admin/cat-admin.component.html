@@ -20,10 +20,20 @@
     </select>
 
     <span *ngIf="idCat?.invalid && idCat!.touched">
+      Please select a cat id
+    </span>
+
+    <br/>
+    <label for="inputCat">Enter a cat ID</label>
+    <br/>
+    <input type="text" id="inputCat" formControlName="inputCat">
+
+    <span *ngIf="inputCat?.invalid && inputCat!.touched">
       Please enter a cat id
     </span>
 
   </div>
+
   <button type="submit" class="btn btn-light" [disabled]="catForm.invalid">
     Submit
   </button>
