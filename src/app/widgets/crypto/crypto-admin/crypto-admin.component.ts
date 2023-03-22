@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { CryptoIdService } from "../crypto-id.service";
 import { CryptoModel } from "../crypto.model";
@@ -16,6 +16,7 @@ export class CryptoAdminComponent implements OnInit, OnDestroy {
   cryptoSelect: string = "";
   form!: FormGroup;
   cryptoServiceSubscribe!: any;
+  colors = ["blue", "yellow", "purple"];
 
   constructor(
     private cryptoIdService: CryptoIdService,
@@ -37,9 +38,20 @@ export class CryptoAdminComponent implements OnInit, OnDestroy {
     this.router.navigate([""]);
   }
 
+  acceptedColors(control: FormControl): { [c: string]: boolean } | null {
+    if (this.colors.indexOf(control.value)) {
+      return { colorIsGood: true };
+    }
+    return null;
+  }
+
   ngOnInit() {
     this.form = new FormGroup({
-      cryptos: new FormControl(null),
+      cryptos: new FormControl(null, Validators.required),
+      favColor: new FormControl(null, [
+        Validators.required,
+        this.acceptedColors.bind(this),
+      ]),
     });
 
     this.cryptoServiceSubscribe = this.cryptoService

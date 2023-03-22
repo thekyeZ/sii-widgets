@@ -32,11 +32,15 @@
           class="help-block"
           >You forgot to selected a crypto!</span
         >
+        <label for="name" class="form-label"
+          >Select your favourite color:
+        </label>
+        <input type="text" class="form-control" formControlName="favColor" />
         <div class="buttons">
           <button
             class="btn btn-success"
             type="submit"
-            [disabled]="form.get('cryptos')!.pristine"
+            [disabled]="form.invalid"
           >
             Accept
           </button>
