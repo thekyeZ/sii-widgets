@@ -54,7 +54,10 @@
   background-color: #9fab95;
 }
 .weather-admin button[disabled] {
-  opacity: 0;
+  opacity: 0.5;
+}
+.weather-admin button[disabled]:hover {
+  box-shadow: none;
 }
 .weather-admin .button-submit {
   margin: 0;
