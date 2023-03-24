@@ -24,20 +24,18 @@ export class CryptoFavComponent implements OnInit, OnDestroy {
     this.cryptoServiceSubscribe = this.cryptoService
       .fetchCryptoItem()
       .subscribe((cryptoItems) => (this.crypto = cryptoItems));
-    this.cryptoIdServiceSubscribe = this.cryptoIdService.favCrypto.subscribe(
-      (selectedCryptoId) => {
-        this.cryptoService
-          .fetchCryptoDetails(selectedCryptoId!)
-          .subscribe((cryptoItem) => {
-            this.selectedFavCrypto = cryptoItem;
-          });
-      }
-    );
-    // this.cryptoIdService.favCrypto.pipe(switchMap())
+    this.cryptoIdService.favCrypto
+      .pipe(
+        switchMap((SelectedCryptoId) => {
+          return this.cryptoService.fetchCryptoDetails(SelectedCryptoId!);
+        })
+      )
+      .subscribe((cryptoItem) => {
+        this.selectedFavCrypto = cryptoItem;
+      });
   }
 
   ngOnDestroy() {
     this.cryptoServiceSubscribe.unsubscribe();
-    this.cryptoIdServiceSubscribe.unsubscribe();
   }
 }
