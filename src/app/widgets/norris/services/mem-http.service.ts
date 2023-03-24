@@ -18,7 +18,8 @@ export class MemHttpService {
 
   requestForApi() {
     const displError = (error: Response) => {
-      throw new Error(`Błąd sieci: ${error.statusText} (${error.status})`)
+      console.error('Error:', error);
+      throw new Error('Oops! Something went wrong while fetching the meme. Please try again later.');
     }
     if (this.memService.selectedCategory.value == "") {
       return this.http.get<Post>(`${this.apiForRandomCategory}`).pipe(

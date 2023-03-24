@@ -13,11 +13,11 @@ export class LocalStorageService {
     localStorage.setItem(id, valueToSave)
   }
 
-  getData (id: string) {
+  getData (id: string): string | null {
     return localStorage.getItem(id)
   }
 
-  formValue: BehaviorSubject<Function> = new BehaviorSubject<Function>(this.getData)
+  formValue: BehaviorSubject<Function | null> = new BehaviorSubject<Function | null>(this.getData)
 
 }
 

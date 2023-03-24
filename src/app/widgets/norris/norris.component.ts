@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Subscribable, Subscriber, Subscription } from "rxjs";
+import { Subscription } from "rxjs";
 import { MemHttpService } from "./services/mem-http.service";
 
 @Component({
@@ -17,11 +17,15 @@ export class NorrisComponent implements OnInit {
       .subscribe((results) => (this.memToDisplay = results.value))
   }
   ngOnInit() {
-   this.subscription = this.requestHttp()
+    const sub = this.requestHttp();
+    if (sub) {
+      this.subscription = sub;
+    }
   }
   constructor(private memService: MemHttpService) {}
 
   ngOnDestroy() {
-    this.subscription?.unsubscribe()
-  }
+     if (this.subscription) {
+      this.subscription.unsubscribe();
+  }}
 }

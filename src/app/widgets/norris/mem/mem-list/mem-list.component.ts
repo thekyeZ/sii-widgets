@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { selectedMemService } from "../../services/selectedMemObservable.service";
 
-
 @Component({
   selector: "app-mem-list",
   templateUrl: "./mem-list.component.html",
