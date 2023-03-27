@@ -15,12 +15,19 @@ export class AdminComponent implements OnInit {
   isSubmitted: boolean = false;
   user?: { id?: string; category?: string };
 
-  ngOnInit() {
+  constructor(
+    private router: Router,
+    private selectedMemService: selectedMemService,
+    private route: ActivatedRoute,
+    private localStorageService: LocalStorageService
+  ) {}
+
+  ngOnInit(): void {
     this.simpleForm = new FormGroup({
-      categoryName: new FormControl<string>("", [
+      categoryName: new FormControl("", [
         Validators.required,
-        allowedNames.bind(this),
-        noSpaceAllowed.bind(this),
+        allowedNames,
+        noSpaceAllowed,
       ]),
     });
     this.user = {
@@ -28,20 +35,20 @@ export class AdminComponent implements OnInit {
       category: this.route.snapshot.params["category"],
     };
   }
-  onSubmit() {
+  onSubmit(): void {
     this.isSubmitted = true;
 
     if (this.simpleForm?.invalid) {
       return;
-    } else {
+    } 
       this.selectedMemService.selectedCategory.next(
         this.simpleForm?.get("categoryName")?.value
       );
-    }
+    
     this.saveToLocalStorage();
   }
 
-  saveToLocalStorage() {
+  saveToLocalStorage(): void {
     const stringifySimpleForm = JSON.stringify(this.simpleForm?.value);
     this.localStorageService.saveInLocalStorage(
       "categoryValue",
@@ -49,14 +56,9 @@ export class AdminComponent implements OnInit {
     );
   }
 
-  navigateToMainPage() {
+  navigateToMainPage(): void {
     this.router.navigate(["/"]);
   }
 
-  constructor(
-    private router: Router,
-    private selectedMemService: selectedMemService,
-    private route: ActivatedRoute,
-    private localStorageService: LocalStorageService
-  ) {}
+
 }
