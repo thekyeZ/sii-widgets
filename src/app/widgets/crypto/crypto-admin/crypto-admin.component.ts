@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { Subscription } from "rxjs";
 import { CryptoIdService } from "../crypto-id.service";
 import { CryptoModel } from "../crypto.model";
 import { CryptoService } from "../crypto.service";
@@ -15,7 +16,7 @@ export class CryptoAdminComponent implements OnInit, OnDestroy {
   crypto: CryptoModel[] = [];
   cryptoSelect: string = "";
   form!: FormGroup;
-  cryptoServiceSubscribe!: any;
+  cryptoServiceSubscribe!: Subscription;
   colors = ["blue", "yellow", "purple"];
 
   constructor(

@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Subscription } from "rxjs";
 import { CryptoIdService } from "../crypto-id.service";
 
 import { CryptoModel } from "../crypto.model";
@@ -12,8 +13,8 @@ import { CryptoService } from "../crypto.service";
 export class CryptoDetailsComponent implements OnInit, OnDestroy {
   crypto: CryptoModel[] = [];
   selectedCrypto!: number;
-  cryptoServiceSubscribe!: any;
-  cryptoIdServiceSubscribe!: any;
+  cryptoServiceSubscribe!: Subscription;
+  cryptoIdServiceSubscribe!: Subscription;
 
   constructor(
     private cryptoService: CryptoService,

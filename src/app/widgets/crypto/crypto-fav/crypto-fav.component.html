@@ -38,11 +38,9 @@
         {{ selectedFavCrypto.supply | number : "1.0-0" }}
       </dd>
 
-      <hr *ngIf="selectedFavCrypto.maxSupply !== null" />
+      <hr *ngIf="selectedFavCrypto.maxSupply" />
 
-      <dt class="col-sm-8" *ngIf="selectedFavCrypto.maxSupply !== null">
-        Max supply
-      </dt>
+      <dt class="col-sm-8" *ngIf="selectedFavCrypto.maxSupply">Max supply</dt>
       <dd class="col-sm-4">
         {{ selectedFavCrypto.maxSupply | number : "1.0-0" }}
       </dd>

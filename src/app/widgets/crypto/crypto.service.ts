@@ -7,8 +7,6 @@ import { map } from "rxjs/operators";
   providedIn: "root",
 })
 export class CryptoService {
-  crypto: CryptoModel[] = [];
-
   constructor(private http: HttpClient) {}
 
   fetchCryptoItem() {

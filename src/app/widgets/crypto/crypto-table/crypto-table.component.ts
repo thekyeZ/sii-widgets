@@ -1,5 +1,6 @@
 import { Component, Injectable, OnDestroy, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
+import { Router } from "@angular/router";
+import { Subscription } from "rxjs";
 import { CryptoIdService } from "../crypto-id.service";
 import { CryptoModel } from "../crypto.model";
 import { CryptoService } from "../crypto.service";
@@ -12,13 +13,12 @@ import { CryptoService } from "../crypto.service";
 })
 export class CryptoTableComponent implements OnInit, OnDestroy {
   crypto: CryptoModel[] = [];
-  cryptoServiceSubscribe!: any;
+  cryptoServiceSubscribe!: Subscription;
 
   constructor(
     private cryptoService: CryptoService,
     private cryptoIdService: CryptoIdService,
-    private router: Router,
-    private route: ActivatedRoute
+    private router: Router
   ) {}
 
   selectedItem(i: number) {

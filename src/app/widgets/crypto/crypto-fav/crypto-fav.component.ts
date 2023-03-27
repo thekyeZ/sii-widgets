@@ -26,8 +26,8 @@ export class CryptoFavComponent implements OnInit, OnDestroy {
       .subscribe((cryptoItems) => (this.crypto = cryptoItems));
     this.cryptoIdService.favCrypto
       .pipe(
-        switchMap((SelectedCryptoId) => {
-          return this.cryptoService.fetchCryptoDetails(SelectedCryptoId!);
+        switchMap((selectedCryptoId) => {
+          return this.cryptoService.fetchCryptoDetails(selectedCryptoId!);
         })
       )
       .subscribe((cryptoItem) => {
