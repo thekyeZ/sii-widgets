@@ -41,7 +41,7 @@
       class="btn btn-primary"
       type="submit"
       *ngIf="simpleForm"
-      [disabled]="simpleForm.get('categoryName')?.invalid"
+      [disabled]="simpleForm.invalid"
       
     >
       Save

@@ -13,7 +13,7 @@ export class NorrisComponent implements OnInit {
 
   requestHttp() {
     return this.memService
-      .requestForApi()
+      .getDataMem()
       .subscribe((results) => (this.memToDisplay = results.value))
   }
   ngOnInit() {

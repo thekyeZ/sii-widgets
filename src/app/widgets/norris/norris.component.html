@@ -1,9 +1,8 @@
 <div class="header">
   <app-header></app-header>
 </div>
- <!-- input, output for mem-List-Component. If user click button -> call http request -> fetch given mem on page paragraf -->
 <app-mem-list
-  *ngIf="requestHttp"
+  *ngIf="memToDisplay"
   [loadMemOnPage]="memToDisplay"
   (httpReqToNorrisComp)="requestHttp()"
 >

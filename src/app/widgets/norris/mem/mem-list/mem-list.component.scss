@@ -6,10 +6,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: indigo;
 
   background-image: url("/assets/jpg/Chuck_Norris_smile.jfif");
   background-repeat: no-repeat;
@@ -20,7 +19,9 @@
     display: flex;
     justify-content: space-around;
     margin-bottom: 15px;
+    
   }
+  
   .card-img-top {
     display: flex;
     align-items: center;
@@ -39,11 +40,14 @@
     padding: 15px;
     max-width: 400px;
 
+    
+
     .paragrafMem {
       max-width: 370px;
       margin: 14px;
       font-size: 18px;
       font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      transition: opacity 0.3s ease-in-out;
     }
   }
 
