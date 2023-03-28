@@ -35,3 +35,4 @@ export class FooterComponent implements OnInit {
     this.subscription?.unsubscribe();
   }
 }
+

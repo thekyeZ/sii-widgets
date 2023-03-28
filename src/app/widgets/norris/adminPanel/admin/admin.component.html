@@ -6,10 +6,6 @@
 /></a>
 
 <div class="ui segment">
-  Admin panel category {{ user?.category }} and id {{ user?.id }}
-</div>
-
-<div class="ui segment">
   <form [formGroup]="simpleForm" (ngSubmit)="onSubmit()" *ngIf="simpleForm">
     <div class="form-group">
       <label class="categoryName" for="categoryName">Category</label>

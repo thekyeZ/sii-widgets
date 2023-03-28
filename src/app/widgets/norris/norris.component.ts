@@ -8,24 +8,24 @@ import { MemHttpService } from "./services/mem-http.service";
   styleUrls: ["./norris.component.scss"],
 })
 export class NorrisComponent implements OnInit {
-  memToDisplay?: string
-  subscription?: Subscription
+  displayedMeme?: string
+  httpSubscription?: Subscription
 
-  requestHttp() {
-    return this.memService
+  requestMemeFromApi() {
+    return this.memHttpService
       .getDataMem()
-      .subscribe((results) => (this.memToDisplay = results.value))
+      .subscribe((results) => (this.displayedMeme = results.value))
   }
   ngOnInit() {
-    const sub = this.requestHttp();
-    if (sub) {
-      this.subscription = sub;
+    const subscription  = this.requestMemeFromApi();
+    if (subscription ) {
+      this.httpSubscription = subscription ;
     }
   }
-  constructor(private memService: MemHttpService) {}
+  constructor(private memHttpService: MemHttpService) {}
 
   ngOnDestroy() {
-     if (this.subscription) {
-      this.subscription.unsubscribe();
+     if (this.httpSubscription) {
+      this.httpSubscription.unsubscribe();
   }}
 }

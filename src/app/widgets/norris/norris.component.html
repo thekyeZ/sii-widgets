@@ -2,9 +2,9 @@
   <app-header></app-header>
 </div>
 <app-mem-list
-  *ngIf="memToDisplay"
-  [loadMemOnPage]="memToDisplay"
-  (httpReqToNorrisComp)="requestHttp()"
+  *ngIf="displayedMeme"
+  [loadMemOnPage]="displayedMeme"
+  (httpReqToNorrisComp)="requestMemeFromApi()"
 >
 </app-mem-list>
 

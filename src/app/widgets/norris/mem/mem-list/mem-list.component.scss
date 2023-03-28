@@ -1,4 +1,25 @@
-
+// Define variables
+$primary-color: linear-gradient(
+  90deg,
+  rgba(9, 9, 121, 1) 5%,
+  rgba(0, 212, 255, 1) 100%
+);
+$secondary-color: linear-gradient(#d7e9b9, #faab78);
+$card-border-color: #000;
+$card-border-radius: 5px;
+$button-margin: 15px;
+$button-padding: 10px;
+$button-padding-left: 22px;
+$button-padding-right: 22px;
+$icon-width: 78%;
+$body-img-border-color: #000;
+$body-img-border-radius: 15px;
+$body-img-padding: 15px;
+$paragraph-max-width: 370px;
+$paragraph-margin: 1rem; // Changed from 14px
+$paragraph-font-size: 1.125rem; // Changed from 18px
+$paragraph-font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+$paragraph-transition: opacity 0.3s ease-in-out;
 
 .card-body {
   //  max-width: 650px;
@@ -7,19 +28,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  border: 1px solid black;
-  border-radius: 5px;
+  border: 1px solid $card-border-color;
+  border-radius: $card-border-radius;
 
   background-image: url("/assets/jpg/Chuck_Norris_smile.jfif");
   background-repeat: no-repeat;
   background-size: cover;
 
   .twoIcon {
-    width: 78%;
+    width: $icon-width;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 15px;
-    
+    margin-bottom: $button-margin;
   }
   
   .card-img-top {
@@ -34,55 +54,37 @@
     display: flex;
     flex-direction: block;
     justify-content: center;
-    border: 1px solid black;
-    border-radius: 15px;
-    background-image: linear-gradient(#d7e9b9, #faab78);
-    padding: 15px;
+    border: 1px solid $body-img-border-color;
+    border-radius: $body-img-border-radius;
+    background-image: $secondary-color;
+    padding: $body-img-padding;
     max-width: 400px;
 
-    
-
     .paragrafMem {
-      max-width: 370px;
-      margin: 14px;
-      font-size: 18px;
-      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-      transition: opacity 0.3s ease-in-out;
+      max-width: $paragraph-max-width;
+      margin: $paragraph-margin;
+      font-size: $paragraph-font-size;
+      font-family: $paragraph-font-family;
+      transition: $paragraph-transition;
     }
   }
 
-    .buttonDiv {
-      margin-right: 15px;
-      color: linear-gradient(
-        90deg,
-        rgba(9, 9, 121, 1) 5%,
-        rgba(0, 212, 255, 1) 100%
-      );
+  .buttonDiv {
+    margin-right: $button-margin;
+    color: $primary-color;
 
-
-      .btn-primary {
-        background-color: linear-gradient(
-          90deg,
-          rgba(9, 9, 121, 1) 5%,
-          rgba(0, 212, 255, 1) 100%
-        );
-        color: linear-gradient(
-          90deg,
-          rgba(9, 9, 121, 1) 5%,
-          rgba(0, 212, 255, 1) 100%
-        );
-        padding: 10px;
-        padding-left: 22px;
-        padding-right: 22px;
-        margin-left: 10px;
-        margin-top: 50px;
-       
-       
-        .img {
-          padding-right: 5px;
-        }
+    .btn-primary {
+      background-color: $primary-color;
+      color: $primary-color;
+      padding: $button-padding;
+      padding-left: $button-padding-left;
+      padding-right: $button-padding-right;
+      margin-left: $button-margin;
+      margin-top: $button-margin;
+      
+      .img {
+        padding-right: 5px;
       }
     }
-  
-
+  }
 }

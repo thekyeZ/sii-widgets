@@ -1,6 +1,7 @@
 import { FormControl } from "@angular/forms";
 import { allowedUsernames } from "./categoryNameTable";
 
+
 export function allowedNames(control: FormControl) {
   if (allowedUsernames.indexOf(control.value) === -1) {
     return { nameIsForbidden: true };

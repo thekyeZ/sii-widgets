@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,9 +15,6 @@ export class LocalStorageService {
   getData (id: string): string | null {
     return localStorage.getItem(id)
   }
-
-  formValue: BehaviorSubject<Function | null> = new BehaviorSubject<Function | null>(this.getData)
-
 }
 
 
