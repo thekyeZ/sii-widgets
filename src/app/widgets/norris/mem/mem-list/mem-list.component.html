@@ -1,17 +1,31 @@
 <div class="card-body">
   <div class="twoIcon">
-    <img src="https://img.icons8.com/emoji/48/null/face-with-tears-of-joy.png"/> 
-    <img src="https://img.icons8.com/emoji/48/null/face-with-tears-of-joy.png"/>  
+    <img
+      src="https://img.icons8.com/emoji/48/null/face-with-tears-of-joy.png"
+    />
+    <img
+      src="https://img.icons8.com/emoji/48/null/face-with-tears-of-joy.png"
+    />
   </div>
- 
+
   <div class="bodyImg">
-    <p  class="paragrafMem" *ngIf="dataUrl">{{ dataUrl }}</p> 
+    <p class="paragrafMem" *ngIf="!loadMemOnPage">Select category</p>
+    <p class="paragrafMem">{{ loadMemOnPage }}</p>
   </div>
 
-  <div class="buttonDiv" (click)="onclick()">
-    <a href="#" class="btn btn-primary">Next mem</a>
+  <div class="buttonDiv">
+    <button (click)="sendData()" class="btn btn-primary">
+      <img class="img" src="assets/jpg/button4.svg" alt="" width="37px" />
+      Losowanie</button
+    >
+    <button
+    (click)="loadData()"
+      class="btn btn-primary"
+      >
+      <img class="img" src="https://cdn.iconscout.com/icon/premium/png-256-thumb/loading-420-892992.png?f=webp&w=256" alt="" width="37px" />
+      load </button>
+  
   </div>
-<hr>
 
-
+  <hr />
 </div>

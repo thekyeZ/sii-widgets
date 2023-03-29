@@ -1,14 +1,8 @@
-
-<div class="header">
-    <app-header></app-header>
-</div>
-        <app-mem-list></app-mem-list>
-
-    <div class="footer">
-        <app-footer></app-footer>
-    </div>
-
-
-
-
-
+<app-header></app-header>
+<app-mem-list
+  *ngIf="displayedMeme"
+  [loadMemOnPage]="displayedMeme"
+  (httpReqToNorrisComp)="requestMemeFromApi()"
+>
+</app-mem-list>
+<app-footer></app-footer>

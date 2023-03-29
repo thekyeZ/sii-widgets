@@ -1,8 +1,31 @@
-.nav {
-    margin: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 3px;
+@import 'semantic-ui-css/semantic.css';
 
+$button-width: 30px;
+$button-height: 30px;
+$button-font-size: 22px;
+$button-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+.container-sm {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 3px;
+
+  h3 {
+    padding-top: 15px;
+  }
+
+  button {
+    border: none;
+    background-color: white;
+    font-size: $button-font-size;
+    font-family: $button-font-family;
+
+    img {
+      width: $button-width;
+      height: $button-height;
+      border: none;
+    }
+  }
 }

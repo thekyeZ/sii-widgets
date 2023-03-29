@@ -1,0 +1,47 @@
+<a (click)="navigateToMainPage()"
+  ><img
+    src="https://th.bing.com/th/id/OIP.CnFyiSGurDTUC2qcCsCDEgHaFX?pid=ImgDet&rs=1"
+    width="30px"
+    alt="Internet error"
+/></a>
+
+<div class="ui segment">
+  <form [formGroup]="simpleForm" (ngSubmit)="onSubmit()" *ngIf="simpleForm">
+    <div class="form-group">
+      <label class="categoryName" for="categoryName">Category</label>
+      <input
+        type="text"
+        id="categoryName"
+        class="form-control"
+        formControlName="categoryName"
+      />
+      <span
+        class="help-block"
+        *ngIf="simpleForm.get('categoryName')?.errors?.['nameIsForbidden'] && simpleForm?.touched "
+      >
+        Please enter valid category name: animal, career, celebrity, dev,
+        explicit, fashion, food, history, money, movie, music, political,
+        religion, science, sport, travel
+      </span>
+      <br />
+      <br />
+
+      <span
+        class="help-block"
+        *ngIf="simpleForm?.get('categoryName')?.errors?.['noSpaceAllowed']"
+      >
+        Category name cannot contain space
+      </span>
+    </div>
+    <button
+      class="btn btn-primary"
+      type="submit"
+      *ngIf="simpleForm"
+      [disabled]="simpleForm.invalid"
+      
+    >
+      Save
+    </button>
+  </form>
+
+</div>

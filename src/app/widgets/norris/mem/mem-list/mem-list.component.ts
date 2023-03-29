@@ -1,7 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
-import { Post } from "../interface/post.model";
-import { HttpClient } from "@angular/common/http";
-import { map } from "rxjs/operators";
+import { selectedMemService } from "../../services/selectedMemObservable.service";
 
 @Component({
   selector: "app-mem-list",
@@ -9,37 +7,24 @@ import { map } from "rxjs/operators";
   styleUrls: ["./mem-list.component.scss"],
 })
 export class MemListComponent implements OnInit {
-  photoUrl: string;
-  public posts: any[] = [];
-  dataUrl: string;
+  @Output() httpReqToNorrisComp = new EventEmitter<Request>();
+  @Input() loadMemOnPage?: string;
 
-  requestPosts() {
-    this.http
-      .get<Post>("https://api.chucknorris.io/jokes/random")
-      .subscribe((results) => {
-        this.posts.push(results);
-        this.dataUrl = results.value;
-      });
+  loadData() {
+    const localStorageData: string = localStorage.getItem("categoryValue") || ''; 
+    const convertToJSON = JSON.parse(localStorageData)
+    this.selectedMem.selectedCategory.next(convertToJSON.categoryName);
   }
 
-  text =
-    "Some quick example text to build on the card title and make up the bulk of the card's content.";
-  today: number = Date.now();
-  pi: number = 3.14159265359;
+  sendData() {
+    this.httpReqToNorrisComp.emit();
+  }
+
+  constructor(
+    private selectedMem: selectedMemService,
+    ) {}
 
   ngOnInit(): void {
-    this.requestPosts();
-  }
-  constructor(private http: HttpClient) {}
-
-  exit() {
-    location.reload();
-  }
-
-  onclick() {
-    this.requestPosts();
+    this.loadData()
   }
 }
-
-
-

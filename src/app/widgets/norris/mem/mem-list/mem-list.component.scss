@@ -1,61 +1,90 @@
+// Define variables
+$primary-color: linear-gradient(
+  90deg,
+  rgba(9, 9, 121, 1) 5%,
+  rgba(0, 212, 255, 1) 100%
+);
+$secondary-color: linear-gradient(#d7e9b9, #faab78);
+$card-border-color: #000;
+$card-border-radius: 5px;
+$button-margin: 15px;
+$button-padding: 10px;
+$button-padding-left: 22px;
+$button-padding-right: 22px;
+$icon-width: 78%;
+$body-img-border-color: #000;
+$body-img-border-radius: 15px;
+$body-img-padding: 15px;
+$paragraph-max-width: 370px;
+$paragraph-margin: 1rem; // Changed from 14px
+$paragraph-font-size: 1.125rem; // Changed from 18px
+$paragraph-font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+$paragraph-transition: opacity 0.3s ease-in-out;
 
 .card-body {
- padding: 3%;
- display: flex;
- flex-direction: column;
- align-items: center;
- border: 1px solid black;
- border-radius: 5px;
- background-color: #ccec99;
+ 
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid $card-border-color;
+  border-radius: $card-border-radius;
 
- .twoIcon {
-    min-width: 400px;
+  background-image: url("/assets/jpg/Chuck_Norris_smile.jfif");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .twoIcon {
+    width: $icon-width;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 15px;
-    
-}
-    
-    .card-img-top {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 2px;
-        background-color: azure;
-        
-    }
-    
-    .bodyImg {
-        display: flex;
-        flex-direction: block;
-        justify-content: center;
-        border: 1px solid black;
-        border-radius: 15px;
-        background-image: linear-gradient(#D7E9B9, #FAAB78);
-        padding: 10px;
-        padding-top: 15px;
-        padding-bottom: 30px;
-        max-width: 400px;
-        
-       
-        
-        .paragrafMem {
-            max-width: 370px;
-            margin: 14px;
-        }
-
-     
-       
-      
-    }
-    
+    margin-bottom: $button-margin;
+  }
   
-    .buttonDiv {
-        min-width: 300px;
-        display: flex;
-        justify-content: center;
-        margin-top: 45px;
-    }
- 
-}
+  .card-img-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    background-color: azure;
+  }
 
+  .bodyImg {
+    display: flex;
+    flex-direction: block;
+    justify-content: center;
+    border: 1px solid $body-img-border-color;
+    border-radius: $body-img-border-radius;
+    background-image: $secondary-color;
+    padding: $body-img-padding;
+    max-width: 400px;
+
+    .paragrafMem {
+      max-width: $paragraph-max-width;
+      margin: $paragraph-margin;
+      font-size: $paragraph-font-size;
+      font-family: $paragraph-font-family;
+      transition: $paragraph-transition;
+    }
+  }
+
+  .buttonDiv {
+    margin-right: $button-margin;
+    color: $primary-color;
+
+    .btn-primary {
+      background-color: $primary-color;
+      color: $primary-color;
+      padding: $button-padding;
+      padding-left: $button-padding-left;
+      padding-right: $button-padding-right;
+      margin-left: $button-margin;
+      margin-top: $button-margin;
+      
+      .img {
+        padding-right: 5px;
+      }
+    }
+  }
+}

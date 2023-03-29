@@ -1,7 +1,21 @@
-.nav {
-  margin: 5px;
+.container-sm {
+  margin: 6.5px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 3px;
+}
+
+.container-sm button {
+  border: none;
+  background-color: white;
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container-sm button img {
+  width: 30px;
+  height: 30px;
+  border: none;
 }
