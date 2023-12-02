@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subscription } from 'rxjs-compat';
+import { Observable, Subscription } from 'rxjs';
 import { Cat } from '../interfaces/cat';
 import { BreedService } from './breeds.service';
 import { SelectedBreedService } from './selected-breed.service';
